@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+ <link rel="stylesheet" href="estilo.css">
+ <title>Táfora</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+</head>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+<body>
+<header id="topbar" style="background-color: var(--bg-color)">
+  <span></span>
+  <h2>Seja bem vindo<span id="welcome-name"></span></h2>
+  <button id="profile-btn" aria-haspopup="dialog" aria-controls="profile-sheet" aria-label="Profile">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="4"/>
+      <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+    </svg>
+  </button>
+<dialog class="sheet" id="profile-sheet" aria-labelledby="profile-sheet-title">
+ <div class="sheet-inner" id="profile-form">
+    <header class="sheet-head">
+     <h2 id="profile-sheet-title">Ajustes</h2>
+     <button type="button" class="sheet-close" data-close aria-label="Close">&times;</button> 
+     </header>
+
+    <div class="sheet-body">
+    <div class="avatar-row">
+      <div class="avatar-wrap">
+      
+      
+          <div class="avatar" id="profile-avatar" aria-hidden="true">AB</div>
+  
+  
+         <button type="button" class="avatar-remove" id="photo-remove" aria-label="Remove photo" hidden>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18"/>
+              </svg>
+            </button>
+
+
+        </div>
+
+
+      <button type="button" class="pfsheetbtn" id="photo-btn">Mudar foto</button>
+      
+  <input type="file" id="p-photo" accept="image/*" hidden>
+</div>
+
+
+
+
+     <div class="field">
+        <label>Nome<input id="p-name" maxlength="20"></label>
+        </div>
+     <div class="fieldgrid">
+         <div class="field"><label>Idade<input id="p-age" type="number" min="0" max="100" step="1"></label></div>
+         <div class="field"> <label>Peso<input id="p-weight" type="number" min="0" max="300" step="1"></label></div>
+         
+         <div class="field"><label>Gênero<select id="p-sex"><option>Masculino</option><option>Feminino</option></select></label></div>
+         <div class="field"> <label>Altura<input id="p-height" type="number" min="0" max="280" step="1"></label></div>
+            </div>
+
+     <label class="dltoggle">
+         <span>Tema escuro</span>
+         <input class="dltoggle-input" id="theme-toggle" type="checkbox">
+         <div class="dltoggle-track"></div></label>
+     <div class="field"><button id="cleardata" class="pfsheetbtn pfsheetbtn-clear">Zerar dados</button></div>
+     <p class="form-error" id="profile-error" role="alert" hidden>Preencha os compos</p>
+     </div>
+    <footer class="sheet-foot">
+  <button id="cancel-btn" class="pfsheetbtn">Cancelar</button>
+  <button id="save-btn" class="pfsheetbtn pfsheetbtn-primary">Salvar ajustes</button>
+</footer>
+ </div>
+</dialog>
+</header>
+<main id="screens">
+  <section class="screen" data-screen="Findhelp">
+
+  <div class="fh">
+    <h1>Encontra tua ajuda</h1>
+    <p class="fh-intro" style="text-align:justify">
+      <b>Nota:</b> Em Manaus, os centros de ajuda e combate ao tabagismo funcionam por meio do Programa Nacional de Controle do Tabagismo (PNCT), integrado à rede de UBS do SUS. O atendimento começa com uma triagem e avaliação clínica para mapear o nível de dependência. A partir daí, são realizadas sessões de terapia em grupo com suporte multidisciplinar de médicos, psicólogos e enfermeiros para apoiar a mudança de comportamento. Quando possível, a rede pública disponibiliza gratuitamente medicamentos complementares ao tratamento, como adesivos, gomas de nicotina e bupropiona.
+      </p>
+<div class="fh-controls">
+      <input type="search" id="fh-search" class="fh-input"
+             placeholder="Buscar por unidade, bairro ou endereço" aria-label="Buscar">
+      <select id="fh-access" class="fh-input" aria-label="Acesso">
+        <option value="all">Todos os tipos</option>
+        <option value="Porta Aberta">Porta Aberta</option>
+        <option value="SISREG">SISREG (Encaminhamento)</option>
+      </select>
+    </div>
+    <div class="fh-chips" id="fh-chips">
+      <button type="button" data-zone="all" class="fh-chip active">Todos</button>
+      <button type="button" data-zone="Norte" class="fh-chip">Norte</button>
+      <button type="button" data-zone="Sul" class="fh-chip">Sul</button>
+      <button type="button" data-zone="Leste" class="fh-chip">Leste</button>
+      <button type="button" data-zone="Oeste" class="fh-chip">Oeste</button>
+      <button type="button" data-zone="Rural" class="fh-chip">Rural</button>
+      <button type="button" data-zone="Especializado" class="fh-chip">RAPS</button>
+    </div>
+    <div class="fh-count" id="fh-count"></div>
+    <div class="fh-grid" id="fh-grid"></div>
+  </div></section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <section class="screen" data-screen="home">
+    <div id="calend" class="calend"></div>
+    <div class="card-streak" style="font-size:17px"><b>TUA SÉRIE</b><div class="streak-num" id="streaknum">00</div></div>
+<div id="smkWrap">
+  <div class="card smkgrid" id="smkBlock"></div>
+  <div class="card smkgrid" id="smkCounterBlock" hidden></div>
+</div>
+    <div class="cardhole">
+  <div class="moneydisplay" id="sald">Economizaste
+  <div id="saldtxt">R$ 0,00</div>
+  <svg id="saldchart" viewBox="0 0 200 110" aria-label="Money saved chart"></svg>
+</div>
+  <div class="watexercdisplay" id="exer">
+    <p>Te exercitaste hoje?</p>
+    <div class="cardrow">
+      <button id="exerYes">Sim</button>
+      <button id="exerNo">Não</button>
+    </div>
+  </div>
+
+  <div class="watexercdisplay" id="agua">
+    <p>Quanta água bebeste?</p>
+    <div class="cardrow">
+      <button id="aguaMinus">−</button>
+      <span id="aguaCount">0</span>
+      <button id="aguaPlus">+</button>
+     
+    </div>
+    copos
+  </div>
+</div>
+
+    
+    <h1>Aprender</h1>
+<div class="lrn-list" id="home-list" role="list"></div>
+
+  </section>
+  
+  
+  
+  
+  
+  
+
+
+
+
+  
+  <section class="screen" data-screen="learn">
+    
+    <h1>Aprender</h1>
+<div class="lrn" id="lrn">
+  <div class="bar">
+  <div class="lrn-search" id="lrn-searchwrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input id="lrn-q" type="search" placeholder="Pesquisar por títulos" aria-label="Search by title" autocomplete="off">
+    <button class="lrn-clear" id="lrn-clear" aria-label="Clear search">&times;</button>
+  </div>
+      </div>
+  <div class="lrn-list" id="lrn-list" role="list"></div>
+  <section class="reader" id="reader" aria-live="polite">
+    <header>
+      <h1 id="readerTitle"></h1>
+    </header>
+
+  </section></div>
+</section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <section class="screen" data-screen="stats">
+      
+      
+      
+      
+      
+      
+      <div class="card"  style="margin-top: 20px; border: none">
+  <strong>Cigarros por dia</strong>
+  <p>nos últimos 30 dias</p>
+  <svg id="smkbars" viewBox="0 0 300 150" aria-label="Cigarettes smoked per day, last 30 days"></svg>
+</div>
+
+
+
+
+
+
+
+
+      <div style="background: var(--bg-color);
+  border: 2px solid var(--border);
+  border-style: none none solid none;
+  padding: 16px 16px 36px 36px;
+  margin: 10px 0 36px 0;
+  display: flex;
+  border-radius: 0px;
+  text-align: right;
+  font-size: 15px;
+  font-weight: 700">
+  <p id="smkcompare" style="margin-left: auto; margin-right: auto;">—</p>
+</div>
+
+
+      
+<div class="statgrid">
+  <div class="statcell">
+    <strong>Cigarros tragados totais</strong>
+    <div class="totalnum" id="totalsmoked">0</div>
+  </div>
+
+  <div class="statcell">
+    <strong>Exercício semanal</strong>
+    <p>tua aderência em %</p>
+    <div class="totalnum" id="exercpct">—</div>
+  </div>
+
+  <div class="statcell">
+    <strong>Série média</strong>
+    <div class="totalnum" id="avgstreak">—</div>
+  </div>
+
+  <div class="statcell">
+    <strong>Evolução da meta</strong>
+    <p>evolução no último mês</p>
+    <div class="totalnum" id="goalevol">—</div>
+  </div>
+
+  <div class="statcell">
+    <strong>Média de água tomada</strong>
+    <p>deves beber ao menos <span id="waterneed">—</span> copos</p>
+    <div class="totalnum" id="wateravg">—</div>
+  </div>
+</div>
+
+<div class="card">
+  <strong>Hora gatilho</strong>
+  <p>presta atenção nesses horários</p>
+  <ol class="triggerlist" id="triggerhours"></ol>
+</div>
+
+
+
+<div class="card"><div class="writergrid"><div><strong>Define tua meta</strong><p>máximo de cigarros por dia</p></div>
+
+
+    <div class="writergrid"><input class="writer"id="goal-input" type="number" min="0" max="99" step="1" placeholder="0" style="margin-left: 25%; width: 75%"><button id="goal-save" class="writerbtn">Salvar</button></div></div></div>
+
+    <div class="card"><div class="writergrid"><strong>Define o preço do cigarro</strong>
+    
+    
+    <div class="writergrid">
+      <input class="writer"id="price-input" type="number" min="0" max="99" step="1" placeholder="0" style="margin-left: 25%; width: 75%">
+      <button id="price-save" class="writerbtn">Salvar</button>
+      </div>
+      </div>
+      </div>
+  
+
+    
+    
+        
+<div class="card missingcard" id="missing-open" role="button" tabindex="0">
+  <strong>Preencher dias perdidos</strong>
+  <p><span id="missing-count">0</span> dias a completar</p>
+</div></section>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+<nav role="tablist" aria-label="Main">
+  <div id="indicator"></div>
+  <button role="tab" data-target="Findhelp">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 22s8-7.5 8-13a8 8 0 0 0-16 0c0 5.5 8 13 8 13z"/>
+  <circle cx="12" cy="9" r="3"/>
+</svg>Ache ajuda
+  </button>
+  <button role="tab" data-target="home">
+    <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Início
+  </button>
+  <button role="tab" data-target="learn">
+<svg viewBox="0 0 24 24">
+  <path d="M22 10v6M2 10l10-5 10 5-10 5zM6 12v5c0 2 3 3 6 3s6-1 6-3v-5" /></svg>Aprender
+  </button>
+  <button role="tab" data-target="stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M3 3v18h18M8 16v-4m5 4V6m5 10V9"/>
+</svg>Estatísticas
+  </button>
+</nav>
+<dialog class="confirm" id="confirm-clear" aria-labelledby="confirm-clear-text">
+  <p id="confirm-clear-text">Queres zerar dados do aplicativo?
+  <div style="font-size: 15px">Os dados não serão recuperáveis</div></p>
+  
+  <button type="button" id="confirm-return" class="confirm-return">Voltar</button>
+  <button type="button" id="confirm-yes" class="confirm-yes">Sim, eu QUERO</button>
+</dialog>
+
+
+
+
+
+
+
+<dialog class="sheet" id="day-sheet" aria-labelledby="day-sheet-title">
+  <div class="sheet-inner">
+    <header class="sheet-head">
+      <h2 id="day-sheet-title"></h2>
+      <button type="button" class="sheet-close" data-close aria-label="Close">&times;</button>
+    </header>
+    <div class="sheet-body" id="day-sheet-body"></div>
+  </div>
+</dialog>
+
+
+
+
+
+
+
+
+<!-- list of Z days -->
+<dialog class="sheet" id="missing-sheet" aria-labelledby="missing-title">
+  <div class="sheet-inner">
+    <header class="sheet-head">
+      <h2 id="missing-title">Dias esquecidos</h2>
+      <button type="button" class="sheet-close" id="missing-close" aria-label="Close">&times;</button>
+    </header>
+    <div class="sheet-body" id="missing-list"></div>
+  </div>
+</dialog>
+
+<!-- edit one day -->
+<dialog class="sheet" id="missingday-sheet" aria-labelledby="day-title">
+  <div class="sheet-inner">
+    <header class="sheet-head">
+      <h2 id="day-title">Day</h2>
+      <button type="button" class="sheet-close" id="day-close" aria-label="Close">&times;</button>
+    </header>
+    <div class="sheet-body">
+      <div class="field"><label>Cigarros fumados<input id="d-smoked" type="number" min="0" max="99" step="1" inputmode="numeric"></label></div>
+      <div class="field"><label>Preço actual<input id="d-price" type="number" min="0" max="99.99" step="0.01" inputmode="decimal"></label></div>
+      <div class="field"><label>Meta<input id="d-goal" type="number" min="0" max="99" step="1" inputmode="numeric"></label></div>
+      <div class="field"><label>Água (em copos)<input id="d-water" type="number" min="0" max="99" step="1" inputmode="numeric"></label></div>
+      <div class="field"><label>Exercício
+        <select id="d-exercise">
+          <option value="">—</option>
+          <option value="yes">Sim</option>
+          <option value="no">Não</option>
+        </select></label></div>
+      <p class="form-error" id="d-error" role="alert"></p>
+    </div>
+    <footer class="sheet-foot">
+      <button type="button" class="pfsheetbtn" id="day-cancel">Cancel</button>
+      <button type="button" class="pfsheetbtn pfsheetbtn-primary" id="day-save">Salvar dia</button>
+    </footer>
+  </div>
+</dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dialog class="ob" id="onboarding" aria-labelledby="ob-title">
+  <div class="ob-card">
+    <div class="ob-dots" id="ob-dots" aria-hidden="true"></div>
+
+    <div class="ob-body">
+
+      <!-- 1. Welcome -->
+      <section class="ob-step" data-step="0">
+        <h1 id="ob-title">Bem vindo!</h1>
+        <p class="ob-sub">Táfora é um aplicativo de ensino e monitoro tabagista</p>
+        <label class="dltoggle" style="align-content: right; position:relative; top: 290px">
+          <span>Tema escuro</span>
+          <input class="dltoggle-input" id="ob-theme" type="checkbox">
+          <div class="dltoggle-track"></div>
+        </label>
+      </section>
+
+      <!-- 2. App info -->
+      <section class="ob-step" data-step="1" hidden>
+        
+    <h1>Nele vais…</h1>
+
+  <h2>Aprender sobre o tabagismo</h2>
+  <p> Na aba Aprender, conhece os riscos associados ao consumo de tabaco, as doenças cardiovasculares, respiratórias, outros impactos e também sobre os benefícios de parar de fumar.</p>
+
+  <h2>Acompanhar tua rotina</h2>
+  <p>Registra teus hábitos de consumo tabageiro, tua rotina. Reconhece situações que despertam-te a vontade de fumar e desenvolver hábitos mais saudáveis no teu quotidiano.</p>
+
+  <h2>Acompanhar tua evolução</h2>
+  <p>Visualiza o teu progresso ao longo do tempo e observa as mudanças nos teus hábitos. Acompanhar tua evolução pode ajudar-te a manter a motivação e a seguir em frente no teu percurso para uma vida sem tabaco.</p>
+
+  <h2>Encontrar ajuda e apoio</h2>
+  <p> Descobre onde procurar apoio profissional, conhece os serviços de saúde disponíveis e lembra-te de que não precisas de enfrentar este desafio sozinho. Procurar ajuda é um passo importante para cuidar de ti.</p>
+      </section>
+
+
+
+
+
+
+      <!-- 3. Name -->
+      <section class="ob-step" data-step="2" hidden>
+        <h2>Como chama-te?</h2>
+        <div class="field"><label>Nome<input id="ob-name" maxlength="20" autocomplete="given-name"></label></div>
+      </section>
+
+      <!-- 4. Body info -->
+      <section class="ob-step" data-step="3" hidden>
+        <h2>Sobre ti</h2>
+        <div class="fieldgrid">
+          <div class="field"><label>Idade<input id="ob-age" type="number" inputmode="numeric" min="1" max="100" step="1"></label></div>
+          <div class="field"><label>Peso (kg)<input id="ob-weight" type="number" inputmode="numeric" min="1" max="300" step="1"></label></div>
+          <div class="field"><label>Gênero<select id="ob-sex"><option>Masculino</option><option>Feminino</option></select></label></div>
+          <div class="field"><label>Altura (cm)<input id="ob-height" type="number" inputmode="numeric" min="1" max="280" step="1"></label></div>
+        </div>
+      </section>
+
+      <!-- 5. Smoking today -->
+      <section class="ob-step" data-step="4" hidden>
+        <h2>Fumo</h2>
+        <p>Fumaste hoje?</p>
+        <div class="ob-choice" id="ob-smoked">
+          <button type="button" data-v="yes">Sim</button>
+          <button type="button" data-v="no">Não</button>
+        </div>
+        <div class="field" id="ob-count-wrap" hidden>
+          <label>Quatos fumaste?<input id="ob-count" type="number" inputmode="numeric" min="1" max="99" step="1"></label>
+        </div>
+        <div class="field">
+          <label>Preço do cigarrro<input id="ob-price" type="text" inputmode="decimal" placeholder="0,00"></label>
+        </div>
+      </section>
+
+      <!-- 6. Last questions -->
+      <section class="ob-step" data-step="5" hidden>
+        <h2>Últimas perguntas</h2>
+        <div class="field"><label>Defina uma meta<input id="ob-goal" type="number" inputmode="numeric" min="0" max="99" step="1"></label></div>
+        <p>Te exetcitaste hoje?</p>
+        <div class="ob-choice" id="ob-exercise">
+          <button type="button" data-v="yes">Sim</button>
+          <button type="button" data-v="no">Não</button>
+        </div>
+        <div class="field"><label>Quanta água bebeste?<input id="ob-water" type="number" inputmode="numeric" min="0" max="99" step="1"></label></div>
+      </section>
+    </div>
+
+    <footer class="ob-foot">
+      <button type="button" class="pfsheetbtn" id="ob-back">Voltar</button>
+      <button type="button" class="pfsheetbtn pfsheetbtn-primary" id="ob-next">Próximo</button>
+    </footer>
+  </div>
+</dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+const STORAGE_KEY = 'profile';
+
+const defaults = {
+  theme: 'light',
+  name: '',
+  age: '',
+  weight: '',
+  sex: 'Masculino',
+  height: '',
+  photo:'',
+};
+
+// map: object key -> input element
+const fields = {
+  name:     document.getElementById('p-name'),
+  age:      document.getElementById('p-age'),
+  weight:   document.getElementById('p-weight'),
+  sex:      document.getElementById('p-sex'),
+  height:   document.getElementById('p-height'),
+};
+const themeToggle = document.getElementById('theme-toggle');
+const avatar = document.getElementById('profile-avatar');
+const photoRemove = document.getElementById('photo-remove');
+
+
+// ---------- storage ----------
+function loadProfile() {
+  try {
+    return { ...defaults, ...JSON.parse(localStorage.getItem(STORAGE_KEY)) };
+  } catch (e) {
+    return { ...defaults };
+  }
+}
+
+function saveProfile(p) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(p));
+  } catch (e) {}
+}
+
+// ---------- UI helpers ----------
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  themeToggle.checked = theme === 'dark';
+}
+
+const profileBtn = document.getElementById('profile-btn');
+let pendingPhoto = '';   // photo chosen in the dialog, not saved yet
+
+// dialog avatar: photo if there is one, otherwise initials
+function updateAvatar(name, photo) {
+  photoRemove.hidden = !photo;   // <- new
+  if (photo) {
+    avatar.style.backgroundImage = `url(${photo})`;
+    avatar.textContent = '';
+  } else {
+    avatar.style.backgroundImage = '';
+    const initials = name.trim().split(/\s+/).filter(Boolean)
+      .slice(0, 2).map(w => w[0].toUpperCase()).join('');
+    avatar.textContent = initials || '?';
+  }
+}
+
+
+photoRemove.addEventListener('click', () => {
+  pendingPhoto = '';
+  updateAvatar(fields.name.value, '');   // falls back to the initials
+});
+
+
+
+
+// top bar button: always shows the SAVED photo
+function updateTopbar(photo) {
+  profileBtn.style.backgroundImage = photo ? `url(${photo})` : '';
+  profileBtn.classList.toggle('has-photo', !!photo);
+}
+function updateWelcome(name) {
+  const n = (name || '').trim();
+  document.getElementById('welcome-name').textContent = n ? ', ' + n : '';
+}
+
+function fillForm(p) {
+  for (const key in fields) fields[key].value = p[key];
+  applyTheme(p.theme);
+  pendingPhoto = p.photo;
+  updateAvatar(p.name, pendingPhoto);
+}
+
+function readForm() {
+  const p = {};
+  for (const key in fields) p[key] = fields[key].value;
+  p.name = p.name.slice(0, 20);
+  p.theme = themeToggle.checked ? 'dark' : 'light';
+  p.photo = pendingPhoto;
+  return p;
+}
+
+// crop to a centered square and shrink
+function resizeImage(file, size = 256) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      const s = Math.min(img.width, img.height);
+      const canvas = document.createElement('canvas');
+      canvas.width = canvas.height = size;
+      canvas.getContext('2d').drawImage(
+        img, (img.width - s) / 2, (img.height - s) / 2, s, s, 0, 0, size, size
+      );
+      URL.revokeObjectURL(url);
+      resolve(canvas.toDataURL('image/jpeg', 0.85));
+    };
+    img.onerror = reject;
+    img.src = url;
+  });
+}
+
+const photoInput = document.getElementById('p-photo');
+document.getElementById('photo-btn').addEventListener('click', () => photoInput.click());
+
+photoInput.addEventListener('change', async () => {
+  const file = photoInput.files[0];
+  if (!file) return;
+  try {
+    pendingPhoto = await resizeImage(file);
+    updateAvatar(fields.name.value, pendingPhoto);
+  } catch (e) {}
+  photoInput.value = '';   // lets you pick the same file again
+});
+
+// ---------- start ----------
+let profile = loadProfile();
+fillForm(profile);
+updateTopbar(profile.photo);
+updateWelcome(profile.name);
+
+
+
+
+
+// theme previews instantly (saved only when you press Save)
+themeToggle.addEventListener('change', () => {
+  applyTheme(themeToggle.checked ? 'dark' : 'light');
+});
+
+const profileError = document.getElementById('profile-error');
+
+// all fields are required (the photo is not part of `fields`, so it stays optional)
+function validateProfile() {
+  let firstEmpty = null;
+  for (const key in fields) {
+    const el = fields[key];
+    const empty = el.value.trim() === '';
+    el.closest('.field').classList.toggle('field-error', empty);
+    if (empty && !firstEmpty) firstEmpty = el;
+  }
+  profileError.hidden = !firstEmpty;
+  if (firstEmpty) firstEmpty.focus();
+  return !firstEmpty;
+}
+
+function clearProfileErrors() {
+  profileError.hidden = true;
+  document.querySelectorAll('#profile-sheet .field-error')
+    .forEach(f => f.classList.remove('field-error'));
+}
+
+// remove the red border as soon as the person starts fixing a field
+for (const key in fields) {
+  fields[key].addEventListener('input', () => {
+    fields[key].closest('.field').classList.remove('field-error');
+  });
+}
+
+document.getElementById('save-btn').addEventListener('click', () => {
+  if (!validateProfile()) return;          // stop here if anything is blank
+  profile = readForm();
+  saveProfile(profile);
+  updateTopbar(profile.photo);
+  updateWelcome(profile.name);
+  renderCard();
+  document.getElementById('profile-sheet').close();
+});
+
+
+
+
+
+document.getElementById('cancel-btn').addEventListener('click', () => {
+  document.getElementById('profile-sheet').close();
+});
+
+// whenever the dialog closes (Cancel, ×, backdrop, Esc), discard unsaved edits
+document.getElementById('profile-sheet').addEventListener('close', () => {
+  fillForm(profile);
+  clearProfileErrors();   // <- new
+});
+
+const confirmClear = document.getElementById('confirm-clear');
+
+document.getElementById('cleardata').addEventListener('click', () => {
+  confirmClear.showModal();
+});
+
+document.getElementById('confirm-return').addEventListener('click', () => {
+  confirmClear.close();
+});
+
+// tapping outside the popup also cancels
+confirmClear.addEventListener('click', (e) => {
+  if (e.target === confirmClear) confirmClear.close();
+});
+
+document.getElementById('confirm-yes').addEventListener('click', () => {
+  try {
+    localStorage.removeItem(STORAGE_KEY);   // profile (name, photo, theme, etc.)
+    localStorage.removeItem('infos');       // all day registers (goal, price, water, exercise, smoked...)
+  } catch (e) {}
+  location.reload();                        // restart the app from a clean state
+});
+
+
+
+
+const KEY = 'infos';
+let infos = JSON.parse(localStorage.getItem(KEY) || '[]');
+const block = document.getElementById('smkBlock');
+let uiReady = false;   // becomes true once calendar/streak/card exist
+
+const todayStr = () => new Date().toLocaleDateString('en-CA');          // YYYY-MM-DD, local time
+const nowHour  = () => new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+const persist  = () => localStorage.setItem(KEY, JSON.stringify(infos));
+
+// ---------- classification ----------
+const isFilled = v => v !== '' && v !== null && v !== undefined;
+
+// X: smoked | V: not smoked + everything registered (willhour ignored) | Z: not smoked + something missing
+function classify(e) {
+  if ((Number(e.numbersmoked) || 0) > 0) return 'X';
+  const complete = isFilled(e.pricecigarrete) && isFilled(e.goal) &&
+                   isFilled(e.watter) && isFilled(e.exercise);
+  return complete ? 'V' : 'Z';
+}
+
+// walks from the first registered day up to today:
+// creates missing days (they become Z) and classifies every day
+function syncDays() {
+  const today = todayStr();
+  const dates = infos.map(i => i.date).filter(Boolean).sort();
+  const start = dates[0] || today;
+  const byDate = new Map(infos.map(i => [i.date, i]));
+
+  const d = new Date(start + 'T00:00:00');
+  let prev = null;   // the day before the one being processed
+  while (true) {
+    const ds = d.toLocaleDateString('en-CA');
+    if (ds > today) break;
+
+    let e = byDate.get(ds);
+    if (!e) {
+      e = { date: ds, numbersmoked: 0, pricecigarrete: '', goal: '',
+            willhour: [], watter: '', exercise: '', classification: '' };
+      infos.push(e);
+      byDate.set(ds, e);
+    }
+
+    // inherit goal / price from yesterday unless the user set them manually
+    if (prev) {
+      if (!isFilled(e.goal) || e.goalAuto) {
+        if (isFilled(prev.goal)) { e.goal = prev.goal; e.goalAuto = true; }
+      }
+      if (!isFilled(e.pricecigarrete) || e.priceAuto) {
+        if (isFilled(prev.pricecigarrete)) { e.pricecigarrete = prev.pricecigarrete; e.priceAuto = true; }
+      }
+    }
+
+    e.numbersmoked   = Number(e.numbersmoked) || 0;   // '' becomes 0
+    e.classification = classify(e);
+    prev = e;
+    d.setDate(d.getDate() + 1);
+  }
+  infos.sort((a, b) => a.date.localeCompare(b.date));
+}
+
+function refreshUI() {
+  if (!uiReady) return;
+  renderCard();
+  renderCalendar();
+  applyStreakStyle();
+  updateMissingCount();   // <- add
+}
+
+
+
+
+
+
+
+// every save re-classifies, persists and redraws
+const save = () => { syncDays(); persist(); refreshUI(); };
+// finds today's entry (syncDays creates it if missing)
+function getToday() {
+  let gettodsmk = infos.find(i => i.date === todayStr());
+  if (!gettodsmk) {
+    syncDays();
+    persist();
+    gettodsmk = infos.find(i => i.date === todayStr());
+  }
+  gettodsmk.numbersmoked = Number(gettodsmk.numbersmoked) || 0;
+  return gettodsmk;
+}
+
+syncDays();   // on startup: fill gaps + classify everything
+persist();
+const counterBlock = document.getElementById('smkCounterBlock');
+
+
+const FADE_MS = 250;          // keep in sync with the .smk-out transition
+let animateNext = false;      // true only when the next render should fade things in
+
+function fadeThen(el, fn) {
+  el.classList.add('smk-out');
+  setTimeout(fn, FADE_MS);
+}
+
+
+function render(view) {
+  const gettodsmk = getToday();
+
+  // --- top block: the "want to smoke" area (always visible) ---
+  if (view === 'registered') {
+    block.innerHTML = `
+      <div class="smkMsg">hora guarda</div>
+      <button class="smkgridBtn smkBack" data-act="back-want">Não quero não</button>`;
+  } else if (view === 'ok') {
+    block.innerHTML = `
+      <div class="smkMsg">está bem por enquanto</div>
+      <button class="smkgridBtn smkBack" data-act="back-fine">Não estou bem</button>`;} else {
+  const showAlready = gettodsmk.numbersmoked === 0;
+  block.innerHTML = `
+    <button class="smkgridBtn smkgridM" data-act="want">Quero fumar agora</button>
+    <button class="smkgridBtn ${showAlready ? '' : 'smkWide'}" data-act="fine">Estou bem</button>
+    ${showAlready
+      ? `<button class="smkgridBtn ${animateNext ? 'smk-in' : ''}" data-act="already">Já fumei</button>`
+      : ''}`;
+}
+
+  // --- counter block: depends only on how many were smoked ---
+  renderCounter();
+  animateNext = false;
+}
+
+
+
+
+
+
+function renderCounter() {
+  const t = getToday();
+  const show = t.numbersmoked > 0;
+  counterBlock.classList.remove('smk-out', 'smk-in');
+  counterBlock.hidden = !show;
+  if (!show) { counterBlock.innerHTML = ''; return; }
+  counterBlock.innerHTML = `
+    <div class="smkCounter">
+      <button class="smkgridBtn" data-act="minus">−</button>
+      <span>${t.numbersmoked}</span>
+      <button class="smkgridBtn" data-act="plus">+</button>
+    </div>
+    <div class="smkGoal">Tua meta: ${isFilled(t.goal) ? t.goal : '—'}</div>`;
+  if (animateNext) {
+    void counterBlock.offsetWidth;        // restarts the animation
+    counterBlock.classList.add('smk-in');
+  }
+}
+
+document.getElementById('smkWrap').addEventListener('click', ev => {
+  const act = ev.target.dataset.act;
+  if (!act) return;
+  const gettodsmk = getToday();
+
+  if (act === 'want') {
+    gettodsmk.willhour = gettodsmk.willhour.filter(h => h);     // drops the empty "" placeholder
+    gettodsmk.willhour.push(nowHour());
+    save();
+    render('registered');
+  } else if (act === 'fine') {
+    render('ok');
+} else if (act === 'already') {
+  fadeThen(ev.target, () => {
+    gettodsmk.numbersmoked = Math.max(gettodsmk.numbersmoked, 1);
+    animateNext = true;
+    save();
+    render('normal');
+  });
+} else if (act === 'plus') {
+  gettodsmk.numbersmoked++;
+  save();
+  render('normal');
+} else if (act === 'minus') {
+  if (gettodsmk.numbersmoked <= 1) {
+    // last cigarette removed: counter fades out, "Já fumei" fades back in
+    fadeThen(counterBlock, () => {
+      gettodsmk.numbersmoked = 0;
+      animateNext = true;
+      save();
+      render('normal');
+    });
+  } else {
+    gettodsmk.numbersmoked--;
+    save();
+    render('normal');
+  }
+} else if (act === 'back-want') {
+    gettodsmk.willhour.pop();          // removes the hour that was just marked
+    save();
+    render('normal');
+  } else if (act === 'back-fine') {
+    render('normal');                  // nothing was saved, so just go back
+  }
+});
+
+// on page load: zero → normal buttons, otherwise keep showing the counter
+render('normal');
+
+
+
+
+
+
+// ---------- console helpers ----------
+function showToday() {
+  const t = getToday();
+  console.log(`📅 Today: ${t.date}`);
+  console.table({
+    'Date':           t.date,
+    'Smoked':         t.numbersmoked,
+    'Cigarette price': t.pricecigarrete || '—',
+    'Goal':           t.goal || '—',
+    'Will hours':     t.willhour.filter(h => h).join(', ') || '—',
+    'Water':          t.watter || '—',
+    'Exercise':       t.exercise || '—',
+    'Classification': t.classification || '—',
+  });
+  return t;   // also lets you inspect the raw object in the console
+}
+
+showToday();   // prints once on page load
+
+// ---------- money / exercise / water block ----------
+function renderCard() {
+  const today = getToday();
+
+  // left: sum of pricecigarrete from every day classified as V
+  const total = infos
+    .filter(i => i.classification === 'V')
+    .reduce((sum, i) => sum + (parseFloat(String(i.pricecigarrete).replace(',', '.')) || 0), 0);
+  document.getElementById('saldtxt').textContent =
+  total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+  // top right: exercise ('yes' / 'no' / '' = not answered)
+  document.getElementById('exerYes').classList.toggle('active', today.exercise === 'yes');
+  document.getElementById('exerNo').classList.toggle('active', today.exercise === 'no');
+
+  // bottom right: water
+  document.getElementById('aguaCount').textContent = Number(today.watter) || 0;
+  
+    // sum of numbersmoked from every day register
+  const totalSmoked = infos.reduce((sum, i) => sum + (Number(i.numbersmoked) || 0), 0);
+  document.getElementById('totalsmoked').textContent = totalSmoked;
+    // exercise adherence: "yes" days / days with an exercise register, last 30 days
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 29);                    // today + the 29 days before = 30 days
+  const cutoffStr = cutoff.toLocaleDateString('en-CA');
+  const recent = infos.filter(i =>
+    i.date >= cutoffStr && i.date <= todayStr() &&
+    (i.exercise === 'yes' || i.exercise === 'no')           // only days that have an answer
+  );
+  const yesDays = recent.filter(i => i.exercise === 'yes').length;
+  document.getElementById('exercpct').textContent =
+    recent.length ? Math.round(yesDays / recent.length * 100) + '%' : '—';
+    
+    
+  // goal evolution: today's goal x100 / average goal of the last 7 days that have a goal
+  const gStart = new Date();
+  gStart.setDate(gStart.getDate() - 6);                     // today + the 6 days before = 7 days
+  const gStartStr = gStart.toLocaleDateString('en-CA');
+  const goals = infos
+    .filter(i => i.date >= gStartStr && i.date <= todayStr() && isFilled(i.goal))
+    .map(i => Number(i.goal));
+  const avgGoal = goals.length ? goals.reduce((a, b) => a + b, 0) / goals.length : 0;
+  document.getElementById('goalevol').textContent =
+    (isFilled(today.goal) && avgGoal > 0)
+      ? Math.round(Number(today.goal) * 100 / avgGoal) + '%'
+      : '—';
+        const evolPct = (isFilled(today.goal) && avgGoal > 0)
+    ? Math.round(Number(today.goal) * 100 / avgGoal)
+    : null;
+  document.getElementById('goalevol').textContent =
+    evolPct === null ? '—' : (evolPct === 100 ? 'ALGUMA' : evolPct + '%');
+    
+      // average water of the last 7 days that have a water register
+  const wStart = new Date();
+  wStart.setDate(wStart.getDate() - 6);                     // today + the 6 days before = 7 days
+  const wStartStr = wStart.toLocaleDateString('en-CA');
+  const waters = infos
+    .filter(i => i.date >= wStartStr && i.date <= todayStr() && isFilled(i.watter))
+    .map(i => Number(i.watter));
+  document.getElementById('wateravg').textContent = waters.length
+    ? Math.round(waters.reduce((a, b) => a + b, 0) / waters.length * 10) / 10
+    : '—';
+
+  // recommended minimum: (32/200) x weight, rounded to the nearest whole number
+  const weightKg = Number(profile.weight);
+  document.getElementById('waterneed').textContent =
+    weightKg > 0 ? Math.round((32 / 200) * weightKg) : '—';
+    
+      // trigger hours: top 8 most frequent 30-minute periods in willhour, last 21 days
+  const tStart = new Date();
+  tStart.setDate(tStart.getDate() - 20);                    // today + the 20 days before = 21 days
+  const tStartStr = tStart.toLocaleDateString('en-CA');
+  const slotCount = {};
+  infos
+    .filter(i => i.date >= tStartStr && i.date <= todayStr())
+    .forEach(i => (i.willhour || []).filter(h => h).forEach(h => {
+      const [hh, mm] = h.split(':').map(Number);
+      const slot = hh * 60 + (mm < 30 ? 0 : 30);            // start of the 30-minute period, in minutes
+      slotCount[slot] = (slotCount[slot] || 0) + 1;
+    }));
+    const pad = n => String(n).padStart(2, '0');
+  const fmt = m => pad(Math.floor(m / 60) % 24) + ':' + pad(m % 60);
+  const top8 = Object.entries(slotCount)
+    .map(([slot, n]) => ({ slot: +slot, n }))
+    .sort((a, b) => b.n - a.n || a.slot - b.slot)           // most frequent first, ties by earliest time
+    .slice(0, 8);
+  document.getElementById('triggerhours').innerHTML = top8.length
+    ? top8.map(t => `<div>${fmt(t.slot)}–${fmt(t.slot + 30)} </div>`).join('')
+    : '<li>—</li>';
+    
+      // average streak: total V days / number of runs of consecutive V days
+  let runs = 0, vDays = 0, inRun = false;
+  [...infos]
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .forEach(i => {
+      if (i.classification === 'V') {
+        vDays++;
+        if (!inRun) { runs++; inRun = true; }
+      } else {
+        inRun = false;
+      }
+    });
+  document.getElementById('avgstreak').textContent =
+    runs ? Math.round(vDays / runs * 10) / 10 : '—';
+
+  // smoking trend: mean of the last 28 days minus mean of the last 7 days
+  const sortedDays = [...infos].sort((a, b) => a.date.localeCompare(b.date));
+  const last28 = sortedDays.slice(-28).map(i => Number(i.numbersmoked) || 0);
+  const last7  = sortedDays.slice(-7).map(i => Number(i.numbersmoked) || 0);
+  const mean = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
+  const smkEl = document.getElementById('smkcompare');
+  if (last28.length) {
+    const diff = mean(last28) - mean(last7);
+    const amount = Math.round(Math.abs(diff) * 10) / 10;
+    smkEl.textContent =
+      diff > 0 ? `“Fumas ${amount} cigarros menos que no mês anterior”`
+    : diff < 0 ? `“Fumas ${amount} ciggaros mais que no mês anterior”`
+    :            `“Fumas o mesmo que no mês anterior”`;
+  } else {
+    smkEl.textContent = '—';
+  }
+  
+  
+  drawSmkBars();
+  drawSaldChart();
+}
+
+//<small>(${t.n}×)</small> was thereafter .slot+30 and before the end div
+
+document.getElementById('exerYes').addEventListener('click', () => {
+  getToday().exercise = 'yes'; save(); renderCard();
+
+
+    
+});
+document.getElementById('exerNo').addEventListener('click', () => {
+  getToday().exercise = 'no'; save(); renderCard();
+});
+document.getElementById('aguaPlus').addEventListener('click', () => {
+  const t = getToday();
+  t.watter = (Number(t.watter) || 0) + 1;
+  save(); renderCard();
+});
+document.getElementById('aguaMinus').addEventListener('click', () => {
+  const t = getToday();
+  t.watter = Math.max(0, (Number(t.watter) || 0) - 1);
+  save(); renderCard();
+});
+// ---------- goal ----------
+const goalInput = document.getElementById('goal-input');
+goalInput.value = getToday().goal;   // shows today's saved goal on load
+
+document.getElementById('goal-save').addEventListener('click', () => {
+  if (goalInput.value === '') return;
+  const t = getToday();
+  t.goal = Math.min(99, Math.max(0, Math.floor(Number(goalInput.value))));
+  save();                         // re-classifies the day and redraws
+  t.goalAuto = false;
+  goalInput.value = t.goal;
+  renderCounter(); 
+  
+  // refreshes "Your goal: ..." if it's visible
+});
+renderCard();   // on page load: fills all three blocks
+
+
+function drawSmkBars() {
+  const svg = document.getElementById('smkbars');
+  if (!svg) return;
+
+  const DAYS = 30;                                  // today + the 29 days before
+  const W = 300, H = 150, P = { l: 22, r: 4, t: 14, b: 18 };
+
+  const iso = off => {
+    const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() + off);
+    return d.toLocaleDateString('en-CA');
+  };
+  const byDate = new Map(infos.map(i => [i.date, Number(i.numbersmoked) || 0]));
+  const vals = [];
+  for (let off = -(DAYS - 1); off <= 0; off++) vals.push(byDate.get(iso(off)) || 0);
+
+  const max = Math.max(1, ...vals);                 // Y axis top = largest numbersmoked
+  const plotW = W - P.l - P.r, plotH = H - P.t - P.b;
+  const slot = plotW / DAYS, bw = slot * 0.7;
+  const Y = v => P.t + plotH - (v / max) * plotH;
+  const txt = 'font-size="8" fill="var(--muted)"';
+
+  const bars = vals.map((v, i) => {
+    const x = P.l + i * slot + (slot - bw) / 2;
+    const h = (v / max) * plotH;
+    const isToday = i === DAYS - 1;
+    return h > 0
+      ? `<rect x="${x.toFixed(1)}" y="${Y(v).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx="1.5" fill="var(--main-color)" opacity="${isToday ? 1 : .75}"/>`
+      : '';
+  }).join('');
+
+  svg.innerHTML = `
+    <line x1="${P.l}" x2="${W - P.r}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--border)" stroke-width="0.8"/>
+    <line x1="${P.l}" x2="${W - P.r}" y1="${Y(max)}" y2="${Y(max)}" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="2 2"/>
+    <text x="${P.l - 4}" y="${Y(max) + 3}" text-anchor="end" ${txt}>${max}</text>
+    <text x="${P.l - 4}" y="${Y(0) + 3}" text-anchor="end" ${txt}>0</text>
+    ${bars}
+    <text x="${P.l}" y="${H - 4}" ${txt}>-29d</text>
+    <text x="${W - P.r}" y="${H - 4}" text-anchor="end" ${txt}>HOJE</text>`;
+}
+
+function drawSaldChart() {
+  const svg = document.getElementById('saldchart');
+  if (!svg) return;
+
+  const PAST = 29, FUTURE = 15, N = PAST + FUTURE;       // 45 points: index 29 = today (≈ ⅔ of the axis)
+  const W = 200, H = 110, P = { l: 4, r: 6, t: 10, b: 16 };
+
+  const iso = off => {                                    // date string for "today + off days"
+    const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() + off);
+    return d.toLocaleDateString('en-CA');
+  };
+  const priceOf = e => parseFloat(String((e && e.pricecigarrete) ?? '').replace(',', '.')) || 0;
+  const smokedOf = e => Number(e && e.numbersmoked) || 0;
+  const step = e => priceOf(e) - smokedOf(e) * priceOf(e); // price - (smoked × price)
+
+  const byDate = new Map(infos.map(i => [i.date, i]));
+
+  // balance carried in from all the days before the window
+  const startStr = iso(-PAST);
+  let acc = infos.filter(i => i.date < startStr).reduce((s, i) => s + step(i), 0);
+
+  // real data: day -29 ... today
+  const vals = [];
+  for (let off = -PAST; off <= 0; off++) {
+    acc += step(byDate.get(iso(off)));
+    vals.push(acc);
+  }
+
+  // prediction: today's price × average smoked in the last 7 days
+  const todayEntry = byDate.get(iso(0));
+  const price = priceOf(todayEntry);
+  const last7 = [...infos].sort((a, b) => a.date.localeCompare(b.date)).slice(-7).map(smokedOf);
+  const avg = last7.length ? last7.reduce((a, b) => a + b, 0) / last7.length : 0;
+  const daily = price - avg * price;
+  for (let k = 1; k <= FUTURE; k++) {
+    acc += daily;
+    vals.push(acc);
+  }
+
+  // scales
+  const lo = Math.min(0, ...vals), hi = Math.max(0, ...vals);
+  const span = (hi - lo) || 1;
+  const X = i => P.l + i / N * (W - P.l - P.r);
+  const Y = v => P.t + (hi - v) / span * (H - P.t - P.b);
+  const pts = idx => idx.map(i => `${X(i).toFixed(1)},${Y(vals[i]).toFixed(1)}`).join(' ');
+
+  const todayI = PAST;
+  const real = Array.from({ length: todayI + 1 }, (_, i) => i);
+  const pred = Array.from({ length: FUTURE + 1 }, (_, i) => todayI + i);   // starts at today so the lines connect
+  const fmt = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  const txt = 'font-size="7" fill="var(--muted)"';
+
+  svg.innerHTML = `
+    <line x1="${P.l}" x2="${W - P.r}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--border)" stroke-width="0.6" stroke-dasharray="2 2"/>
+    <line x1="${X(todayI)}" x2="${X(todayI)}" y1="${P.t}" y2="${H - P.b}" stroke="var(--border)" stroke-width="0.6"/>
+    <polyline points="${pts(real)}" fill="none" stroke="var(--main-color)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+    <polyline points="${pts(pred)}" fill="none" stroke="var(--main-color)" stroke-width="1.8" stroke-dasharray="3 3" opacity=".6" stroke-linecap="round"/>
+    <circle cx="${X(todayI)}" cy="${Y(vals[todayI])}" r="2.6" fill="var(--main-color)"/>
+    <text x="${P.l}" y="${H - 4}" ${txt}>-29d</text>
+    <text x="${X(todayI)}" y="${H - 4}" text-anchor="middle" ${txt}>hoje</text>
+    <text x="${W - P.r}" y="${H - 4}" text-anchor="end" ${txt}>+15d</text>
+    <text x="${W - P.r}" y="${Math.max(P.t - 2, Y(vals[N]) - 3)}" text-anchor="end" font-size="12" fill="var(--txt-color)">${fmt(vals[N])}</text>`;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const priceInput = document.getElementById('price-input');
+priceInput.value = getToday().pricecigarrete;   // shows today's saved price on load
+
+document.getElementById('price-save').addEventListener('click', () => {
+  if (priceInput.value === '') return;
+  const t = getToday();
+  const v = parseFloat(String(priceInput.value).replace(',', '.'));
+  if (isNaN(v)) return;
+  t.pricecigarrete = Math.min(99.99, Math.max(0, Math.round(v * 100) / 100));
+  save();                                   // re-classifies and redraws (money card updates)
+  t.priceAuto = false;
+  priceInput.value = t.pricecigarrete;
+});
+(() => {
+  const screens = [...document.querySelectorAll('.screen')];
+  const tabs = [...document.querySelectorAll('nav button')];
+  const indicator = document.getElementById('indicator');
+  const names = screens.map(s => s.dataset.screen);
+  const homeIndex = names.indexOf('home');
+  const hashIndex = names.indexOf(location.hash.slice(1));
+  let current = hashIndex === -1 ? homeIndex : hashIndex;
+
+
+  function render(dragOffset = 0) {
+    screens.forEach((s, i) => {
+      s.style.setProperty('--offset', i - current + dragOffset);
+      s.setAttribute('aria-hidden', i === current ? 'false' : 'true');
+    });
+    tabs.forEach((t, i) => t.setAttribute('aria-selected', i === current));
+    indicator.style.width = (100 / names.length) + '%';
+    indicator.style.transform = `translateX(${current * 100}%)`;
+  }
+
+  function go(index, push = true) {
+    if (index < 0 || index >= names.length) return render();
+    current = index;
+    if (push) history.pushState(null, '', '#' + names[index]);
+    render();
+  }
+
+  tabs.forEach((t, i) => t.addEventListener('click', () => go(i)));
+  window.addEventListener('popstate', () => {
+  const i = names.indexOf(location.hash.slice(1));
+  go(i === -1 ? homeIndex : i, false);
+});
+
+
+  let startX = 0, startY = 0, dx = 0, tracking = false, locked = null;
+  const area = document.getElementById('screens');
+  area.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+    dx = 0; locked = null; tracking = true;
+  }, { passive: true });
+  area.addEventListener('touchmove', e => {
+    if (!tracking) return;
+    const mx = e.touches[0].clientX - startX, my = e.touches[0].clientY - startY;
+    if (locked === null && (Math.abs(mx) > 8 || Math.abs(my) > 8)) locked = Math.abs(mx) > Math.abs(my) ? 'x' : 'y';
+    if (locked !== 'x') return;
+    dx = mx;
+    screens.forEach(s => s.classList.add('dragging'));
+    let off = dx / area.clientWidth;
+    // rubber-band at the edges
+    if ((current === 0 && off > 0) || (current === names.length - 1 && off < 0)) off *= 0.3;
+    render(off);
+  }, { passive: true });
+  area.addEventListener('touchend', () => {
+    if (!tracking) return;
+    tracking = false;
+    screens.forEach(s => s.classList.remove('dragging'));
+    if (locked === 'x' && Math.abs(dx) > area.clientWidth * 0.25) go(current + (dx < 0 ? 1 : -1));
+    else render();
+  });
+if (!location.hash) history.replaceState(null, '', '#' + names[current]);
+render();
+})();
+
+
+
+
+
+
+const calend = document.getElementById('calend');
+const classes = { X: 'dayX', V: 'dayV', Z: 'dayZ' };
+
+const coloq = (n) => String(n).padStart(2, '0');
+const dtLine = (d) => `${d.getFullYear()}-${coloq(d.getMonth() + 1)}-${coloq(d.getDate())}`;
+
+function renderCalendar() {
+  calend.innerHTML = '';   // so it can be re-drawn without duplicating days
+
+  // date -> classification, using the real keys saved in localStorage
+  const infoLine = new Map(infos.map(i => [i.date, i.classification]));
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const dayDif = 14 + today.getDay();   // starts on the Sunday two weeks ago
+  const days = [];
+
+  for (let l = dayDif; l >= 0; l--) {
+    const d = new Date(today);
+    d.setDate(today.getDate() - l);
+    days.push({ dt: d, cls: classes[infoLine.get(dtLine(d))] ?? 'dayWreg' });
+  }
+
+    days.forEach((day, im) => {
+  const div = document.createElement('button');          // was 'div'
+  div.type = 'button';
+  div.className = `day ${day.cls}`;
+  div.textContent = day.dt.getDate();
+  div.dataset.date = dtLine(day.dt);
+  if (day.cls === 'dayWreg') div.disabled = true;        // no data → not clickable
+  const tSid = im % 7;
+  // ...the rest stays exactly the same
+    if (day.cls === 'dayV') {
+      if (tSid > 0 && days[im - 1].cls === 'dayV')   div.classList.add('tLef');
+      if (tSid < 6 && days[im + 1]?.cls === 'dayV')  div.classList.add('tRig');
+    }
+    calend.appendChild(div);
+  });
+}
+// counts consecutive V days
+function computeStreak() {
+  const byDate = new Map(infos.map(i => [i.date, i.classification]));
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+
+  const todayCls = byDate.get(dtLine(d));
+  if (todayCls === 'X') return 0;                       // smoked today: streak is broken
+  if (todayCls !== 'V') d.setDate(d.getDate() - 1);     // today still incomplete: count from yesterday
+
+  let n = 0;
+  while (byDate.get(dtLine(d)) === 'V') {
+    n++;
+    d.setDate(d.getDate() - 1);
+  }
+  return n;
+}
+function applyStreakStyle() {
+  const el = document.getElementById('streaknum');
+  const entry = infos.find(i => i.date === todayStr());   // todayStr() already exists above
+el.textContent = String(computeStreak()).padStart(2, '0');   // <- add
+
+  el.classList.remove('dayX', 'dayZ', 'dayV', 'dayWreg');
+  el.classList.add('day' + (entry?.classification || 'Wreg'));   // '' falls back to Sreg
+}
+
+renderCalendar();
+applyStreakStyle();;
+  uiReady = true;
+  
+  
+  
+  
+  
+  
+ const daySheet = document.getElementById('day-sheet');
+
+calend.addEventListener('click', ev => {
+  const btn = ev.target.closest('.day');
+  if (!btn || btn.classList.contains('dayWreg')) return;   // no register → no sheet
+  const e = infos.find(i => i.date === btn.dataset.date);
+  if (!e) return;
+
+  const has = isFilled;
+  const hours = (e.willhour || []).filter(h => h);
+  const rows = [
+    ['Cigarettes smoked', e.numbersmoked ?? 0],
+    ['Goal',              has(e.goal) ? e.goal : '—'],
+    ['Cigarette price',   has(e.pricecigarrete) ? e.pricecigarrete : '—'],
+    ['Water (cups)',      has(e.watter) ? e.watter : '—'],
+    ['Exercise',          e.exercise === 'yes' ? 'Yes' : e.exercise === 'no' ? 'No' : '—'],
+    ['Willing to smoke at', hours.length ? hours.join(', ') : '—'],
+  ];
+
+  document.getElementById('day-sheet-title').textContent =
+    new Date(e.date + 'T00:00:00').toLocaleDateString(undefined,
+      { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  document.getElementById('day-sheet-body').innerHTML = rows
+    .map(([k, v]) => `<div class="dayrow"><span>${k}</span><strong>${v}</strong></div>`)
+    .join('');
+  daySheet.showModal();
+});
+
+daySheet.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => daySheet.close()));
+daySheet.addEventListener('click', ev => { if (ev.target === daySheet) daySheet.close(); });
+
+
+
+
+
+
+(function () {
+    const sheet = document.getElementById('profile-sheet');
+    const trigger = document.querySelector('#profile-btn, .profile-btn');
+    if (!sheet || !trigger) return;
+
+    trigger.setAttribute('aria-haspopup', 'dialog');
+    trigger.addEventListener('click', () => sheet.showModal());
+
+    sheet.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => sheet.close()));
+    sheet.addEventListener('click', (e) => { if (e.target === sheet) sheet.close(); });
+})();
+
+
+
+
+
+
+const heightmax = document.getElementById('p-height');
+heightmax.addEventListener('input', () => {
+  if (heightmax.value !== '' && +heightmax.value > +heightmax.max) heightmax.value = heightmax.max;
+  if (heightmax.value !== '' && +heightmax.value < +heightmax.min) heightmax.value = heightmax.min;
+});
+  const weightmax = document.getElementById('p-weight');
+weightmax.addEventListener('input', () => {
+  if (weightmax.value !== '' && +weightmax.value > +weightmax.max) weightmax.value = weightmax.max;
+  if (weightmax.value !== '' && +weightmax.value < +weightmax.min) weightmax.value = weightmax.min;
+});
+  const agemax = document.getElementById('p-age');
+agemax.addEventListener('input', () => {
+  if (agemax.value !== '' && +agemax.value > +agemax.max) agemax.value = agemax.max;
+  if (agemax.value !== '' && +agemax.value < +agemax.min) agemax.value = agemax.min;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(() => {
+  // ➜ EDIT THESE TWO SETTINGS
+  const FOLDER = "folder/";   // folder (next to your main page) that holds the .html articles
+  const LINES  = 1;           // lines of content shown on each card
+const homeList = document.getElementById("home-list");
+
+
+  const wrap = document.getElementById("lrn-searchwrap");
+  const list = document.getElementById("lrn-list");
+  const q    = document.getElementById("lrn-q");
+  let articles = [];
+
+  const esc  = s => s.replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+  const norm = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+  /* ----- reader (built here, attached to <body>) ----- */
+  const dlg = document.createElement("dialog");
+dlg.className = "lrn-reader";
+dlg.innerHTML = `
+  <div class="lrn-rhead">
+    <button type="button" class="lrn-back">&larr; Voltar</button>
+    <strong class="lrn-rtitle"></strong>
+    <button type="button" class="lrn-theme" aria-label="Change theme">
+      <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+      </svg>
+    </button>
+  </div>
+  <iframe class="lrn-frame" title="Article"></iframe>`;
+document.body.appendChild(dlg);
+const frame = dlg.querySelector(".lrn-frame");
+dlg.querySelector(".lrn-back").addEventListener("click", () => dlg.close());
+dlg.addEventListener("close", () => { frame.src = "about:blank"; });
+
+/* ----- apply the app theme inside the article ----- */
+function paintFrame() {
+  try {
+    const d = frame.contentDocument;
+    if (!d || !d.documentElement || frame.src === "about:blank") return;
+    const t = document.documentElement.getAttribute("data-theme") || "light";
+    const dark = t === "dark";
+    d.documentElement.setAttribute("data-theme", t);
+
+    let s = d.getElementById("lrn-theme-style");
+    if (!s) {
+      s = d.createElement("style");
+      s.id = "lrn-theme-style";
+      (d.head || d.documentElement).appendChild(s);
+    }
+    s.textContent = `
+      :root{color-scheme:${t}}
+      html,body{background:${dark ? "#121212" : "#ffffff"}!important;color:${dark ? "#e8e8e8" : "#1a1a1a"}!important}
+      body *{background-color:transparent!important;color:inherit!important}
+      a{color:${dark ? "#8ab4f8" : "#0b57d0"}!important}`;
+  } catch (e) {}
+}
+frame.addEventListener("load", paintFrame);
+
+dlg.querySelector(".lrn-theme").addEventListener("click", () => {
+  const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  applyTheme(next);            // changes the whole app + the profile toggle
+  profile.theme = next;
+  saveProfile(profile);        // remembered next time
+  paintFrame();
+});
+
+  function openArticle(url, title) {
+    dlg.querySelector(".lrn-rtitle").textContent = title;
+    frame.src = url;
+    dlg.showModal();
+  }
+
+  /* ----- 1. find the files ----- */
+  async function filesFromListing() {          // server shows a folder listing
+    const res = await fetch(FOLDER);
+    if (!res.ok) throw new Error("No folder listing");
+    const doc = new DOMParser().parseFromString(await res.text(), "text/html");
+    const base = new URL(FOLDER, location.href);
+    const urls = new Set();
+    doc.querySelectorAll("a[href]").forEach(a => {
+      const u = new URL(a.getAttribute("href"), base);
+      if (u.origin === base.origin && u.pathname.startsWith(base.pathname) && /\.html?$/i.test(u.pathname)) urls.add(u.href);
+    });
+    return [...urls];
+  }
+  async function filesFromManifest() {         // folder/index.json = ["a.html", "b.html"]
+    const res = await fetch(FOLDER + "index.json");
+    if (!res.ok) throw new Error("No index.json");
+    return (await res.json()).map(n => new URL(FOLDER + n, location.href).href);
+  }
+  async function findFiles() {
+  try { return await filesFromManifest(); } catch (e) {}
+  return filesFromListing();
+}
+
+  /* ----- 2. read title + first lines ----- */
+  const BLOCKS = "h1,h2,h3,h4,h5,h6,p,li,blockquote,pre,td,th,dt,dd,figcaption";
+
+  function firstLines(doc, title) {
+    doc.querySelectorAll("script,style,noscript,template,head").forEach(n => n.remove());
+    const out = [];
+    const push = t => { t = t.replace(/\s+/g, " ").trim(); if (t) out.push(t); };
+    doc.body.querySelectorAll(BLOCKS).forEach(el => {
+      if (out.length >= LINES || el.querySelector(BLOCKS)) return;
+      if (el.tagName === "PRE") el.textContent.split("\n").forEach(push); else push(el.textContent);
+    });
+    if (!out.length) doc.body.textContent.split("\n").forEach(push);
+    if (out.length > 1 && norm(out[0]) === norm(title)) out.shift();   // do not repeat the title
+    return out.slice(0, LINES);
+  }
+
+  async function readArticle(url) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(url);
+    const doc = new DOMParser().parseFromString(await res.text(), "text/html");
+    const file = decodeURIComponent(url.split("/").pop()).replace(/\.html?$/i, "");
+    const title = (doc.title || "").trim() || file;
+    return { title, lines: firstLines(doc, title), url };
+  }
+
+  async function load() {
+  list.innerHTML = `<p class="lrn-empty">Carregando artigos…</p>`;
+  homeList.innerHTML = `<p class="lrn-empty">Carregando artigos…</p>`;
+  try {
+    const urls = await findFiles();
+    const results = await Promise.allSettled(urls.map(readArticle));
+    articles = results.filter(r => r.status === "fulfilled").map(r => r.value)
+      .sort((a, b) => a.title.localeCompare(b.title));
+  } catch (e) {
+    const msg = `<p class="lrn-empty">Não foi possível ler “${esc(FOLDER)}”. Abre o aplicativo em servidor e confire se a pasta existe ou ${esc(FOLDER)}index.json existe.</p>`;
+    list.innerHTML = msg;
+    homeList.innerHTML = msg;
+    return;
+  }
+  draw();
+  drawHome();
+}
+
+  /* ----- 3. cards + search ----- */
+  function highlight(title, term) {
+    if (!term) return esc(title);
+    const i = norm(title).indexOf(term);
+    if (i < 0) return esc(title);
+    return esc(title.slice(0, i)) + "<mark>" + esc(title.slice(i, i + term.length)) + "</mark>" + esc(title.slice(i + term.length));
+  }
+
+  function cardHTML(a, term = "") {
+  return `
+    <a class="card lrn-card" role="listitem" href="${esc(a.url)}" data-url="${esc(a.url)}" data-title="${esc(a.title)}">
+      <h2>${highlight(a.title, term)}</h2>
+      <div class="lrn-sub">${a.lines.map(l => `<div class="lrn-sub">${esc(l)}</div>`).join("")}</div>
+    </a>`;
+}
+
+function drawHome() {
+  const pool = [...articles];
+  for (let i = pool.length - 1; i > 0; i--) {          // shuffle
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  const picks = pool.slice(0, 3);
+  homeList.innerHTML = picks.length
+    ? picks.map(a => cardHTML(a)).join("")
+    : `<p class="lrn-empty">Não há artigos disponíveis.</p>`;
+}
+
+function draw() {
+  const term = norm(q.value.trim());
+  wrap.classList.toggle("has-text", !!q.value);
+  const items = articles.filter(a => norm(a.title).includes(term));
+  if (!items.length) {
+    list.innerHTML = articles.length
+      ? `<p class="lrn-empty">Não há artigos para “${esc(q.value)}”.</p>`
+      : `<p class="lrn-empty">Não há artigos em “${esc(FOLDER)}”.</p>`;
+    return;
+  }
+  list.innerHTML = items.map(a => cardHTML(a, term)).join("");
+}
+
+  function onCardClick(e) {
+  const card = e.target.closest(".lrn-card");
+  if (!card || e.metaKey || e.ctrlKey || e.shiftKey) return;
+  e.preventDefault();
+  openArticle(card.dataset.url, card.dataset.title);
+}
+list.addEventListener("click", onCardClick);
+homeList.addEventListener("click", onCardClick);
+
+
+  q.addEventListener("input", draw);
+  document.getElementById("lrn-clear").addEventListener("click", () => { q.value = ""; draw(); q.focus(); });
+
+  load();
+})();
+
+
+
+
+
+
+
+
+
+
+
+// ---------- missing days (Z) ----------
+const missingSheet = document.getElementById('missing-sheet');
+const missingdaySheet     = document.getElementById('missingday-sheet');
+const missingList  = document.getElementById('missing-list');
+const dayErr       = document.getElementById('d-error');
+const df = {
+  smoked:   document.getElementById('d-smoked'),
+  price:    document.getElementById('d-price'),
+  goal:     document.getElementById('d-goal'),
+  water:    document.getElementById('d-water'),
+  exercise: document.getElementById('d-exercise'),
+};
+let editingDate = null;
+
+const getZDays = () => infos
+  .filter(i => i.classification === 'Z')
+  .sort((a, b) => b.date.localeCompare(a.date));        // newest first
+
+const fmtDay = ds => new Date(ds + 'T00:00:00')
+  .toLocaleDateString(undefined, { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' });
+
+function missingLabels(e) {
+  const m = [];
+  if (!isFilled(e.pricecigarrete)) m.push('preço');
+  if (!isFilled(e.goal))           m.push('meta');
+  if (!isFilled(e.watter))         m.push('água');
+  if (!isFilled(e.exercise))       m.push('exercício');
+  return m;
+}
+
+function updateMissingCount() {
+  document.getElementById('missing-count').textContent = getZDays().length;
+}
+
+function renderMissingList() {
+  const days = getZDays();
+  updateMissingCount();
+  missingList.innerHTML = days.length
+    ? days.map(e => `
+        <button type="button" class="missing-item" data-date="${e.date}">
+          <span>${fmtDay(e.date)}<br><small>queda: ${missingLabels(e).join(', ')}</small></span>
+          <span aria-hidden="true">&rsaquo;</span>
+        </button>`).join('')
+    : `<p class="lrn-empty">Sem dias por registrar</p>`;
+}
+
+// validates every typed value against the record format; returns {error} or {data}
+function validateDay() {
+  const int = (raw, label, max) => {
+    if (raw === '') return { v: '' };
+    if (!/^\d+$/.test(raw) || Number(raw) > max) return { err: `${label}: número inteiro de 0 a ${max}.` };
+    return { v: Number(raw) };
+  };
+
+  const smoked = int(df.smoked.value.trim(), 'Cigarettes smoked', 99);
+  if (smoked.err) return { error: smoked.err };
+
+  const goal = int(df.goal.value.trim(), 'Goal', 99);
+  if (goal.err) return { error: goal.err };
+
+  const water = int(df.water.value.trim(), 'Water', 99);
+  if (water.err) return { error: water.err };
+
+  let price = '';
+  const rawPrice = df.price.value.trim().replace(',', '.');
+  if (rawPrice !== '') {
+    if (!/^\d{1,2}(\.\d{1,2})?$/.test(rawPrice)) return { error: 'Preço: número de 0 a 99.99' };
+    price = Math.round(parseFloat(rawPrice) * 100) / 100;
+  }
+
+  const exercise = df.exercise.value;
+  if (!['', 'yes', 'no'].includes(exercise)) return { error: 'Exercício: escolha Sim ou Não.' };
+
+  return { data: { numbersmoked: smoked.v === '' ? 0 : smoked.v, pricecigarrete: price,
+                   goal: goal.v, watter: water.v, exercise } };
+}
+
+function openDay(date) {
+  const e = infos.find(i => i.date === date);
+  if (!e) return;
+  editingDate = date;
+  document.getElementById('day-title').textContent = fmtDay(date);
+  df.smoked.value   = e.numbersmoked || 0;
+  df.price.value    = e.pricecigarrete;
+  df.goal.value     = e.goal;
+  df.water.value    = e.watter;
+  df.exercise.value = e.exercise || '';
+  dayErr.textContent = '';
+  missingdaySheet.showModal();                       // stacks on top of the list
+}
+
+function saveDay() {
+  const res = validateDay();
+  if (res.error) { dayErr.textContent = res.error; return; }
+
+  const e = infos.find(i => i.date === editingDate);
+  const d = res.data;
+
+  e.numbersmoked = d.numbersmoked;
+  e.watter       = d.watter;
+  e.exercise     = d.exercise;
+  // changed values become "manual", so syncDays() stops overwriting them with yesterday's
+  if (String(d.goal) !== String(e.goal))                 { e.goal = d.goal;                 e.goalAuto  = false; }
+  if (String(d.pricecigarrete) !== String(e.pricecigarrete)) { e.pricecigarrete = d.pricecigarrete; e.priceAuto = false; }
+
+  save();                                     // re-classifies, persists, redraws everything
+  missingdaySheet.close();
+  renderMissingList();
+  if (!getZDays().length) missingSheet.close();
+
+  if (e.date === todayStr()) {                // keep the other screens in sync if today was edited
+    goalInput.value  = getToday().goal;
+    priceInput.value = getToday().pricecigarrete;
+    render('normal');
+  }
+}
+
+// events
+const openMissing = () => { renderMissingList(); missingSheet.showModal(); };
+const missingCard = document.getElementById('missing-open');
+missingCard.addEventListener('click', openMissing);
+missingCard.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openMissing(); } });
+
+missingList.addEventListener('click', e => {
+  const b = e.target.closest('.missing-item');
+  if (b) openDay(b.dataset.date);
+});
+document.getElementById('missing-close').addEventListener('click', () => missingSheet.close());
+document.getElementById('day-close').addEventListener('click',  () => missingdaySheet.close());
+document.getElementById('day-cancel').addEventListener('click', () => missingdaySheet.close());
+document.getElementById('day-save').addEventListener('click', saveDay);
+[missingSheet, missingdaySheet].forEach(s =>
+  s.addEventListener('click', e => { if (e.target === s) s.close(); }));
+
+updateMissingCount();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<script>
+(() => {
+  const need = p => ['name', 'age', 'weight', 'height'].some(k => String(p[k] ?? '').trim() === '');
+  if (!need(profile)) return;
+
+  const dlg   = document.getElementById('onboarding');
+  const steps = [...dlg.querySelectorAll('.ob-step')];
+  const dots  = document.getElementById('ob-dots');
+  const back  = document.getElementById('ob-back');
+  const next  = document.getElementById('ob-next');
+  const $     = id => document.getElementById(id);
+
+  dots.innerHTML = steps.map(() => '<i></i>').join('');
+  let step = 0;
+  const ans = { smoked: null, exercise: null };
+
+  // ranges (same as the profile form, but 0 isn't a real age/weight/height)
+  const int = (raw, min, max) => /^\d+$/.test(raw.trim()) && +raw >= min && +raw <= max;
+  const parsePrice = raw => {
+    const s = raw.trim().replace(',', '.');
+    return /^\d{1,2}(\.\d{1,2})?$/.test(s) && +s > 0 ? Math.round(+s * 100) / 100 : null;
+  };
+
+  const valid = [
+    () => true,
+    () => true,
+    () => $('ob-name').value.trim().length >= 1 && $('ob-name').value.length <= 20,
+    () => int($('ob-age').value, 1, 100) && int($('ob-weight').value, 1, 300) && int($('ob-height').value, 1, 280),
+    () => ans.smoked !== null
+          && (ans.smoked === 'no' || int($('ob-count').value, 1, 99))
+          && parsePrice($('ob-price').value) !== null,
+    () => int($('ob-goal').value, 0, 99) && ans.exercise !== null && int($('ob-water').value, 0, 99),
+  ];
+
+  function update() {
+    steps.forEach((s, i) => s.hidden = i !== step);
+    [...dots.children].forEach((d, i) => d.classList.toggle('on', i === step));
+    back.style.visibility = step === 0 ? 'hidden' : 'visible';
+    next.textContent = step === steps.length - 1 ? 'Finalizar' : 'Próximo';
+    next.disabled = !valid[step]();
+  }
+
+  // yes / no button groups
+  function choice(id, key, onPick) {
+    $(id).addEventListener('click', e => {
+      const b = e.target.closest('button[data-v]');
+      if (!b) return;
+      ans[key] = b.dataset.v;
+      $(id).querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      onPick && onPick();
+      update();
+    });
+  }
+  choice('ob-smoked', 'smoked', () => { $('ob-count-wrap').hidden = ans.smoked !== 'yes'; });
+  choice('ob-exercise', 'exercise');
+
+  dlg.addEventListener('input', update);
+
+  // theme toggle (applies instantly and is remembered)
+  $('ob-theme').checked = profile.theme === 'dark';
+  $('ob-theme').addEventListener('change', e => {
+    const t = e.target.checked ? 'dark' : 'light';
+    applyTheme(t);
+    profile.theme = t;
+    saveProfile(profile);
+  });
+
+  back.addEventListener('click', () => { if (step > 0) { step--; update(); } });
+  next.addEventListener('click', () => {
+    if (!valid[step]()) return;
+    if (step < steps.length - 1) { step++; update(); return; }
+    finish();
+  });
+
+  // can't be dismissed with Esc
+  dlg.addEventListener('cancel', e => e.preventDefault());
+
+  function finish() {
+    profile = {
+      ...profile,
+      name:   $('ob-name').value.trim().slice(0, 20),
+      age:    $('ob-age').value.trim(),
+      weight: $('ob-weight').value.trim(),
+      sex:    $('ob-sex').value,
+      height: $('ob-height').value.trim(),
+      theme:  $('ob-theme').checked ? 'dark' : 'light',
+    };
+    saveProfile(profile);
+    fillForm(profile);
+    updateTopbar(profile.photo);
+    updateWelcome(profile.name);
+
+    const t = getToday();
+    t.numbersmoked   = ans.smoked === 'yes' ? Number($('ob-count').value) : 0;
+    t.pricecigarrete = parsePrice($('ob-price').value);  t.priceAuto = false;
+    t.goal           = Number($('ob-goal').value);       t.goalAuto  = false;
+    t.exercise       = ans.exercise;
+    t.watter         = Number($('ob-water').value);
+    save();                                    // re-classifies, persists, redraws
+
+    goalInput.value  = t.goal;
+    priceInput.value = t.pricecigarrete;
+    render(t.numbersmoked === 0 ? 'normal' : 'counter');
+    renderCard();
+    dlg.close();
+  }
+
+  update();
+  dlg.showModal();
+})();
+</script>
+
+
+<script src="findhelp.js"></script>
+</body>
+</html>
