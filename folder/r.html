@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manejo da parada caridíaca</title>
+<style>
+  :root {
+    /* white #ffffff graystrong #333333 bluelight #95bdfc gray #7a7a85 bluestrong  #3178eb whiteblued #e4e4ea;*/
+  --bg-color: #f6f7f9;
+  --txt-color: #333333;
+  --button-color: #95bdfc;
+  --surface: #f6f7f9; --muted: #7a7a85;
+  --main-color: #3178eb; --border: #e4e4ea;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+  --bg-color: #13171d;
+  --txt-color: #f0f0f0;
+  --button-color: #95bdfc;
+  --surface: #1a1a20; --muted: #8e8e99;
+  --main-color: #3178eb; --border: #676772;
+    }}
+:root[data-theme="dark"] {
+  --bg-color: #13171d;
+  --txt-color: #f0f0f0;
+  --button-color: #95bdfc;
+  --surface: #1a1a20z; --muted: #8e8e99;
+  --main-color: #3178eb; --border: #676772;
+  }
+
+  
+  
+  
+  
+  
+  
+  
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px 20px 48px; background: var(--bg-color); color: var(--txt-color);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 8px; }
+  h2 { font-size: 1.15rem; margin: 28px 0 8px; }
+  p { margin: 0 0 12px; }
+  .lead { color: var(--muted); }
+  ol, ul { padding-left: 22px; margin: 0 0 12px; }
+  li { margin-bottom: 6px; }
+  code { background: color-mix(in srgb, var(--border) 12%, transparent); padding: 1px 6px; border-radius: 4px; }
+  blockquote { margin: 16px 0; padding: 8px 14px; border-left: 3px solid var(--border); color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+
+
+
+<p>A insuficiência cardíaca (IC) é uma síndrome clínica caracterizada pela presença de sintomas e/ou sinais decorrentes de uma alteração estrutural ou funcional do coração, que compromete sua capacidade de funcionar adequadamente. Essa condição pode prejudicar o enchimento ventricular, a ejeção de sangue ou ambos, comprometendo o atendimento das necessidades circulatórias do organismo.</p>
+
+<h1>1. Introdução e importância clínica da insuficiência cardíaca</h1>
+
+ Suas manifestações incluem dispneia, fadiga, intolerância ao exercício e retenção de líquidos, que pode se manifestar por edema periférico e congestão pulmonar.
+
+A insuficiência cardíaca constitui um problema importante de saúde pública devido à sua elevada morbidade, mortalidade, necessidade de hospitalizações recorrentes e repercussões sobre a qualidade de vida. Sua evolução pode ser progressiva, com períodos de estabilidade clínica intercalados por episódios de piora aguda. Mesmo quando os sintomas são controlados, permanece o risco de descompensação, deterioração da função cardíaca e morte cardiovascular.
+
+O manejo adequado exige uma abordagem contínua, que englobe prevenção, identificação precoce, investigação da causa, tratamento farmacológico, intervenções cardiovasculares quando indicadas, controle das doenças associadas e acompanhamento longitudinal. A assistência não deve se limitar ao alívio dos sintomas: também precisa reduzir a progressão da doença, prevenir hospitalizações, prolongar a sobrevida e preservar a capacidade funcional.
+
+A atualização de 2026 introduz mudanças importantes na classificação da insuficiência cardíaca, na organização das terapias e na identificação de indivíduos que ainda não apresentam manifestações clínicas, mas já possuem fatores de risco ou alterações cardíacas. O objetivo é reconhecer a doença mais precocemente e organizar o tratamento de acordo com o estágio, a fração de ejeção, a etiologia, as comorbidades e as necessidades individuais.
+
+A abordagem também enfatiza a necessidade de distinguir terapias fundamentais, que devem constituir a base do tratamento quando indicadas, de tratamentos adicionais e intervenções específicas. A seleção terapêutica deve considerar a evidência científica disponível, os benefícios esperados, os riscos, a tolerabilidade, as preferências do paciente e a possibilidade de acompanhamento adequado.
+
+<h1>2. Definição, epidemiologia e classificação</h1>
+
+<h2>2.1. Conceito de insuficiência cardíaca</h2>
+
+A insuficiência cardíaca deve ser entendida como uma síndrome clínica, e não simplesmente como uma redução da fração de ejeção ventricular. Sua identificação depende da integração entre manifestações clínicas e evidências objetivas de alterações cardíacas. A fração de ejeção é um parâmetro essencial para classificar os fenótipos e orientar a terapêutica, mas não representa isoladamente toda a complexidade da doença.
+
+Os sintomas e sinais podem decorrer de dois mecanismos principais, frequentemente coexistentes:
+
+•Congestão: acúmulo de líquido nos pulmões, nas veias sistêmicas e nos tecidos, associado ao aumento das pressões de enchimento e à retenção de sódio e água.
+
+•Hipoperfusão: redução da capacidade de fornecer fluxo sanguíneo suficiente aos tecidos, podendo comprometer a função renal, a perfusão periférica e o funcionamento de outros órgãos.
+
+A intensidade dessas alterações varia conforme a gravidade da doença, o lado do coração predominantemente comprometido, a presença de arritmias, as condições hemodinâmicas e as doenças concomitantes.
+
+A insuficiência cardíaca pode resultar de diferentes processos patológicos, incluindo doença arterial coronariana, hipertensão arterial, infarto do miocárdio, cardiomiopatias, doenças valvares, arritmias, inflamação miocárdica, alterações genéticas e doenças infiltrativas, como a amiloidose cardíaca. A investigação etiológica é indispensável porque algumas causas possuem tratamentos específicos capazes de modificar a evolução clínica.
+
+<h2>2.2. Classificação de acordo com a fração de ejeção</h2>
+
+A fração de ejeção do ventrículo esquerdo (FEVE) corresponde à proporção do volume de sangue presente no ventrículo ao final da diástole que é ejetada durante a sístole. Ela é utilizada para distinguir dois fenótipos principais nas diretrizes de 2026.
+
+•Insuficiência cardíaca com fração de ejeção reduzida (ICFEr / HFrEF)
+
+FEVE abaixo de 50%. Caracteriza-se pela presença de sintomas e/ou sinais de insuficiência cardíaca associados à redução da fração de ejeção. A classificação de 2026 amplia essa categoria para incluir pacientes com FEVE entre 41% e 49%, anteriormente enquadrados em uma categoria intermediária.
+
+•Insuficiência cardíaca com fração de ejeção preservada (ICFEp / HFpEF)
+
+FEVE igual ou superior a 50%. Exige sintomas e/ou sinais de insuficiência cardíaca e evidências objetivas de alterações estruturais e/ou funcionais cardíacas. Uma fração de ejeção preservada não exclui a presença de insuficiência cardíaca.
+
+
+
+A categoria denominada insuficiência cardíaca com fração de ejeção levemente reduzida (HFmrEF) foi removida da nova classificação. Com isso, os pacientes com FEVE inferior a 50% são agrupados na categoria de fração de ejeção reduzida, enquanto aqueles com FEVE igual ou superior a 50% pertencem à categoria de fração de ejeção preservada, desde que preencham os critérios clínicos e objetivos correspondentes.
+
+Essa mudança influencia a organização das recomendações terapêuticas. Entretanto, não significa que todos os pacientes com FEVE abaixo de 50% respondam de maneira idêntica aos medicamentos. A intensidade das evidências varia entre os intervalos de fração de ejeção, e a decisão clínica deve levar em consideração o conjunto das características do paciente.
+
+Outro aspecto importante é a possibilidade de melhora da fração de ejeção durante o tratamento. A recuperação da função ventricular não significa necessariamente desaparecimento da doença ou eliminação do risco de recorrência. A continuidade da terapia fundamental, nas doses mais elevadas toleradas, permanece recomendada mesmo quando os sintomas desaparecem ou a FEVE melhora.
+
+<h1>2.3. Classificação por estágios da insuficiência cardíaca</h1>
+
+A classificação por estágios A–D organiza a evolução desde a presença de fatores de risco até a doença avançada. Essa organização permite reconhecer diferentes necessidades clínicas antes mesmo do aparecimento de sintomas.
+
+EstágioCaracterísticas principaisA — Risco de insuficiência cardíacaPresença de fatores de risco, sem sintomas ou sinais de IC e sem alterações cardíacas que estabeleçam a doença.B — Pré-insuficiência cardíacaAusência de sintomas e sinais atuais de IC, mas presença de alterações estruturais ou funcionais cardíacas, ou outras evidências objetivas que caracterizam risco elevado de evolução.C — Insuficiência cardíaca clínicaPresença atual ou prévia de sintomas e/ou sinais atribuíveis à insuficiência cardíaca, acompanhados de evidências objetivas da condição.D — Insuficiência cardíaca avançadaDoença grave, com sintomas persistentes, limitações importantes e/ou episódios recorrentes de descompensação, apesar do tratamento adequado, podendo exigir terapias especializadas.
+
+Os estágios não devem ser confundidos com a classificação funcional da New York Heart Association (NYHA), que descreve a limitação física provocada pelos sintomas. O estágio expressa a posição do indivíduo na trajetória da doença, enquanto a classe funcional indica o impacto dos sintomas sobre as atividades cotidianas.
+
+O estágio A exige prevenção dos fatores de risco; o estágio B demanda identificação e tratamento das alterações cardíacas antes do desenvolvimento de sintomas; o estágio C requer tratamento contínuo e controle da congestão; e o estágio D exige avaliação especializada para estratégias avançadas, incluindo suporte circulatório mecânico, transplante cardíaco e cuidados paliativos, conforme a situação clínica.
+
+<h1>2.4. Evolução natural e prognóstico</h1>
+
+A evolução da insuficiência cardíaca é heterogênea. Alguns pacientes permanecem estáveis por longos períodos, enquanto outros apresentam piora progressiva, hospitalizações repetidas e perda da capacidade funcional. O prognóstico depende da etiologia, da gravidade das alterações cardíacas, da função renal, da presença de arritmias, da resposta ao tratamento, das comorbidades e da ocorrência de episódios de descompensação.
+
+As hospitalizações por insuficiência cardíaca representam momentos de especial vulnerabilidade. A piora clínica pode estar associada a infecções, arritmias, isquemia miocárdica, hipertensão não controlada, deterioração da função renal, uso inadequado de medicamentos ou interrupção da terapia. A prevenção desses episódios exige reconhecimento precoce dos sinais de congestão, otimização terapêutica e acompanhamento após a alta.
+
+A avaliação prognóstica não deve depender de um único parâmetro. É necessário integrar sintomas, classe funcional, pressão arterial, frequência cardíaca, exames laboratoriais, marcadores de estresse cardíaco, função ventricular, capacidade de exercício e histórico de hospitalizações. Nos casos mais complexos, instrumentos de estratificação de risco auxiliam a identificar indivíduos que necessitam de encaminhamento precoce para centros especializados.
+
+<h1>3. Prevenção da insuficiência cardíaca</h1>
+
+A prevenção é uma das partes centrais do manejo, pois a insuficiência cardíaca frequentemente se desenvolve ao longo de anos, em associação com fatores de risco cardiovasculares, doenças metabólicas e lesões miocárdicas. A intervenção precoce pode diminuir a probabilidade de aparecimento da doença, retardar sua progressão e reduzir hospitalizações e mortes.
+
+<h2>3.1. Controle dos fatores de risco cardiometabólicos</h2>
+
+A hipertensão arterial, o diabetes mellitus tipo 2, a obesidade, a dislipidemia e a doença renal crônica estão entre os fatores relevantes para o desenvolvimento da insuficiência cardíaca.
+
+A hipertensão mantida aumenta a sobrecarga imposta ao ventrículo esquerdo. Inicialmente, o coração pode desenvolver hipertrofia para compensar o aumento da pressão; com o tempo, essa adaptação pode contribuir para alterações do relaxamento ventricular, elevação das pressões de enchimento e deterioração da função cardíaca. O controle rigoroso da pressão arterial é, portanto, uma medida fundamental de prevenção. As diretrizes recomendam, em pacientes com hipertensão ou no estágio B de insuficiência cardíaca, uma pressão arterial sistólica inferior a 130 mmHg, desde que a estratégia seja adequada à situação clínica.
+
+O diabetes favorece alterações metabólicas, inflamação, disfunção vascular e lesão miocárdica, além de frequentemente coexistir com hipertensão, obesidade e doença renal. Em pessoas com diabetes tipo 2 que apresentam múltiplos fatores de risco cardiovascular ou doença cardiovascular aterosclerótica estabelecida, os inibidores do cotransportador de sódio-glicose tipo 2 (SGLT2) são recomendados para reduzir o risco de insuficiência cardíaca e morte cardiovascular. Os agonistas do receptor do peptídeo semelhante ao glucagon tipo 1 (GLP-1), por sua vez, devem ser considerados em pessoas com diabetes tipo 2 e pelo menos outro fator de risco cardiovascular, com o objetivo de reduzir o risco de insuficiência cardíaca ou morte cardiovascular.
+
+A obesidade aumenta a carga hemodinâmica e está associada a alterações metabólicas, inflamatórias e estruturais que favorecem a disfunção cardíaca. A redução da adiposidade e da circunferência abdominal pode contribuir para diminuir o risco. O controle do peso deve ser acompanhado de atenção à preservação da massa magra, à capacidade funcional e ao estado nutricional.
+
+A doença renal crônica também exige atenção, pois há interação bidirecional entre coração e rins. A disfunção renal pode favorecer retenção de líquidos, alterações eletrolíticas e maior risco cardiovascular; a insuficiência cardíaca, por sua vez, pode reduzir a perfusão renal e agravar a função dos rins. A albuminúria constitui um marcador adicional de risco, inclusive em pacientes cuja taxa de filtração glomerular ainda esteja preservada.
+
+<h2>3.2. Alimentação, atividade física e hábitos de vida</h2>
+
+A manutenção de um estilo de vida saudável é recomendada para indivíduos nos estágios A e B, visando reduzir o risco de progressão da doença. As principais medidas incluem:
+
+•Manter um peso corporal saudável.
+
+•Adotar uma alimentação equilibrada.
+
+•Evitar o sedentarismo.
+
+•Praticar atividade física de acordo com a capacidade funcional e as condições clínicas.
+
+•Interromper o tabagismo.
+
+•Evitar o consumo excessivo de álcool.
+
+•Não utilizar substâncias associadas à lesão miocárdica, como cocaína, anfetaminas e esteroides anabolizantes.
+
+O tabagismo está associado ao aumento do risco cardiovascular, e sua interrupção reduz o risco de insuficiência cardíaca ao longo do tempo. O consumo excessivo de álcool também está relacionado ao aumento desse risco, enquanto os dados sobre o consumo leve a moderado são menos consistentes. O uso de drogas recreativas e substâncias estimulantes pode favorecer cardiomiopatias, arritmias e deterioração da função ventricular.
+
+A prática regular de atividade física contribui para a saúde cardiovascular, o controle dos fatores metabólicos e a preservação da capacidade funcional. Nos indivíduos que já apresentam insuficiência cardíaca, a intensidade e a modalidade do exercício devem ser individualizadas, considerando a estabilidade clínica e as comorbidades.
+
+<h2>3.3. Grupos que necessitam de prevenção específica</h2>
+
+Algumas condições exigem vigilância adicional porque podem provocar ou agravar a insuficiência cardíaca:
+
+•Arritmias: podem comprometer o enchimento ventricular ou provocar frequência cardíaca persistentemente elevada, favorecendo a deterioração da função miocárdica.
+
+•Infarto do miocárdio: a lesão do músculo cardíaco pode causar disfunção ventricular e aumentar o risco de insuficiência cardíaca.
+
+•Doença renal crônica: exige avaliação integrada da função renal, da pressão arterial e do risco cardiovascular.
+
+•Sobreviventes de câncer: determinados tratamentos oncológicos podem causar cardiotoxicidade, justificando avaliação e acompanhamento cardiovascular conforme a exposição e o risco.
+
+•Predisposição familiar e genética: determinadas cardiomiopatias podem permanecer assintomáticas durante anos e necessitar de investigação familiar.
+
+•Doenças pulmonares e distúrbios respiratórios do sono: podem aumentar a sobrecarga cardiovascular e agravar os sintomas.
+
+•Doenças endócrinas: alterações hormonais podem comprometer a função cardíaca.
+
+•Cardiopatias congênitas: mesmo após intervenções corretivas, alguns indivíduos permanecem expostos a complicações hemodinâmicas e insuficiência cardíaca.
+
+<h2>3.4. Estágio B: intervenção antes dos sintomas</h2>
+
+O estágio B representa uma oportunidade importante para prevenir a manifestação clínica da insuficiência cardíaca. O tratamento é direcionado aos pacientes assintomáticos que já apresentam alterações cardíacas objetivas.
+
+Em pacientes com FEVE igual ou inferior a 40%, recomenda-se um inibidor da enzima conversora de angiotensina (IECA) ou, em caso de intolerância, um bloqueador do receptor da angiotensina (BRA), com o objetivo de reduzir hospitalizações e mortes. Os betabloqueadores são recomendados quando a FEVE é inferior a 50%, visando diminuir o risco de hospitalização ou morte.
+
+Após infarto do miocárdio, a eplerenona é recomendada em pacientes com FEVE igual ou inferior a 40% que apresentem sinais de insuficiência cardíaca ou diabetes, para reduzir o risco de hospitalização e morte.
+
+Essas intervenções mostram que o tratamento cardiovascular não deve começar somente quando surgem dispneia, edema ou limitação funcional. A presença de disfunção ventricular assintomática pode justificar medidas capazes de modificar a evolução da doença.
+
+<h1>4. Diagnóstico da insuficiência cardíaca crônica</h1>
+
+<h2>4.1. Avaliação clínica inicial</h2>
+
+O diagnóstico começa com a identificação de sintomas, sinais físicos e condições predisponentes. A dispneia aos esforços, a ortopneia, o despertar noturno por falta de ar, a fadiga, a redução da tolerância ao exercício e o edema periférico são manifestações frequentes.
+
+Entre os achados clínicos relevantes estão a elevação da pressão venosa jugular, os estertores pulmonares, o edema dos membros inferiores e outros sinais de congestão. Em situações mais graves, podem surgir hipotensão, extremidades frias, alteração do estado mental e sinais de hipoperfusão.
+
+Nenhum desses achados, isoladamente, é suficiente para confirmar ou excluir todos os casos de insuficiência cardíaca. Os sintomas podem ser inespecíficos, especialmente em idosos e em pessoas com obesidade, doença pulmonar, anemia ou outras comorbidades. Por isso, a avaliação deve combinar história clínica, exame físico e exames complementares.
+
+<h2>4.2. Peptídeos natriuréticos</h2>
+
+Os peptídeos natriuréticos, especialmente o BNP e o NT-proBNP, são biomarcadores importantes na investigação da insuficiência cardíaca. Suas concentrações aumentam em resposta ao estresse das paredes cardíacas e às alterações das pressões de enchimento.
+
+A dosagem desses marcadores auxilia a estimar a probabilidade de insuficiência cardíaca em pessoas com suspeita clínica. Valores baixos podem tornar o diagnóstico menos provável, enquanto concentrações elevadas reforçam a necessidade de investigação, especialmente com ecocardiografia.
+
+Entretanto, a interpretação deve considerar fatores que modificam os resultados. A idade avançada, a fibrilação atrial, a disfunção renal e algumas doenças pulmonares podem elevar os níveis. A obesidade pode reduzi-los, assim como determinados tratamentos cardiovasculares. Portanto, um valor isolado não deve ser interpretado sem considerar o contexto clínico.
+
+Os peptídeos natriuréticos também apresentam importância prognóstica, pois podem ajudar a avaliar a gravidade da doença e o risco de eventos adversos. Sua utilização deve ser integrada aos demais parâmetros clínicos e laboratoriais.
+
+<h2>4.3. Exames complementares</h2>
+
+A investigação diagnóstica inclui diferentes exames, cada um com uma função específica.
+
+Eletrocardiograma de 12 derivações: identifica arritmias, alterações de condução, sinais de isquemia e outras anormalidades que podem contribuir para o diagnóstico e para a determinação da causa.
+
+Radiografia de tórax: permite avaliar sinais de congestão pulmonar, aumento da silhueta cardíaca e possíveis causas respiratórias dos sintomas. Um resultado normal, isoladamente, não exclui a doença.
+
+Ecocardiograma transtorácico: é fundamental para avaliar a FEVE, as dimensões das câmaras cardíacas, a função sistólica e diastólica, as válvulas e outras alterações estruturais. Também auxilia na identificação da etiologia e na diferenciação entre os fenótipos de insuficiência cardíaca.
+
+Exames laboratoriais: devem avaliar hemograma, função renal, eletrólitos, função hepática, função tireoidiana, hemoglobina glicada, perfil lipídico e estado do ferro, incluindo ferritina e saturação da transferrina. Esses dados ajudam a identificar comorbidades, fatores precipitantes, limitações terapêuticas e alterações que podem contribuir para a fadiga e a intolerância ao exercício.
+
+A investigação também deve considerar a albuminúria e a taxa de filtração glomerular estimada, importantes para a avaliação renal e prognóstica.
+
+<h2>4.4. Diagnóstico da insuficiência cardíaca com fração de ejeção preservada</h2>
+
+A ICFEp pode ser particularmente difícil de diagnosticar porque os pacientes podem apresentar sintomas importantes apesar de uma FEVE normal ou preservada. Nesses casos, a alteração principal pode envolver o relaxamento ventricular, a rigidez miocárdica, o aumento das pressões de enchimento ou outras alterações estruturais e funcionais.
+
+A confirmação exige sintomas e/ou sinais compatíveis, FEVE igual ou superior a 50% e evidências objetivas de alterações cardíacas. A ecocardiografia e os peptídeos natriuréticos são importantes, mas seus resultados devem ser interpretados de acordo com as características individuais.
+
+Quando a avaliação inicial não é conclusiva, podem ser considerados testes de exercício cardiopulmonar, ecocardiografia sob estresse e avaliação hemodinâmica invasiva. A medição invasiva das pressões de enchimento durante o exercício pode ajudar a confirmar casos duvidosos, embora não seja necessária rotineiramente para todos os pacientes.
+
+<h2>4.5. Identificação da etiologia</h2>
+
+Determinar a causa da insuficiência cardíaca é essencial porque algumas etiologias são reversíveis ou possuem tratamento específico. A avaliação começa pela história clínica e familiar, exame físico, eletrocardiograma, exames laboratoriais e ecocardiografia, avançando para testes direcionados conforme os achados.
+
+A investigação pode envolver ressonância magnética cardíaca, tomografia, estudos de doença arterial coronariana, avaliação de arritmias e testes genéticos. Em pacientes com suspeita de amiloidose cardíaca, são necessários exames específicos para identificar a doença e diferenciar seus subtipos. Quando há suspeita de sarcoidose cardíaca, a tomografia por emissão de pósitrons com FDG pode ser considerada.
+
+A investigação genética é recomendada quando o diagnóstico de cardiomiopatia está estabelecido e o resultado pode modificar o diagnóstico, o prognóstico, o tratamento, as decisões reprodutivas ou a avaliação em cascata dos familiares.
+
+A identificação da causa deve orientar o planejamento terapêutico e o acompanhamento. Tratar apenas os sintomas sem investigar a origem da disfunção pode deixar de reconhecer condições que exigem intervenções específicas.
+
+<h1>5. Tratamento da insuficiência cardíaca crônica</h1>
+
+<h2>5.1. Objetivos do tratamento</h2>
+
+O tratamento farmacológico busca reduzir a mortalidade, prevenir hospitalizações, retardar a progressão da doença, melhorar os sintomas e preservar a qualidade de vida. Também é necessário controlar a congestão, manter uma perfusão adequada, evitar efeitos adversos e tratar as condições que contribuem para a disfunção cardíaca.
+
+A estratégia terapêutica deve ser adaptada ao fenótipo da insuficiência cardíaca, à pressão arterial, à frequência cardíaca, à função renal, aos níveis de potássio, à presença de congestão e à tolerabilidade dos medicamentos.
+
+Nas diretrizes de 2026, as terapias são organizadas em três grupos:
+
+•Terapia médica fundamental (FMT): medicamentos que formam a base do tratamento modificador da doença.
+
+√Terapia médica adicional (AMT): medicamentos utilizados conforme as necessidades clínicas, os sintomas, o risco residual e as características individuais.
+
+•Terapia intervencionista orientada por diretrizes (GDIT): dispositivos e procedimentos destinados a pacientes que atendem a critérios específicos.
+
+Essa organização ajuda a distinguir os tratamentos essenciais daqueles que devem ser acrescentados de acordo com a situação clínica.
+
+<h2>5.2. Terapia fundamental e importância da otimização</h2>
+
+Na insuficiência cardíaca com fração de ejeção reduzida, a terapia fundamental inclui quatro grupos principais de medicamentos:
+
+•Inibidores do sistema renina-angiotensina, preferencialmente com utilização de ARNI quando indicado e tolerado, ou IECA/BRA conforme as circunstâncias.
+
+•Betabloqueadores com evidência de benefício na insuficiência cardíaca.
+
+•Antagonistas dos receptores mineralocorticoides (MRA).
+
+•Inibidores do SGLT2.
+
+Essas classes atuam por mecanismos complementares. A combinação busca reduzir a ativação neuro-hormonal prejudicial, limitar a remodelação cardíaca, diminuir o risco de eventos clínicos e melhorar a estabilidade da doença.
+
+A otimização das doses é uma parte essencial do tratamento. A introdução de medicamentos em doses iniciais toleráveis deve ser seguida por aumentos progressivos, com acompanhamento de sintomas, sinais vitais e exames laboratoriais. As diretrizes recomendam a intensificação da terapia fundamental, quando clinicamente possível, pelo menos a cada uma a duas semanas, buscando alcançar as doses-alvo comprovadamente eficazes nos ensaios clínicos.
+
+A ausência de sintomas não significa que o tratamento deixou de ser necessário. A manutenção das doses mais elevadas toleradas é recomendada inclusive nos pacientes que apresentam melhora da FEVE ou se tornam assintomáticos, para reduzir o risco de hospitalização e morte.
+
+<h2>5.3. Inibidores do sistema renina-angiotensina e ARNI</h2>
+
+Os IECA, os BRA e os inibidores do receptor da angiotensina e da neprilisina (ARNI) atuam sobre mecanismos neuro-hormonais envolvidos na progressão da insuficiência cardíaca.
+
+Esses medicamentos contribuem para reduzir a sobrecarga hemodinâmica e a remodelação cardíaca. O ARNI, que combina sacubitril e valsartana, integra a estratégia terapêutica da ICFEr quando indicado e tolerado. Os IECA e BRA permanecem alternativas relevantes em situações específicas.
+
+O uso exige monitoramento da pressão arterial, da função renal e dos níveis de potássio. Hipotensão, deterioração da função renal e hipercalemia podem limitar a dose ou exigir ajustes. A escolha deve considerar tratamentos prévios, tolerabilidade e contraindicações.
+
+<h2>5.4. Betabloqueadores</h2>
+
+Os betabloqueadores reduzem a ativação simpática excessiva, diminuem a frequência cardíaca e ajudam a limitar os efeitos prejudiciais da estimulação adrenérgica crônica sobre o miocárdio.
+
+Na ICFEr, fazem parte da terapia fundamental porque reduzem o risco de eventos clínicos e contribuem para o controle da doença. Sua introdução e titulação devem ocorrer de acordo com a estabilidade hemodinâmica, evitando iniciar ou aumentar doses de forma inadequada durante instabilidade clínica importante.
+
+A frequência cardíaca, a pressão arterial, a presença de bradicardia, os distúrbios de condução e os sinais de congestão devem ser acompanhados durante os ajustes.
+
+<h2>5.5. Antagonistas dos receptores mineralocorticoides</h2>
+
+Os MRA incluem medicamentos como espironolactona e eplerenona. Esses fármacos bloqueiam os efeitos da aldosterona, contribuindo para reduzir a remodelação miocárdica e a progressão da doença.
+
+Sua utilização exige atenção especial ao potássio sérico e à função renal, devido ao risco de hipercalemia e deterioração renal. A monitorização laboratorial é indispensável durante o início do tratamento e após ajustes de dose.
+
+A finerenona, um antagonista não esteroidal do receptor mineralocorticoide, também aparece na organização terapêutica das diretrizes, com evidências e indicações que variam conforme o fenótipo e a população estudada. Não deve ser considerada automaticamente equivalente aos MRA esteroidais em todas as situações clínicas.
+
+<h2>5.6. Inibidores do SGLT2</h2>
+
+Os inibidores do SGLT2, como dapagliflozina e empagliflozina, possuem papel central no tratamento da insuficiência cardíaca. Seu benefício cardiovascular não se limita ao controle da glicemia, pois a utilização desses medicamentos também é relevante em pacientes sem diabetes.
+
+Esses fármacos contribuem para reduzir o risco de hospitalização por insuficiência cardíaca e são utilizados em diferentes fenótipos da doença. Sua ação também pode ser relevante em pacientes com comorbidades renais e metabólicas, conforme as indicações e as condições clínicas.
+
+A função renal, o estado volêmico e a tolerabilidade devem ser avaliados. Durante episódios de doença aguda, desidratação ou instabilidade clínica, pode ser necessário reavaliar temporariamente a utilização de determinados medicamentos.
+
+<h2>5.7. Diuréticos e controle da congestão</h2>
+
+Os diuréticos de alça, como a furosemida, são utilizados para aliviar a congestão causada pela retenção de sódio e água. Eles ajudam a reduzir edema, dispneia e outros sintomas relacionados ao excesso de líquido.
+
+Sua função principal é controlar a congestão; o ajuste da dose deve considerar o peso, os sintomas, os sinais físicos, a resposta diurética, a função renal e os eletrólitos. O objetivo é alcançar e manter a euvolemia, evitando tanto a persistência do excesso de volume quanto a redução excessiva do volume circulante.
+
+Os diuréticos não substituem a terapia fundamental modificadora da doença. Mesmo após o alívio dos sintomas, é necessário manter os medicamentos que reduzem o risco de progressão, quando indicados e tolerados.
+
+<h2>5.8. Terapias adicionais na ICFEr</h2>
+
+Quando persistem sintomas ou risco elevado apesar da terapia fundamental, outros medicamentos podem ser considerados de acordo com critérios específicos.
+
+A ivabradina pode ser utilizada em pacientes selecionados com frequência cardíaca elevada e características clínicas compatíveis. A vericiguat pode ser considerada em determinadas situações de piora recente da insuficiência cardíaca. A associação de hidralazina e dinitrato de isossorbida pode ter indicação em grupos específicos, enquanto os glicosídeos cardíacos podem ser utilizados em situações selecionadas.
+
+Os ativadores da miosina cardíaca também integram as opções discutidas para pacientes com características clínicas específicas. A escolha de qualquer terapia adicional deve ser fundamentada na evidência correspondente, na gravidade dos sintomas, nas comorbidades e no equilíbrio entre benefícios e riscos.
+
+<h2>5.9. Insuficiência cardíaca com fração de ejeção preservada</h2>
+
+Na ICFEp, o tratamento exige atenção especial às comorbidades, à congestão e às alterações estruturais e funcionais associadas à doença. A FEVE preservada não elimina a necessidade de tratamento, mas a evidência para determinadas classes farmacológicas difere daquela disponível na ICFEr.
+
+Os inibidores do SGLT2 possuem papel importante no manejo da insuficiência cardíaca, enquanto os diuréticos são empregados quando há congestão. O controle da hipertensão, da obesidade, do diabetes, da fibrilação atrial, da doença renal e de outras condições concomitantes é fundamental.
+
+Os IECA, BRA ou ARNI podem ser considerados em pacientes sintomáticos com ICFEp para reduzir o risco de hospitalização, embora a recomendação seja menos forte e a evidência mais limitada do que em algumas indicações da ICFEr.
+
+<h2>5.10. Melhora da fração de ejeção e continuidade do tratamento</h2>
+
+A recuperação da FEVE representa uma evolução favorável, mas não garante a eliminação do substrato responsável pela doença. A retirada indiscriminada dos medicamentos pode favorecer recorrência da disfunção ventricular e reaparecimento dos sintomas.
+
+Por isso, recomenda-se manter a terapia fundamental nas doses mais elevadas toleradas, inclusive quando ocorre melhora clínica ou funcional.
+
+A interrupção gradual pode ser considerada apenas em pacientes altamente selecionados, assintomáticos, com normalização completa da função e dos volumes ventriculares e dos níveis de peptídeos natriuréticos após tratamento específico de uma causa reversível. Essa possibilidade exige vigilância clínica, laboratorial e por imagem frequente, além de decisão individualizada.
+
+<h2>5.11. Dispositivos e intervenções na insuficiência cardíaca crônica</h2>
+
+Alguns pacientes necessitam de intervenções que complementam o tratamento farmacológico.
+
+Cardiodesfibrilador implantável (CDI): pode ser indicado para prevenir morte súbita em pacientes selecionados, tanto para prevenção secundária, após eventos arrítmicos relevantes, quanto para prevenção primária em grupos de maior risco. A decisão depende da etiologia, da FEVE, da resposta à terapia e do prognóstico.
+
+Terapia de ressincronização cardíaca (TRC): destina-se a pacientes com alterações específicas da condução elétrica, especialmente aqueles com bloqueio de ramo esquerdo, QRS prolongado e disfunção ventricular. Pode melhorar a coordenação da contração, os sintomas e os resultados clínicos.
+
+Estimulação do sistema de condução: pode ser considerada em situações selecionadas para corrigir padrões de ativação ventricular anormais.
+
+Intervenções valvares e coronarianas: podem ser necessárias quando doenças valvares ou doença arterial coronariana contribuem significativamente para a insuficiência cardíaca.
+
+A seleção de candidatos a dispositivos exige avaliação individualizada, considerando o tratamento farmacológico já implementado, as características eletrocardiográficas, a função ventricular e o risco de complicações.
+
+<h1>6. Insuficiência cardíaca descompensada</h1>
+
+<h2>6.1. Definição e apresentação clínica</h2>
+
+A insuficiência cardíaca descompensada (ICD) corresponde à piora clínica que exige intensificação do tratamento, frequentemente com necessidade de atendimento hospitalar. Pode ocorrer em pacientes com insuficiência cardíaca previamente diagnosticada ou representar a primeira manifestação reconhecida da doença.
+
+A descompensação pode decorrer do aumento das pressões de enchimento, da retenção de líquidos, da redistribuição do volume sanguíneo, da redução do débito cardíaco ou da combinação desses mecanismos. Sua gravidade varia desde congestão relativamente estável até edema pulmonar agudo e choque cardiogênico.
+
+Os principais quadros clínicos incluem:
+
+•Insuficiência cardíaca esquerda descompensada: predominam congestão pulmonar, dispneia, ortopneia e redução da tolerância ao esforço.
+
+•Insuficiência cardíaca direita descompensada: predominam congestão venosa sistêmica, edema periférico, distensão venosa jugular e, em alguns casos, congestão hepática e ascite.
+
+•Edema pulmonar agudo: ocorre congestão pulmonar intensa e rapidamente progressiva, podendo provocar insuficiência respiratória.
+
+•Choque cardiogênico: caracteriza-se por hipoperfusão dos órgãos causada por disfunção cardíaca, com risco de deterioração multiorgânica e morte.
+
+<h2>6.2. Avaliação inicial e identificação dos fatores precipitantes</h2>
+
+A avaliação inicial deve determinar a gravidade da descompensação, a presença de congestão, o estado hemodinâmico, a oxigenação e a perfusão dos órgãos. Também é necessário identificar rapidamente os fatores desencadeantes, pois o tratamento da causa pode ser decisivo para a estabilização.
+
+Entre os fatores que podem precipitar a piora estão arritmias, síndrome coronariana aguda, infecções, hipertensão não controlada, deterioração renal, alterações eletrolíticas, interrupção do tratamento e utilização de medicamentos que favorecem retenção de líquidos ou pioram a função renal.
+
+A investigação pode incluir eletrocardiograma, radiografia de tórax, ecocardiografia, peptídeos natriuréticos, exames de função renal e eletrólitos, hemograma, marcadores de lesão miocárdica e outros testes orientados pela apresentação clínica.
+
+A presença de hipoperfusão exige atenção especial. A avaliação deve considerar pressão arterial, estado mental, perfusão periférica, débito urinário, função renal e hepática e lactato arterial. A classificação do choque cardiogênico em estágios de gravidade auxilia a orientar a intensidade da monitorização e a necessidade de suporte circulatório.
+
+<h2>6.3. Fases do tratamento hospitalar</h2>
+
+O manejo da insuficiência cardíaca descompensada é organizado em três fases, cujos objetivos se complementam.
+
+Fase 1 — Tratamento inicial
+
+Avaliar a gravidade, estabelecer o nível de cuidado necessário, identificar causas reversíveis e iniciar rapidamente as medidas de estabilização. A prioridade é tratar as condições potencialmente fatais, corrigir a hipoxemia quando presente e restabelecer uma situação hemodinâmica segura.
+
+Fase 2 — Estabilização
+
+Controlar a congestão, acompanhar a resposta ao tratamento e melhorar o estado hemodinâmico. Quando a estabilidade é alcançada, deve-se iniciar ou otimizar a terapia fundamental, preparando o paciente para o tratamento prolongado.
+
+Fase 3 — Pré-alta e início do acompanhamento ambulatorial
+
+Confirmar o controle da congestão, revisar os medicamentos, planejar a continuidade do tratamento e organizar consultas precoces após a alta. É essencial identificar riscos residuais e assegurar que o paciente tenha condições de manter a terapia.
+
+Na fase inicial, a avaliação e o tratamento devem ocorrer sem atrasos desnecessários. Nos pacientes que já utilizam terapia fundamental, a continuidade ou a reintrodução rápida é recomendada sempre que possível. A interrupção deve ser reservada a situações com indicação clínica clara, como hipoperfusão relevante ou outras contraindicações.
+
+Durante a estabilização, o controle da congestão deve ser iniciado e mantido. A introdução de determinados medicamentos, incluindo antagonistas mineralocorticoides, inibidores do SGLT2 e ARNI, pode ser viável durante essa fase, desde que as condições clínicas permitam.
+
+A fase pré-alta exige uma reavaliação cuidadosa da situação volêmica. A melhora da dispneia, isoladamente, não garante que a congestão tenha sido completamente resolvida. A terapia deve estar iniciada ou otimizada, e o plano de acompanhamento precisa estar definido antes da saída do hospital.
+
+<h2>6.4. Diuréticos e descongestão</h2>
+
+Os diuréticos de alça são a principal estratégia farmacológica para controlar a congestão na insuficiência cardíaca descompensada. Sua administração pode ser intravenosa durante a fase hospitalar, com ajuste conforme a resposta clínica.
+
+A eficácia deve ser avaliada por parâmetros como débito urinário, excreção urinária de sódio quando indicada, variação do peso, melhora da dispneia, redução do edema e outros sinais de congestão. A resposta inadequada pode exigir aumento da dose ou associação de estratégias diuréticas.
+
+A descongestão deve ser equilibrada com a manutenção de uma perfusão adequada e a vigilância da função renal e dos eletrólitos. Uma pequena alteração da creatinina durante o tratamento não deve ser interpretada isoladamente, sem considerar a evolução da congestão e o estado clínico geral.
+
+Quando a congestão persiste apesar da terapia diurética, pode ser necessária uma estratégia mais intensiva. A ultrafiltração pode ser considerada em situações selecionadas, mas não deve substituir indiscriminadamente o tratamento farmacológico.
+
+<h2>6.5. Oxigenação, ventilação e suporte hemodinâmico</h2>
+
+A oxigenoterapia deve ser orientada pela presença de hipoxemia, e o suporte ventilatório pode ser necessário em pacientes com insuficiência respiratória. No edema pulmonar agudo, o tratamento busca aliviar rapidamente a congestão pulmonar, corrigir a insuficiência respiratória e preservar a perfusão periférica.
+
+Os vasodilatadores podem ser considerados em pacientes selecionados, especialmente quando a pressão arterial permite sua utilização. Eles podem ajudar a reduzir as pressões de enchimento e a carga hemodinâmica.
+
+Os inotrópicos e vasopressores possuem indicações mais restritas. Podem ser necessários quando há baixo débito cardíaco, hipoperfusão ou instabilidade hemodinâmica, mas apresentam riscos, incluindo arritmias e isquemia miocárdica. Sua utilização exige monitorização e reavaliação frequentes.
+
+Nos casos de choque cardiogênico, o suporte circulatório mecânico temporário pode ser considerado em pacientes selecionados. A decisão deve envolver uma equipe especializada, com objetivos definidos, como permitir recuperação miocárdica, estabilizar o paciente até uma intervenção definitiva ou possibilitar a avaliação de uma estratégia de suporte prolongado.
+
+<h2>6.6. Alta hospitalar e prevenção de novas internações</h2>
+
+A transição do hospital para o acompanhamento ambulatorial é uma etapa crítica. O paciente deve receber alta após avaliação adequada da estabilidade clínica, com controle satisfatório da congestão e um plano terapêutico definido.
+
+As medidas essenciais incluem:
+
+•Revisão da terapia fundamental e dos medicamentos adicionais.
+
+•Avaliação da função renal e dos eletrólitos.
+
+•Orientação sobre os medicamentos e possíveis efeitos adversos.
+
+•Identificação dos sinais de alerta para nova descompensação.
+
+•Planejamento de consultas e exames após a alta.
+
+•Continuidade da otimização das doses.
+
+•Avaliação das condições sociais, da capacidade de autocuidado e das dificuldades para aderir ao tratamento.
+
+A introdução e a intensificação da terapia fundamental, associadas a acompanhamento ambulatorial próximo, constituem estratégias importantes para reduzir o risco de novas hospitalizações e melhorar os resultados clínicos.
+
+<h1>7. Insuficiência cardíaca avançada</h1>
+
+<h2>7.1. Características e reconhecimento</h2>
+
+A insuficiência cardíaca avançada corresponde a uma fase de maior gravidade, marcada por sintomas persistentes, limitações funcionais importantes e eventos recorrentes apesar da implementação de tratamento adequado.
+
+Os critérios utilizados para reconhecer essa condição incluem manifestações graves e persistentes, episódios de descompensação ou hospitalizações repetidas, intolerância ao exercício, disfunção cardíaca significativa e necessidade de intervenções especializadas.
+
+O agravamento progressivo da função renal ou hepática, a congestão refratária, a incapacidade de tolerar os medicamentos fundamentais e a dependência de inotrópicos são sinais que podem indicar deterioração avançada.
+
+A identificação precoce é importante porque o encaminhamento tardio reduz as oportunidades de avaliação para transplante cardíaco ou suporte circulatório mecânico. A ausência de resposta ao tratamento convencional deve motivar uma reavaliação da etiologia, da adesão, das comorbidades e das possibilidades terapêuticas.
+
+<h2>7.2. Encaminhamento para centros especializados</h2>
+
+Pacientes com insuficiência cardíaca avançada devem ser encaminhados oportunamente para equipes especializadas quando persistem sintomas ou episódios de descompensação apesar do tratamento otimizado.
+
+A avaliação deve considerar o potencial de recuperação, o prognóstico, a função de outros órgãos, as comorbidades, a fragilidade, o estado nutricional, as condições psicossociais e a capacidade de manter o tratamento após intervenções complexas.
+
+A decisão não deve se limitar à gravidade da função ventricular. É necessário analisar o conjunto das condições clínicas e a possibilidade de obter benefícios reais com as terapias avançadas.
+
+<h2>7.3. Suporte circulatório mecânico</h2>
+
+O suporte circulatório mecânico pode ser temporário ou duradouro.
+
+O suporte temporário é utilizado em pacientes selecionados com instabilidade grave, especialmente no choque cardiogênico. Pode funcionar como ponte para a recuperação, para a decisão terapêutica, para o implante de um dispositivo duradouro ou para o transplante.
+
+O dispositivo de assistência ventricular esquerda (LVAD) é a forma mais comum de suporte mecânico duradouro. Pode prolongar a sobrevida e melhorar a qualidade de vida em pacientes selecionados cuja doença não é controlada adequadamente com as terapias convencionais.
+
+A decisão de implantar um dispositivo deve considerar os benefícios esperados e os riscos, incluindo sangramento, infecções relacionadas ao sistema de condução do dispositivo, insuficiência ventricular direita e arritmias. O acompanhamento exige uma equipe experiente e uma estrutura adequada de suporte.
+
+<h2>7.4. Transplante cardíaco</h2>
+
+O transplante cardíaco constitui uma opção para pacientes com insuficiência cardíaca avançada, quando não há outra alternativa terapêutica capaz de proporcionar benefício comparável e não existem contraindicações relevantes.
+
+A seleção deve avaliar a gravidade da doença, a possibilidade de benefício, as condições clínicas gerais, a função de outros órgãos e a capacidade de manter o tratamento após o procedimento.
+
+Entre os fatores que podem impedir ou limitar a indicação estão infecção ativa, câncer com prognóstico desfavorável, disfunção irreversível de órgãos importantes, doença vascular grave, obesidade importante ou caquexia, tabagismo ou uso ativo de substâncias e condições psicossociais que comprometam o tratamento. A decisão é individualizada e depende da avaliação especializada.
+
+<h2>7.5. Cuidados paliativos e planejamento antecipado</h2>
+
+Os cuidados paliativos podem ser integrados ao tratamento da insuficiência cardíaca avançada para aliviar sintomas, reduzir sofrimento e preservar a qualidade de vida. Sua utilização não exclui necessariamente tratamentos modificadores da doença.
+
+A abordagem inclui controle de dispneia, dor, ansiedade, depressão e outros sintomas, além de comunicação clara sobre o prognóstico, os objetivos do tratamento e as preferências do paciente.
+
+O planejamento antecipado permite discutir as possíveis trajetórias da doença, os limites aceitáveis de intervenção, as decisões sobre suporte circulatório e as necessidades da família. A assistência deve ser individualizada e respeitar os objetivos de cuidado estabelecidos em conjunto com o paciente.
+
+<h1>8. Comorbidades cardiovasculares</h1>
+
+<h2>8.1. Fibrilação atrial</h2>
+
+A fibrilação atrial e a insuficiência cardíaca frequentemente coexistem e podem agravar uma à outra. A arritmia pode reduzir a eficiência do enchimento ventricular e provocar frequência cardíaca inadequada; por outro lado, as alterações estruturais e hemodinâmicas da insuficiência cardíaca favorecem o desenvolvimento da fibrilação atrial.
+
+O manejo deve considerar o controle da frequência cardíaca, a possibilidade de controle do ritmo, a identificação de fatores desencadeantes e a prevenção de eventos tromboembólicos.
+
+A anticoagulação deve ser orientada pelo risco tromboembólico e pelas condições clínicas. A cardioversão e a ablação podem ser consideradas em pacientes selecionados, especialmente quando há uma relação plausível entre a arritmia e a deterioração da função ventricular.
+
+A decisão entre controle da frequência e do ritmo depende da duração da arritmia, dos sintomas, da estrutura cardíaca, das comorbidades e da probabilidade de manter o ritmo sinusal.
+
+<h2>8.2. Arritmias ventriculares e morte súbita</h2>
+
+As arritmias ventriculares podem provocar insuficiência cardíaca ou surgir como consequência de alterações estruturais do miocárdio. A taquicardia ventricular sustentada exige estabilização, investigação de fatores precipitantes e otimização do tratamento.
+
+Pacientes que sobrevivem a uma parada cardíaca ou apresentam determinadas arritmias ventriculares potencialmente fatais podem ter indicação de CDI para prevenção secundária de morte súbita.
+
+A prevenção primária depende da avaliação da FEVE, da etiologia, da resposta à terapia fundamental e do risco global. A decisão deve considerar a expectativa de vida e a probabilidade de que o paciente obtenha benefício clínico significativo.
+
+<h2>8.3. Doença arterial coronariana</h2>
+
+A doença arterial coronariana é uma das principais causas de insuficiência cardíaca. A investigação deve avaliar a presença de doença obstrutiva, isquemia e possibilidade de revascularização.
+
+A terapia fundamental da insuficiência cardíaca deve ser implementada antes da revascularização planejada, quando possível. A decisão entre tratamento conservador, intervenção coronária percutânea e cirurgia de revascularização miocárdica deve considerar a anatomia coronariana, a FEVE, a presença de angina, as comorbidades e o risco do procedimento.
+
+Em pacientes com ICFEr, FEVE igual ou inferior a 35% e doença multiarterial, a cirurgia de revascularização pode ser a estratégia preferencial quando a equipe multidisciplinar considera que há benefício esperado. A intervenção coronária percutânea não demonstrou benefício prognóstico uniforme em todos os pacientes com disfunção ventricular grave, razão pela qual a seleção deve ser cuidadosa.
+
+<h2>8.4. Doenças valvares</h2>
+
+As doenças valvares podem provocar ou agravar a insuficiência cardíaca por alterações de pressão, volume e função ventricular.
+
+Na estenose aórtica grave, a intervenção valvar é recomendada em pacientes com insuficiência cardíaca e expectativa de vida superior a um ano quando há estenose de alto gradiente. Também há indicações específicas nos casos de estenose de baixo fluxo e baixo gradiente, dependendo do fenótipo e da avaliação clínica.
+
+Na insuficiência mitral secundária, a seleção para intervenção deve considerar a gravidade da regurgitação, a anatomia valvar, a função ventricular e a resposta ao tratamento farmacológico. A intervenção transcateter borda a borda pode ser apropriada para pacientes selecionados que permanecem sintomáticos apesar da terapia otimizada.
+
+As doenças valvares devem ser avaliadas por uma equipe multidisciplinar, considerando o benefício esperado e o risco da intervenção.
+
+<h2>8.5. Hipertensão e outras condições cardiovasculares</h2>
+
+O controle da pressão arterial continua sendo importante durante o tratamento da insuficiência cardíaca, respeitando a tolerabilidade e o estado hemodinâmico.
+
+A presença de acidente vascular cerebral prévio, doença arterial periférica e outras condições cardiovasculares modifica o risco global e pode influenciar as decisões terapêuticas. A abordagem deve integrar a prevenção de eventos vasculares, o tratamento da doença cardíaca e o controle das comorbidades.
+
+<h1>9. Comorbidades não cardiovasculares</h1>
+
+<h2>9.1. Obesidade e diabetes</h2>
+
+A obesidade pode agravar a limitação funcional, aumentar a carga hemodinâmica e contribuir para a inflamação e as alterações metabólicas associadas à insuficiência cardíaca. A avaliação deve considerar o peso, a composição corporal, o estado nutricional e a capacidade de exercício.
+
+O diabetes exige controle metabólico e escolha cuidadosa dos medicamentos, priorizando aqueles com benefícios cardiovasculares demonstrados quando indicados. A associação entre diabetes, doença renal e insuficiência cardíaca torna particularmente importante o acompanhamento integrado.
+
+<h2>9.2. Doença renal crônica</h2>
+
+A insuficiência cardíaca e a doença renal crônica interagem por meio de mecanismos hemodinâmicos, neuro-hormonais e metabólicos. O comprometimento de um órgão pode dificultar o tratamento do outro.
+
+A avaliação da função renal e dos eletrólitos é necessária antes e durante o uso de medicamentos que atuam sobre o sistema renina-angiotensina e os receptores mineralocorticoides. A interpretação da creatinina deve considerar a situação volêmica, a perfusão e a evolução clínica, evitando decisões baseadas em um único resultado laboratorial.
+
+<h2>9.3. Deficiência de ferro e anemia</h2>
+
+A deficiência de ferro pode contribuir para fadiga, redução da capacidade de exercício e piora da qualidade de vida, mesmo na ausência de anemia evidente. Por isso, a avaliação do estado do ferro deve integrar a investigação das comorbidades.
+
+A ferritina e a saturação da transferrina auxiliam a identificar a deficiência. O tratamento deve ser orientado pela condição clínica e pelas indicações específicas, considerando a evidência disponível para cada forma de reposição.
+
+A anemia também exige investigação de suas causas, incluindo deficiência nutricional, doença renal, inflamação e perdas sanguíneas.
+
+<h2>9.4. Câncer e toxicidade cardiovascular</h2>
+
+O câncer pode coexistir com a insuficiência cardíaca, e alguns tratamentos oncológicos podem provocar disfunção ventricular ou outras complicações cardiovasculares. A avaliação deve considerar o histórico de exposição a terapias potencialmente cardiotóxicas, os fatores de risco e a evolução da função cardíaca.
+
+A colaboração entre cardiologia e oncologia permite equilibrar o controle do câncer com a prevenção e o tratamento das complicações cardiovasculares.
+
+<h2>9.5. Doenças pulmonares e distúrbios do sono</h2>
+
+As doenças pulmonares podem provocar dispneia e reduzir a capacidade funcional, dificultando a distinção entre sintomas respiratórios e manifestações de insuficiência cardíaca. O diagnóstico diferencial deve orientar o tratamento.
+
+A apneia obstrutiva do sono e outros distúrbios respiratórios do sono também podem coexistir com a doença cardíaca. A identificação e o tratamento dessas condições devem considerar o tipo de distúrbio, os sintomas e as evidências disponíveis.
+
+<h2>9.6. Ansiedade, depressão, cognição e fragilidade</h2>
+
+A ansiedade e a depressão podem prejudicar a qualidade de vida, a adesão terapêutica e a capacidade de autocuidado. Alterações cognitivas podem dificultar o uso correto dos medicamentos e o reconhecimento dos sinais de descompensação.
+
+A fragilidade deve ser avaliada especialmente em idosos e pacientes com doença avançada, pois pode modificar a tolerabilidade dos tratamentos, o risco de procedimentos e a recuperação funcional.
+
+A assistência deve considerar não apenas os parâmetros cardíacos, mas também a capacidade de realizar atividades cotidianas, o suporte familiar, as condições sociais e as necessidades de reabilitação.
+
+<h2>9.7. Outras comorbidades e medicamentos que exigem cautela</h2>
+
+O uso de anti-inflamatórios não esteroides e inibidores seletivos da COX-2 não é recomendado em pacientes com insuficiência cardíaca, pois pode aumentar o risco de piora clínica, retenção de líquidos, deterioração renal e hospitalização.
+
+A avaliação deve incluir vacinação, estado nutricional e outras medidas preventivas apropriadas. A vacinação contra influenza e pneumococo deve ser considerada para reduzir complicações infecciosas, hospitalizações e morte.
+
+A prescrição deve ser revisada periodicamente, levando em conta possíveis interações medicamentosas, efeitos adversos e medicamentos que podem agravar a insuficiência cardíaca.
+
+<h1>10. Equipe multidisciplinar, autocuidado e acompanhamento</h1>
+
+<h2>10.1. Organização da assistência</h2>
+
+A insuficiência cardíaca exige acompanhamento prolongado, com participação de diferentes profissionais conforme a complexidade da doença. A equipe pode incluir cardiologistas, médicos da atenção primária, enfermeiros especializados, farmacêuticos, nutricionistas, fisioterapeutas, profissionais de saúde mental e assistentes sociais.
+
+A atuação integrada facilita a otimização das terapias, a identificação precoce de efeitos adversos, o reconhecimento de barreiras à adesão e a coordenação entre o hospital e o atendimento ambulatorial.
+
+Programas multidisciplinares de insuficiência cardíaca estão associados à redução de hospitalizações e podem contribuir para melhores resultados clínicos. A intensidade do acompanhamento deve ser adaptada ao risco, especialmente após descompensações recentes.
+
+<h2>10.2. Educação e autocuidado</h2>
+
+A educação do paciente é necessária para que ele compreenda a doença, os objetivos do tratamento e os sinais que exigem avaliação médica.
+
+O autocuidado inclui a utilização correta dos medicamentos, a observação de alterações nos sintomas, a identificação de sinais de congestão e a comunicação oportuna de mudanças clínicas.
+
+Entre os sinais que merecem atenção estão o aumento progressivo do edema, o agravamento da dispneia, a redução da tolerância ao exercício e o aumento inesperado do peso associado a retenção de líquidos. A orientação deve esclarecer quando procurar atendimento e como proceder diante de alterações clínicas.
+
+As recomendações sobre alimentação, atividade física, consumo de álcool, tabagismo e controle do peso devem ser adaptadas às necessidades individuais. A restrição de líquidos não deve ser aplicada indiscriminadamente a todos os pacientes com insuficiência cardíaca crônica, pois a necessidade depende da situação clínica.
+
+<h2>10.3. Adesão ao tratamento</h2>
+
+A adesão é influenciada por fatores como complexidade do esquema terapêutico, efeitos adversos, compreensão das orientações, custos, condições sociais e presença de múltiplas doenças.
+
+A revisão periódica da prescrição pode identificar duplicidades, interações e medicamentos desnecessários. A simplificação do esquema, a educação individualizada e o acompanhamento por profissionais capacitados podem facilitar a continuidade do tratamento.
+
+A falta de adesão não deve ser atribuída automaticamente à falta de interesse do paciente. É necessário identificar as dificuldades concretas e oferecer estratégias compatíveis com sua realidade.
+
+<h2>10.4. Exercício e reabilitação cardíaca</h2>
+
+O treinamento físico individualizado é recomendado para pacientes clinicamente estáveis, salvo contraindicações específicas. A reabilitação cardíaca pode melhorar a capacidade funcional e a qualidade de vida e reduzir hospitalizações por todas as causas.
+
+A prescrição deve considerar frequência, intensidade, duração e tipo de exercício, levando em conta a capacidade física, o risco cardiovascular, as comorbidades e as preferências do paciente.
+
+O exercício deve ser iniciado após estabilização clínica e implementação da terapia fundamental. Não é apropriado iniciar treinamento durante descompensação ativa, angina instável, arritmias de alto risco, doença tromboembólica ativa ou outras condições instáveis.
+
+A reabilitação também pode ser benéfica para pacientes com dispositivos de assistência ventricular, desde que realizada em condições adequadas de segurança e supervisão.
+
+<h2>10.5. Telemonitoramento</h2>
+
+O telemonitoramento pode auxiliar na identificação de alterações clínicas e na organização do acompanhamento. Dispositivos implantáveis podem fornecer informações sobre arritmias, funcionamento do dispositivo e parâmetros fisiológicos.
+
+Entretanto, a utilidade clínica depende da modalidade de monitorização, da população selecionada e da capacidade de responder aos dados recebidos. A monitorização remota não substitui a avaliação clínica, e nem todas as modalidades demonstraram melhorar os desfechos clínicos.
+
+A monitorização hemodinâmica por sensores de pressão arterial pulmonar pode ser considerada em pacientes selecionados com sintomas importantes e hospitalização recente, visando reduzir o risco de novas internações.
+
+<h2>10.6. Seguimento de longo prazo</h2>
+
+O acompanhamento deve incluir reavaliação dos sintomas, estado volêmico, pressão arterial, frequência cardíaca, função renal, eletrólitos e tolerabilidade dos medicamentos. A necessidade de ecocardiografia e outros exames deve ser determinada pela evolução clínica e pelas decisões terapêuticas.
+
+Pacientes com insuficiência cardíaca avançada precisam de planejamento antecipado, discussões sobre objetivos de cuidado e integração com equipes de cuidados paliativos quando apropriado.
+
+A continuidade assistencial deve permitir ajustes do tratamento ao longo do tempo, reconhecimento precoce de deterioração clínica e adaptação das intervenções às mudanças nas condições do paciente.
+
+<h1>11. Condições específicas</h1>
+
+<h2>11.1. Gravidez e insuficiência cardíaca</h2>
+
+A gravidez exige avaliação especializada devido às alterações hemodinâmicas maternas e às restrições de segurança de determinados medicamentos. O manejo deve considerar a gravidade da doença, os riscos maternos e fetais e a necessidade de acompanhamento conjunto.
+
+Em gestantes com ICFEr, recomenda-se substituir betabloqueadores não seletivos por betabloqueadores seletivos para receptores beta-1, como metoprolol ou bisoprolol, com monitorização materna e fetal.
+
+IECA, BRA, ARNI, MRA, ivabradina e inibidores do SGLT2 não são recomendados durante a gravidez devido aos riscos para o feto. O planejamento reprodutivo e a revisão do tratamento são, portanto, componentes importantes da assistência.
+
+<h2>11.2. Cardiomiopatias</h2>
+
+As cardiomiopatias representam um grupo heterogêneo de doenças do músculo cardíaco que podem provocar disfunção sistólica, disfunção diastólica, dilatação ventricular, hipertrofia e formação de cicatrizes miocárdicas.
+
+A investigação deve definir o fenótipo, identificar a etiologia e avaliar o risco familiar quando pertinente. O diagnóstico genético pode orientar o prognóstico, as estratégias terapêuticas e a avaliação de familiares.
+
+<h2>11.3. Amiloidose cardíaca</h2>
+
+A amiloidose cardíaca ocorre quando proteínas anormais se depositam no tecido cardíaco, comprometendo a estrutura e a função do coração. Pode causar espessamento das paredes ventriculares, disfunção diastólica, arritmias e insuficiência cardíaca.
+
+A investigação deve diferenciar a amiloidose de cadeias leves de imunoglobulina (AL) daquela relacionada à transtirretina (ATTR), pois os tratamentos são distintos. A avaliação pode incluir imunofixação sérica e urinária, dosagem de cadeias leves livres e cintilografia óssea com traçadores apropriados.
+
+Nos pacientes com amiloidose cardíaca por transtirretina, os tratamentos específicos incluem estabilizadores da transtirretina, como tafamidis ou acoramidis, e o silenciador de transtirretina vutrisirana, conforme a indicação clínica. O objetivo é retardar a progressão dos sintomas e reduzir hospitalizações cardiovasculares e mortalidade.
+
+A coexistência de fibrilação atrial exige atenção particular ao risco tromboembólico. O manejo da insuficiência cardíaca deve ser individualizado, com cautela na utilização de medicamentos que podem provocar hipotensão ou outros efeitos adversos.
+
+<h2>11.4. Miocardite</h2>
+
+A miocardite corresponde à inflamação do músculo cardíaco e pode apresentar manifestações variadas, desde sintomas leves até disfunção ventricular grave, arritmias e choque cardiogênico.
+
+A investigação deve considerar a apresentação clínica, os exames laboratoriais, a imagem cardíaca e, em casos selecionados, métodos diagnósticos especializados. O tratamento depende da causa, da gravidade e da presença de complicações.
+
+<h2>11.5. Cardiopatias congênitas no adulto</h2>
+
+Os adultos com cardiopatias congênitas constituem uma população heterogênea, com diferentes alterações anatômicas, intervenções prévias e complicações extracardíacas. A insuficiência cardíaca pode decorrer de lesões residuais, alterações hemodinâmicas, arritmias e disfunção ventricular.
+
+O manejo exige experiência específica, considerando a anatomia original, as cirurgias anteriores e as possíveis repercussões sobre outros órgãos.
+
+<h2>12. Principais mudanças das diretrizes de 2026</h2>
+
+As atualizações mais importantes podem ser sintetizadas nos seguintes pontos:
+
+√Nova classificação por fração de ejeção: a categoria de fração de ejeção levemente reduzida foi removida, e a ICFEr passou a abranger FEVE inferior a 50%.
+
+•Adoção dos estágios A–D: a organização contempla desde indivíduos sob risco até pacientes com doença avançada.
+
+•Mudança de nomenclatura: o termo insuficiência cardíaca descompensada substitui a classificação anteriormente denominada insuficiência cardíaca aguda na estrutura das diretrizes.
+
+•Organização das terapias: a separação entre terapia médica fundamental, terapia adicional e terapia intervencionista facilita a estruturação do tratamento.
+
+•Maior ênfase na prevenção: o controle dos fatores de risco e a intervenção no estágio B recebem destaque.
+
+•Otimização terapêutica precoce: recomenda-se intensificar a terapia fundamental em intervalos regulares, conforme a tolerabilidade, até alcançar as doses-alvo.
+
+•Continuidade após melhora clínica: a manutenção da terapia fundamental é recomendada mesmo quando os sintomas desaparecem ou a FEVE melhora.
+
+•Atenção às etiologias específicas: a investigação e o tratamento direcionados, incluindo aqueles relacionados à amiloidose cardíaca, assumem papel importante.
+
+•Cuidado multidisciplinar: a educação, a adesão, a reabilitação, o acompanhamento após a alta e o planejamento de longo prazo são componentes fundamentais.
+
+<h1>13. Lacunas de evidência e perspectivas futuras</h1>
+
+Apesar dos avanços no tratamento, permanecem questões que exigem novas pesquisas.
+
+Entre elas estão a definição de valores de referência da FEVE, a validação da nova classificação, o prognóstico da insuficiência cardíaca com fração de ejeção melhorada e a identificação de estratégias preventivas mais eficazes para diferentes grupos de risco.
+
+A ICFEp continua sendo uma área de investigação importante, especialmente quanto à fisiopatologia, aos critérios diagnósticos, à estratificação dos fenótipos e à identificação de terapias que melhorem os desfechos clínicos.
+
+Também são necessárias evidências adicionais sobre a prevenção da insuficiência cardíaca em pessoas sem diabetes que apresentam obesidade, hipertensão ou doença renal crônica, assim como sobre as estratégias de perda de peso e o tratamento dos distúrbios respiratórios do sono.
+
+Na insuficiência cardíaca descompensada, permanecem dúvidas sobre o papel ideal de inotrópicos, vasopressores e vasodilatadores em diferentes apresentações clínicas. O manejo após a alta também precisa de estratégias mais bem validadas para identificar riscos e reduzir reinternações precoces.
+
+Na doença avançada, são necessárias pesquisas sobre a otimização terapêutica em pacientes que não toleram todas as classes fundamentais, a seleção de candidatos a dispositivos duradouros e as melhores estratégias de acompanhamento ao longo da vida.
+
+A inteligência artificial e as novas tecnologias de monitorização também representam áreas de desenvolvimento, especialmente para aprimorar o diagnóstico, a identificação de pacientes de alto risco e a personalização do tratamento.
+
+<h1>14. Conclusão</h1>
+
+O manejo da insuficiência cardíaca exige uma estratégia integrada que começa antes do aparecimento dos sintomas e se estende por todas as fases da doença. A prevenção dos fatores de risco, o reconhecimento precoce das alterações cardíacas, a investigação da etiologia e a classificação adequada permitem selecionar intervenções mais precisas.
+
+Na insuficiência cardíaca com fração de ejeção reduzida, a terapia fundamental, formada por medicamentos com mecanismos complementares, deve ser iniciada e otimizada de maneira sistemática. O controle da congestão, a manutenção do tratamento após melhora clínica e a vigilância de efeitos adversos são indispensáveis para reduzir hospitalizações e mortalidade.
+
+Na fração de ejeção preservada, o tratamento deve integrar o controle da congestão, a utilização das terapias indicadas e o manejo rigoroso das comorbidades. Nos episódios de descompensação, a estabilização rápida, a identificação dos fatores precipitantes e o planejamento da alta são fundamentais para evitar recorrências.
+
+A doença avançada exige reconhecimento oportuno e avaliação especializada para suporte circulatório mecânico, transplante cardíaco e cuidados paliativos, conforme os objetivos de tratamento. Ao longo de toda a trajetória, a participação do paciente, a educação para o autocuidado, a adesão terapêutica, a reabilitação e o acompanhamento multidisciplinar contribuem para melhorar os resultados.
+
+
+
+<h5>
+European Heart Journal, volume 47, 2026, páginas 5346–5457. Documento de diretrizes da Sociedade Europeia de Cardiologia (ESC). Fonte-base: 2026 ESC Guidelines for the management of heart failure, European Heart Journal, 2026.
+</h5>
+
+
+
+
+
+
+
+</main>
+</body>
+</html>

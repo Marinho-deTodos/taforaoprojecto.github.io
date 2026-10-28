@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Segurança e eficácia da vareniclina precoce prescrição em pacientes hospitalizados com infarto agudo do miocárdio</title>
+<style>
+  :root {
+    /* white #ffffff graystrong #333333 bluelight #95bdfc gray #7a7a85 bluestrong  #3178eb whiteblued #e4e4ea;*/
+  --bg-color: #f6f7f9;
+  --txt-color: #333333;
+  --button-color: #95bdfc;
+  --surface: #f6f7f9; --muted: #7a7a85;
+  --main-color: #3178eb; --border: #e4e4ea;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+  --bg-color: #13171d;
+  --txt-color: #f0f0f0;
+  --button-color: #95bdfc;
+  --surface: #1a1a20; --muted: #8e8e99;
+  --main-color: #3178eb; --border: #676772;
+    }}
+:root[data-theme="dark"] {
+  --bg-color: #13171d;
+  --txt-color: #f0f0f0;
+  --button-color: #95bdfc;
+  --surface: #1a1a20z; --muted: #8e8e99;
+  --main-color: #3178eb; --border: #676772;
+  }
+
+  
+  .grid-table {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 640px;
+  margin: 1rem auto;
+  font-family: system-ui, sans-serif;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* subgrid keeps the columns aligned across every row */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 7rem 7rem;
+  align-items: center;
+}
+
+.row > div {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e4e7ec;
+}
+
+.row:last-child > div {
+  border-bottom: 0;
+}
+
+.row.header > div {
+  background: #f2f4f7;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.row:not(.header):nth-child(even) > div {
+  background: #fafafa;
+}
+
+.row:not(.header):hover > div {
+  background: #eef4ff;
+}
+
+/* numeric columns */
+.row > div:nth-child(2),
+.row > div:nth-child(3) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* small screens: tighter columns */
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: 1fr 5rem 5rem;
+  }
+  .row > div {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+  
+  
+  
+  
+  
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px 20px 48px; background: var(--bg-color); color: var(--txt-color);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 8px; }
+  h2 { font-size: 1.15rem; margin: 28px 0 8px; }
+  p { margin: 0 0 12px; }
+  .lead { color: var(--muted); }
+  ol, ul { padding-left: 22px; margin: 0 0 12px; }
+  li { margin-bottom: 6px; }
+  code { background: color-mix(in srgb, var(--border) 12%, transparent); padding: 1px 6px; border-radius: 4px; }
+  blockquote { margin: 16px 0; padding: 8px 14px; border-left: 3px solid var(--border); color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+
+
+
+
+
+<p>O infarto agudo do miocárdio (IAM) é uma das principais causas de morte no mundo e está fortemente associado ao tabagismo, que constitui um dos fatores de risco mais importantes para o desenvolvimento de doenças cardiovasculares. O consumo de cigarros contribui para o surgimento e a progressão da doença arterial coronariana, aumentando a probabilidade de ocorrência de eventos cardíacos graves. </p>
+
+<h1>1. Introdução e contextualização</h1>
+
+ Em pessoas que já sofreram um infarto, a manutenção do hábito de fumar representa um risco adicional, pois favorece a ocorrência de novos infartos, mortes de origem cardiovascular e outras complicações cardíacas.
+
+A interrupção do tabagismo é, portanto, uma medida fundamental para a recuperação e a prevenção secundária em pacientes com doença coronariana. A cessação pode reduzir consideravelmente o risco de novos eventos cardiovasculares, com benefícios que vão além do período imediato de hospitalização. Em pacientes submetidos à cirurgia de revascularização do miocárdio, por exemplo, a interrupção do tabagismo está associada ao aumento da expectativa de vida. Dessa forma, abandonar o cigarro após um infarto não representa apenas uma mudança de comportamento, mas uma intervenção importante para melhorar o prognóstico cardiovascular.
+
+Apesar desses benefícios, a interrupção do tabagismo continua sendo um desafio. Muitos pacientes internados por doenças cardiovasculares manifestam o desejo de parar de fumar e recebem orientações médicas ou aconselhamento especializado. Entretanto, uma parcela significativa retoma o hábito depois da alta hospitalar. A dificuldade de manter a abstinência demonstra que a recomendação verbal, isoladamente, nem sempre é suficiente para produzir uma mudança duradoura.
+
+O período imediatamente posterior a um evento cardíaco grave constitui uma oportunidade importante para a intervenção. A experiência de sofrer um infarto pode aumentar a percepção dos riscos associados ao cigarro e estimular a disposição para modificar hábitos prejudiciais à saúde. A internação, portanto, pode ser aproveitada para iniciar o tratamento farmacológico e o acompanhamento profissional, em vez de deixar a abordagem da dependência do tabaco exclusivamente para consultas futuras.
+
+Entre as estratégias disponíveis para auxiliar na cessação estão a reposição de nicotina, a bupropiona e a vareniclina. Entretanto, a utilização dessas intervenções em pacientes hospitalizados por síndromes coronarianas agudas exige uma avaliação cuidadosa de sua segurança, principalmente porque esses indivíduos se encontram em uma situação clínica de maior vulnerabilidade.
+
+A vareniclina apresenta interesse particular nesse contexto por atuar sobre os receptores nicotínicos envolvidos na dependência da nicotina. Embora sua eficácia tenha sido demonstrada em diferentes populações de fumantes, ainda havia dúvidas sobre a segurança e os resultados de seu início precoce em pacientes que acabaram de sofrer um infarto, especialmente em populações asiáticas.
+
+O uso de vareniclina durante a hospitalização por IAM foi, assim, investigado com dois objetivos principais: avaliar a ocorrência de eventos cardiovasculares adversos graves após o início precoce do medicamento e verificar a proporção de pacientes que conseguia interromper o tabagismo durante o acompanhamento de 24 semanas.
+
+
+
+<h1>2. Vareniclina e seu mecanismo de ação</h1>
+
+A vareniclina é um medicamento empregado no tratamento da dependência do tabaco. Sua ação ocorre por meio dos receptores nicotínicos de acetilcolina do subtipo α4β2, relacionados aos efeitos da nicotina no sistema nervoso.
+
+O medicamento atua como agonista parcial desses receptores. Isso significa que produz uma ativação parcial da resposta associada à nicotina, ajudando a reduzir os sintomas de abstinência e o desejo de fumar. Ao mesmo tempo, interfere nos efeitos reforçadores da nicotina, diminuindo a recompensa que normalmente acompanha o consumo do cigarro.
+
+Esses mecanismos podem facilitar a adaptação do indivíduo à ausência de nicotina e contribuir para a manutenção da abstinência. Entretanto, o sucesso do tratamento não depende apenas da ação farmacológica: a motivação do paciente, a intensidade da dependência, o acompanhamento profissional e a adesão ao medicamento também podem influenciar os resultados.
+
+A segurança cardiovascular da vareniclina já havia sido investigada em estudos anteriores, incluindo ensaios clínicos e pesquisas observacionais. Os resultados disponíveis eram, em geral, favoráveis à utilização do medicamento, embora ainda existissem questionamentos sobre sua administração em pessoas com doenças cardiovasculares recentes. Parte das pesquisas anteriores incluía pacientes com doença cardiovascular estável ou utilizava grandes bancos de dados populacionais, nos quais os indivíduos com infarto agudo recente representavam uma parcela pequena.
+
+Essa diferença é relevante porque os pacientes que acabaram de sofrer um IAM apresentam necessidades clínicas específicas. Além de iniciar a recuperação do evento agudo, frequentemente precisam utilizar diversos medicamentos e passam por procedimentos de revascularização coronariana. A avaliação da vareniclina nesse grupo exige, portanto, atenção não apenas à interrupção do tabagismo, mas também à ocorrência de novos eventos cardíacos e de efeitos adversos durante o período de recuperação.
+
+<h1>3. Objetivo da investigação</h1>
+
+A investigação teve como finalidade examinar a segurança e a eficácia da administração precoce de vareniclina em pacientes hospitalizados por infarto agudo do miocárdio submetidos à intervenção coronária percutânea.
+
+A avaliação da segurança concentrou-se na ocorrência de eventos cardiovasculares graves durante as 24 semanas posteriores ao tratamento. Foram considerados novos infartos do miocárdio, necessidade de nova revascularização do vaso relacionado ao evento inicial, acidente vascular cerebral não fatal e morte.
+
+A eficácia foi avaliada pela proporção de pacientes que relatou abstinência completa do cigarro durante os sete dias anteriores à avaliação realizada na 24.ª semana.
+
+A proposta consistiu em verificar se a introdução do medicamento ainda durante a internação, associada ao aconselhamento intensivo para abandonar o tabagismo, poderia apresentar resultados favoráveis em uma população de pacientes com risco cardiovascular elevado.
+
+<h1>4. Metodologia e desenho do estudo</h1>
+
+A investigação foi conduzida como um estudo observacional prospectivo, realizado em um único centro hospitalar de Taiwan. A coleta de dados ocorreu entre maio de 2018 e julho de 2021.
+
+Foram avaliados pacientes hospitalizados por IAM que haviam sido submetidos à intervenção coronária percutânea (ICP), procedimento utilizado para restabelecer o fluxo sanguíneo em uma artéria coronária comprometida. A população incluía pessoas com infarto com supradesnivelamento do segmento ST (IAMCSST ou STEMI) e infarto sem supradesnivelamento do segmento ST (IAMSSST ou NSTEMI).
+
+A seleção foi direcionada a fumantes que apresentavam histórico significativo de exposição ao tabaco. Foram excluídos indivíduos com infarto prévio, não fumantes e pessoas que fumavam menos de dez cigarros por dia ou apresentavam histórico inferior a dez maços-ano. A medida maços-ano expressa a exposição acumulada ao cigarro ao longo do tempo, considerando a quantidade consumida diariamente e a duração do hábito.
+
+Dos pacientes inicialmente identificados, foram selecionados 162 indivíduos que concordaram em receber vareniclina e atenderam aos critérios estabelecidos. Todos receberam aconselhamento intensivo para interromper o tabagismo, além do tratamento farmacológico.
+
+O acompanhamento foi realizado ao longo de 24 semanas. Durante esse período, foram avaliados o estado clínico dos pacientes, a ocorrência de efeitos adversos, a adesão ao medicamento e a manutenção ou interrupção do consumo de cigarros. As avaliações ocorreram nas semanas 4, 8 e 12, com análise final da segurança e da eficácia na semana 24.
+
+Por se tratar de um estudo observacional, sem grupo de controle e realizado em uma única instituição, os resultados permitem descrever o comportamento clínico dos pacientes tratados, mas não estabelecem, isoladamente, uma relação causal definitiva entre a vareniclina e os desfechos observados.
+
+<h1>5. Características dos pacientes participantes</h1>
+
+A amostra final foi constituída por 162 pacientes hospitalizados por IAM e submetidos à intervenção coronária percutânea.
+
+A idade média foi de 56,7 anos, com desvio-padrão de 9,95 anos. Houve predominância expressiva do sexo masculino: 157 participantes eram homens, correspondendo a 96,9% da amostra. As mulheres representaram apenas 3,1%, o que precisa ser considerado na interpretação e na generalização dos resultados.
+
+Quanto ao tipo de infarto, 92 pacientes (56,8%) apresentaram IAM com supradesnivelamento do segmento ST, enquanto 70 (43,2%) tiveram IAM sem supradesnivelamento do segmento ST. Todos foram submetidos à intervenção coronária percutânea.
+
+A exposição ao tabaco era elevada. Os pacientes fumavam, em média, 25,91 cigarros por dia e apresentavam um histórico médio de 33,35 anos de tabagismo. A exposição acumulada correspondia a 43,57 maços-ano, indicando que muitos participantes apresentavam longa trajetória de consumo de cigarros e dependência potencialmente importante.
+
+Também havia elevada frequência de comorbidades cardiovasculares e metabólicas. A dislipidemia estava presente em 63% dos participantes, a hipertensão arterial em 53,1% e o diabetes mellitus em 43,8%. Além disso, 14,2% apresentavam insuficiência cardíaca, 6,2% tinham fibrilação atrial e 3,1% possuíam histórico de acidente vascular cerebral isquêmico. Doença renal crônica e doença renal em estágio terminal também foram registradas.
+
+Essas características demonstram que a amostra reunia pacientes com múltiplos fatores de risco e necessidade de cuidados cardiovasculares contínuos. A presença de diabetes, hipertensão e dislipidemia, associada à exposição prolongada ao tabaco e ao infarto recente, reforça a importância de medidas preventivas capazes de reduzir a probabilidade de recorrência de eventos cardiovasculares.
+
+A população estudada era, portanto, clinicamente relevante para a avaliação do tratamento: eram fumantes com exposição importante ao cigarro, submetidos recentemente a um procedimento de revascularização e frequentemente em uso de múltiplos medicamentos.
+
+
+<h1>6. Intervenção farmacológica e aconselhamento para cessação do tabagismo</h1>
+
+A vareniclina foi introduzida preferencialmente durante a hospitalização, com o objetivo de aproveitar o momento imediatamente posterior ao infarto para iniciar o tratamento da dependência do tabaco.
+
+Dos 162 participantes, 151 (93,2%) receberam a primeira dose ainda durante a internação. O intervalo médio entre a admissão hospitalar e o início do medicamento foi de 2,31 dias. Os demais iniciaram o tratamento no período inicial após a alta, respeitando o prazo previsto pelo protocolo.
+
+A posologia foi estabelecida de forma gradual. Nos três primeiros dias, os pacientes receberam 0,5 mg uma vez ao dia. Nos quatro dias seguintes, a dose passou para 0,5 mg duas vezes ao dia. Em seguida, foi prescrita a dose de 1 mg duas vezes ao dia, completando o esquema terapêutico planejado de oito semanas.
+
+A duração média do uso foi de 7,41 semanas, com desvio-padrão de 5,18 semanas. Alguns pacientes interromperam o medicamento mais cedo, enquanto outros necessitaram de um período adicional. Trinta e três participantes (20,4%) receberam um novo curso de tratamento por não terem conseguido interromper o tabagismo após o primeiro ciclo de oito semanas.
+
+O tratamento farmacológico foi acompanhado por aconselhamento intensivo. Durante a internação, os pacientes receberam, em média, de 15 a 20 minutos de orientação conduzida por um profissional de educação em saúde. O aconselhamento enfatizou de maneira direta a necessidade de abandonar o cigarro após o IAM e os riscos relacionados à continuidade do consumo.
+
+O acompanhamento não se limitou ao período hospitalar. Os participantes puderam receber novas orientações por telefone e durante as consultas ambulatoriais. Também foram incentivados a procurar apoio adicional sempre que necessário.
+
+Essa associação entre medicamento e aconselhamento é importante porque a dependência do tabaco envolve mecanismos farmacológicos e comportamentais. A vareniclina procura reduzir a vontade de fumar e os sintomas de abstinência, enquanto o aconselhamento reforça a motivação, ajuda a lidar com dificuldades e mantém a cessação como uma prioridade ao longo da recuperação.
+
+Durante o seguimento, foram avaliados efeitos adversos, desconfortos, adesão ao medicamento, sintomas de abstinência e situação do tabagismo. Os pacientes que não conseguiram manter a abstinência foram incentivados a realizar um segundo curso terapêutico.
+
+<h1>7. Critérios de avaliação da segurança e da eficácia</h1>
+
+A principal medida de segurança foi a ocorrência de eventos cardiovasculares graves durante as 24 semanas posteriores ao tratamento.
+
+Foram considerados quatro tipos de desfecho: recorrência do infarto do miocárdio, necessidade de nova revascularização do vaso relacionado ao infarto inicial, acidente vascular cerebral não fatal e morte.
+
+A necessidade de revascularização era relevante porque poderia indicar problemas no vaso previamente tratado, incluindo reestenose, situação em que ocorre um novo estreitamento da artéria depois da intervenção.
+
+Além dos eventos cardiovasculares graves, foram registrados efeitos adversos menos graves, como desconforto gastrointestinal, insônia, cefaleia, fadiga, irritabilidade e aumento do apetite.
+
+A eficácia foi definida com base na abstinência autorrelatada durante os sete dias que antecederam a avaliação da 24.ª semana. Portanto, para ser classificado como abstinente, o paciente precisava informar que não havia fumado durante esse intervalo.
+
+Essa definição permite avaliar o comportamento recente em relação ao cigarro, mas não comprova, por si só, que a abstinência tenha sido contínua durante todas as 24 semanas. Também não elimina a possibilidade de informações imprecisas ou de subnotificação do consumo.
+
+<h1>8. Resultados relacionados à segurança cardiovascular</h1>
+
+Durante as avaliações das semanas 4, 8 e 12, não foram identificados eventos que atingissem o desfecho de segurança cardiovascular grave estabelecido para a investigação.
+
+Na avaliação da 24.ª semana, ocorreu um novo infarto do miocárdio, correspondente a 0,62% dos participantes. Cinco pacientes (3,1%) necessitaram de nova revascularização do vaso relacionado ao infarto inicial. Não foram registradas mortes nem acidentes vasculares cerebrais não fatais durante o período de acompanhamento.
+
+A necessidade de revascularização merece interpretação cuidadosa. A nova intervenção pode estar relacionada à reestenose da artéria previamente tratada, mas sua ocorrência não demonstra automaticamente que a vareniclina tenha provocado a complicação.
+
+Os pacientes haviam sido submetidos à intervenção coronária percutânea inicial, e a investigação observou que todos tinham recebido stents metálicos convencionais nesse procedimento. A reestenose após esse tipo de intervenção constitui uma possível explicação para parte das novas revascularizações. Além disso, não foram realizados exames coronarianos de rotina em pacientes assintomáticos, o que também influencia a quantidade de complicações identificadas.
+
+No conjunto, a frequência observada de eventos cardiovasculares graves foi baixa durante as 24 semanas. Esse resultado é relevante porque o tratamento começou muito próximo do infarto, em uma população de alto risco e frequentemente exposta a diversos medicamentos cardiovasculares.
+
+Entretanto, a ausência de um grupo de comparação impede determinar se a frequência de eventos seria maior, menor ou semelhante sem o uso da vareniclina. Portanto, os resultados são favoráveis quanto à segurança observada, mas não equivalem à demonstração definitiva de que o medicamento elimina riscos ou é isento de efeitos cardiovasculares em todos os pacientes com IAM.
+
+<h1>9. Efeitos adversos observados</h1>
+
+Os efeitos adversos relatados foram predominantemente leves. Os mais frequentes foram desconforto gastrointestinal, insônia, fadiga e irritabilidade.
+
+A distribuição dos eventos foi a seguinte:
+
+<div class="grid-table" role="table" aria-label="Efeitos adversos">
+  <div class="row header" role="row">
+    <div role="columnheader">Efeito adverso</div>
+    <div role="columnheader">Pacientes</div>
+    <div role="columnheader">Frequência</div>
+  </div>
+
+  <div class="row" role="row">
+    <div role="cell">Desconforto gastrointestinal</div>
+    <div role="cell">9</div>
+    <div role="cell">5,6%</div>
+  </div>
+  <div class="row" role="row">
+    <div role="cell">Irritabilidade</div>
+    <div role="cell">5</div>
+    <div role="cell">3,1%</div>
+  </div>
+  <div class="row" role="row">
+    <div role="cell">Insônia</div>
+    <div role="cell">4</div>
+    <div role="cell">2,5%</div>
+  </div>
+  <div class="row" role="row">
+    <div role="cell">Fadiga</div>
+    <div role="cell">4</div>
+    <div role="cell">2,5%</div>
+  </div>
+  <div class="row" role="row">
+    <div role="cell">Cefaleia</div>
+    <div role="cell">2</div>
+    <div role="cell">1,2%</div>
+  </div>
+  <div class="row" role="row">
+    <div role="cell">Aumento do apetite</div>
+    <div role="cell">2</div>
+    <div role="cell">1,2%</div>
+  </div>
+</div>
+
+O desconforto gastrointestinal foi o efeito adverso mais frequente, atingindo aproximadamente seis em cada cem participantes. Irritabilidade, insônia e fadiga também foram relatadas, mas em proporções menores.
+
+A baixa frequência de efeitos adversos graves e a predominância de sintomas leves contribuíram para a avaliação favorável da tolerabilidade do medicamento nessa amostra. Ainda assim, a ocorrência de efeitos adversos precisa ser considerada individualmente, especialmente em pacientes que estão se recuperando de um evento cardíaco agudo e utilizam vários medicamentos simultaneamente.
+
+Durante a internação e o período imediatamente posterior à alta, eram comuns medicamentos como ácido acetilsalicílico, outros antiagregantes plaquetários, anticoagulantes orais, estatinas, betabloqueadores, inibidores da enzima conversora de angiotensina ou bloqueadores dos receptores de angiotensina, além de protetores gástricos.
+
+A coexistência de diferentes tratamentos torna relevante a avaliação de possíveis interações medicamentosas e a vigilância clínica. Embora poucos efeitos adversos tenham sido registrados, a investigação não realizou uma análise detalhada das interações entre a vareniclina e todos os medicamentos utilizados.
+
+Assim, os resultados apoiam uma avaliação de boa tolerabilidade no grupo acompanhado, sem justificar a conclusão de que a monitorização clínica seja dispensável.
+
+<h1>10. Resultados relacionados à cessação do tabagismo</h1>
+
+A principal medida de eficácia foi a proporção de pacientes que relatou abstinência completa durante os sete dias anteriores à avaliação final.
+
+Na 24.ª semana, 128 dos 162 participantes estavam abstinentes, correspondendo a uma taxa de 79%.
+
+Esse resultado representa aproximadamente quatro em cada cinco pacientes da amostra e indica uma elevada proporção de abstinência ao final do acompanhamento. A relevância do achado é reforçada pelo histórico dos participantes, que apresentavam, em média, mais de três décadas de tabagismo e consumiam aproximadamente 26 cigarros por dia antes do tratamento.
+
+A taxa observada sugere que o período de hospitalização por IAM pode constituir uma oportunidade importante para começar o tratamento da dependência do tabaco. A gravidade do evento cardíaco pode aumentar a disposição para mudar de comportamento, enquanto o início imediato do tratamento e a manutenção do aconselhamento oferecem suporte durante as primeiras semanas sem cigarro.
+
+Entretanto, a taxa de 79% não deve ser interpretada como prova de que a vareniclina, isoladamente, produziu esse resultado. Todos os pacientes receberam tanto o medicamento quanto aconselhamento intensivo, não existindo um grupo que recebesse apenas aconselhamento ou tratamento alternativo. Além disso, a abstinência foi definida por autorrelato e não foi confirmada por uma medida objetiva, como a dosagem de monóxido de carbono no ar expirado.
+
+<h1>Resultados conforme a duração do tratamento</h1>
+
+Entre os participantes que utilizaram o medicamento por até uma semana, 13 de 18 estavam abstinentes, correspondendo a 72,2%.
+
+No grupo de 33 pacientes que receberam um segundo curso de tratamento por não terem conseguido parar de fumar após o primeiro ciclo, 21 alcançaram abstinência, equivalente a 63,6%.
+
+Esses resultados mostram que a abstinência foi observada em diferentes grupos de duração do tratamento. Contudo, não demonstram que um tratamento mais curto seja tão eficaz quanto o esquema completo ou que a extensão da terapia reduza necessariamente a probabilidade de sucesso.
+
+Os grupos diferiam justamente pela resposta inicial ao tratamento: aqueles que precisaram de um segundo curso já haviam apresentado dificuldade para interromper o tabagismo. Por esse motivo, as taxas não devem ser comparadas diretamente como se os pacientes tivessem sido distribuídos aleatoriamente para diferentes durações da medicação.
+
+<h1>Resultados conforme a intensidade do tabagismo</h1>
+
+Os melhores resultados foram observados entre os fumantes classificados como menos intensos, considerando o consumo inferior a 20 cigarros por dia ou a exposição acumulada inferior a 20 maços-ano.
+
+Nesse grupo, 38 de 42 participantes estavam abstinentes na avaliação, correspondendo a uma taxa de 90,5%.
+
+A diferença em relação à taxa geral de 79% indica que os participantes com menor exposição ao tabaco apresentaram maior proporção de abstinência. Uma possível interpretação é que uma menor intensidade da dependência ou uma exposição acumulada mais baixa possa facilitar a interrupção do hábito. Entretanto, a investigação não permite determinar isoladamente qual desses fatores explica a diferença.
+
+Ainda assim, o resultado destaca a importância de considerar o histórico de consumo de cigarros na avaliação da dificuldade de cessação e no planejamento do acompanhamento.
+
+<h1>11. Comparação com investigações anteriores</h1>
+
+A avaliação da vareniclina em pacientes com doenças cardiovasculares já havia sido realizada em diferentes contextos, mas persistiam dúvidas específicas sobre seu início durante a internação por síndrome coronariana aguda.
+
+O ensaio clínico EVITA, conduzido no Canadá e nos Estados Unidos, avaliou a utilização de vareniclina em pacientes hospitalizados por síndrome coronariana aguda. Após 24 semanas, a taxa de abstinência foi de 47,3% no grupo que recebeu vareniclina e de 32,5% no grupo que recebeu placebo.
+
+A frequência de eventos adversos nesse ensaio foi baixa, embora a investigação não tivesse sido dimensionada para avaliar de forma definitiva os desfechos de segurança cardiovascular. No acompanhamento de um ano, uma parcela expressiva dos participantes havia voltado a fumar, demonstrando a dificuldade de manter a abstinência a longo prazo.
+
+A taxa de abstinência de 79% observada em Taiwan foi superior às taxas registradas no grupo da vareniclina e no grupo placebo do EVITA. Essa diferença, no entanto, não permite concluir que a intervenção tenha sido necessariamente mais eficaz, pois os estudos diferiam em diversos aspectos.
+
+Entre as possíveis explicações para os resultados distintos estão as diferenças entre as populações avaliadas, a intensidade do aconselhamento e a forma de confirmar a abstinência. Na investigação taiwanesa, todos os pacientes receberam orientação intensiva de um profissional de saúde e tiveram acesso a acompanhamento adicional. Já no EVITA, o aconselhamento apresentou menor intensidade.
+
+Além disso, a abstinência no estudo taiwanês foi estabelecida por autorrelato, sem confirmação por monóxido de carbono expirado. Isso pode ter aumentado artificialmente a proporção de pacientes classificados como abstinentes.
+
+Outra investigação, realizada na Suécia, avaliou a implementação de estratégias para melhorar a cessação do tabagismo após o infarto. O tratamento incluía reposição de nicotina, vareniclina ou uma combinação dessas opções. A taxa de abstinência foi de 64% durante o período de implementação, contra 54% no período de referência. Entre os pacientes que receberam aconselhamento durante a internação, as taxas foram de 73% e 54%, respectivamente.
+
+Esses resultados reforçam a relevância de combinar tratamento farmacológico com apoio comportamental após um evento cardiovascular. Ao mesmo tempo, as diferenças entre os desenhos de pesquisa e as intervenções utilizadas impedem comparações diretas e definitivas entre as taxas de abstinência.
+
+Pesquisas anteriores realizadas com grandes populações também não encontraram aumento consistente de eventos cardiovasculares graves associado à vareniclina em comparação com outras intervenções para cessação do tabagismo. Contudo, muitos desses estudos incluíam poucos pacientes com síndrome coronariana aguda recente, o que limitava a aplicação direta dos resultados às pessoas hospitalizadas imediatamente após um IAM.
+
+A contribuição específica da investigação taiwanesa está na avaliação da administração precoce em pacientes de uma população do Leste Asiático que haviam sofrido IAM e realizado intervenção coronária percutânea.
+
+<h1>12. Importância do início precoce do tratamento</h1>
+
+O momento escolhido para iniciar a intervenção é um aspecto central da estratégia de cessação do tabagismo.
+
+Após um infarto, o paciente enfrenta uma experiência potencialmente ameaçadora à vida e pode reconhecer mais claramente a relação entre o cigarro e o risco cardiovascular. Essa percepção pode favorecer a motivação para abandonar o hábito, principalmente quando existe orientação médica clara e acesso imediato ao tratamento.
+
+O início da vareniclina durante a internação permite aproveitar essa oportunidade sem depender exclusivamente do retorno ambulatorial. Na investigação, 93,2% dos pacientes começaram a medicação ainda hospitalizados, demonstrando que a introdução precoce foi viável no contexto assistencial avaliado.
+
+Entretanto, a motivação inicial pode diminuir com o tempo. O retorno à rotina, a presença de gatilhos comportamentais, os sintomas de abstinência e a dificuldade de manter a adesão podem favorecer uma recaída. Por isso, o acompanhamento após a alta é tão importante quanto o início do medicamento.
+
+A combinação de tratamento farmacológico, aconselhamento intensivo e contatos posteriores cria uma estratégia que aborda diferentes aspectos da dependência. A medicação pode reduzir o desejo de fumar, enquanto o suporte profissional oferece orientação para lidar com situações de risco e sustentar a decisão de interromper o consumo.
+
+A necessidade de um segundo curso terapêutico em alguns participantes também evidencia que nem todos conseguem abandonar o cigarro após a primeira tentativa. A persistência no acompanhamento e a possibilidade de reavaliar a estratégia são, portanto, aspectos relevantes do cuidado.
+
+<h1>13. Limitações da investigação</h1>
+
+Apesar dos resultados favoráveis, algumas limitações precisam ser consideradas.
+
+A primeira é o tamanho relativamente pequeno da amostra, composta por 162 pacientes. Esse número restringe a possibilidade de analisar subgrupos e reduz a capacidade de identificar eventos adversos raros. A ausência de mortes ou acidentes vasculares cerebrais durante 24 semanas, por exemplo, não significa que esses eventos sejam impossíveis em pacientes submetidos ao mesmo tratamento.
+
+A segunda limitação é a ausência de um grupo de comparação. Todos os participantes receberam vareniclina e aconselhamento intensivo, de modo que não foi possível separar os efeitos da medicação daqueles associados ao suporte comportamental, à motivação após o infarto ou a outros fatores.
+
+Além disso, o desenho observacional não permite atribuir causalidade com a mesma segurança de um ensaio clínico randomizado. A taxa de abstinência encontrada demonstra o resultado observado no grupo tratado, mas não comprova que a mesma proporção de pacientes teria continuado fumando na ausência da vareniclina.
+
+A terceira limitação está na definição da abstinência. O resultado foi baseado no relato dos próprios participantes e não foi confirmado por medidas objetivas. Consequentemente, alguns pacientes podem ter sido classificados como abstinentes mesmo tendo mantido algum consumo de cigarros. Isso cria a possibilidade de superestimação da eficácia.
+
+A perda de participantes durante o acompanhamento também pode ter influenciado os resultados. Treze pacientes foram perdidos antes da avaliação da 24.ª semana. Quando indivíduos deixam de participar, principalmente se apresentam comportamentos diferentes daqueles que permanecem no estudo, as taxas finais podem deixar de representar fielmente a população inicialmente selecionada.
+
+Outra limitação diz respeito à realização da pesquisa em um único hospital. Os resultados podem não ser reproduzidos em instituições com outros protocolos assistenciais, diferentes perfis de pacientes ou menor disponibilidade de aconselhamento especializado.
+
+A predominância masculina, com 96,9% de homens, também limita a generalização para mulheres. Da mesma forma, a inclusão de uma população específica do Leste Asiático não permite assumir que os resultados serão idênticos em outros grupos populacionais.
+
+Por fim, o acompanhamento de 24 semanas foi adequado à avaliação dos desfechos estabelecidos, mas não permite determinar a manutenção da abstinência durante vários anos. A persistência do abandono do tabagismo a longo prazo continua sendo uma questão importante, especialmente porque a recaída pode ocorrer depois do encerramento do tratamento farmacológico.
+
+Diante dessas limitações, são necessários estudos prospectivos adicionais, preferencialmente ensaios clínicos randomizados, com amostras maiores, grupos de comparação, confirmação objetiva da abstinência e períodos mais longos de acompanhamento.
+
+<h1>14. Conclusão geral</h1>
+
+A administração precoce de vareniclina em pacientes hospitalizados por infarto agudo do miocárdio submetidos à intervenção coronária percutânea apresentou resultados favoráveis quanto à segurança observada e à cessação do tabagismo durante 24 semanas de acompanhamento.
+
+A maioria dos participantes iniciou o medicamento ainda durante a internação. O tratamento foi acompanhado de aconselhamento intensivo, contatos posteriores e avaliação periódica da adesão, dos efeitos adversos e da manutenção da abstinência.
+
+A taxa de cessação do tabagismo alcançou 79%, com resultados ainda mais elevados entre os fumantes classificados como menos intensos. Ao mesmo tempo, a frequência de eventos cardiovasculares graves foi baixa: houve um caso de infarto recorrente e cinco casos de nova revascularização, sem mortes ou acidentes vasculares cerebrais não fatais durante o período avaliado.
+
+Os efeitos adversos registrados foram predominantemente leves, com destaque para o desconforto gastrointestinal. Esses achados indicam que a vareniclina foi bem tolerada no grupo estudado e que sua introdução precoce pode ser considerada uma estratégia promissora para pacientes que precisam abandonar o tabagismo após um IAM.
+
+A principal implicação clínica está na integração da cessação do tabagismo ao cuidado hospitalar do infarto. Em vez de tratar o abandono do cigarro como uma recomendação secundária a ser retomada posteriormente, o tratamento pode começar durante a internação e ser mantido por meio de acompanhamento profissional após a alta.
+
+É necessário, porém, diferenciar resultados favoráveis de comprovação definitiva de eficácia e segurança. A ausência de grupo de controle, o tamanho da amostra, a confirmação da abstinência apenas por autorrelato e o acompanhamento limitado a 24 semanas restringem as conclusões possíveis. Os resultados apoiam a viabilidade e a tolerabilidade do início precoce da vareniclina nessa população, mas pesquisas mais robustas são necessárias para estabelecer com maior segurança sua eficácia comparativa, seus efeitos cardiovasculares e a manutenção da abstinência a longo prazo.
+
+Em síntese, o tratamento da dependência do tabaco representa uma parte importante da prevenção secundária após o infarto. A associação entre vareniclina e aconselhamento intensivo apresentou resultados promissores em pacientes do Leste Asiático, reforçando a importância de aproveitar a hospitalização como uma oportunidade para iniciar a cessação do tabagismo, acompanhar a adesão e reduzir o risco associado à continuidade do consumo de cigarros.
+
+
+<h4>
+Os autores Chien-Hsien Lo , Li-Ching Li, Kai-Wei Chang , Chin-Feng Tsai , Chun-Hung Su  , Tse-Hsien Lo , Chi-Hua Yen, Kuei-Chuan Chan</h4>
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efeitos do tabagismo sobre os principais eventos cardiovasculares adversos em pacientes com espasmo da artéria coronária</title>
+<style>
+  :root {
+    /* white #ffffff graystrong #333333 bluelight #95bdfc gray #7a7a85 bluestrong  #3178eb whiteblued #e4e4ea;*/
+  --bg-color: #f6f7f9;
+  --txt-color: #333333;
+  --button-color: #95bdfc;
+  --surface: #f6f7f9; --muted: #7a7a85;
+  --main-color: #3178eb; --border: #e4e4ea;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+  --bg-color: #13171d;
+  --txt-color: #f0f0f0;
+  --button-color: #95bdfc;
+  --surface: #1a1a20; --muted: #8e8e99;
+  --main-color: #3178eb; --border: #676772;
+    }}
+:root[data-theme="dark"] {
+  --bg-color: #13171d;
+  --txt-color: #f0f0f0;
+  --button-color: #95bdfc;
+  --surface: #1a1a20z; --muted: #8e8e99;
+  --main-color: #3178eb; --border: #676772;
+  }
+
+  
+  
+
+
+
+
+
+
+
+.grid-table {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 820px;
+  margin: 1rem auto;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(10rem, 1fr) 2fr;
+  align-items: stretch;
+}
+
+.row > div {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e4e7ec;
+}
+
+.row:last-child > div {
+  border-bottom: 0;
+}
+
+/* cabeçalho */
+.row.header > div {
+  background: #f2f4f7;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* primeira coluna como rótulo */
+.row:not(.header) > div:first-child {
+  font-weight: 600;
+  background: #fafafa;
+  border-right: 1px solid #e4e7ec;
+}
+
+.row:not(.header):hover > div:last-child {
+  background: #eef4ff;
+}
+
+/* telas pequenas: empilha rótulo e valor */
+@media (max-width: 560px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .row.header {
+    display: none;
+  }
+  .row:not(.header) > div:first-child {
+    border-right: 0;
+    border-bottom: 0;
+    padding-bottom: 0.25rem;
+    font-size: 0.85rem;
+    color: #475467;
+  }
+  .row:not(.header) > div:last-child {
+    padding-top: 0.25rem;
+  }
+}
+
+
+
+  
+  .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  max-width: 960px;
+  margin: 1rem auto;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr; /* a descrição ocupa o espaço restante */
+  gap: 0.5rem;
+  padding: 1.25rem;
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.card-head h3 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.badge {
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge--sig {
+  background: #dcfae6;
+  color: #067647;
+}
+
+.badge--ns {
+  background: #f2f4f7;
+  color: #475467;
+}
+
+.rr {
+  margin: 0.25rem 0 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.ci {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #475467;
+  font-variant-numeric: tabular-nums;
+}
+
+.desc {
+  margin: 0.5rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e4e7ec;
+  font-size: 0.9rem;
+  color: #344054;
+}
+
+
+
+  
+  
+  
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px 20px 48px; background: var(--bg-color); color: var(--txt-color);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 8px; }
+  h2 { font-size: 1.15rem; margin: 28px 0 8px; }
+  p { margin: 0 0 12px; }
+  .lead { color: var(--muted); }
+  ol, ul { padding-left: 22px; margin: 0 0 12px; }
+  li { margin-bottom: 6px; }
+  code { background: color-mix(in srgb, var(--border) 12%, transparent); padding: 1px 6px; border-radius: 4px; }
+  blockquote { margin: 16px 0; padding: 8px 14px; border-left: 3px solid var(--border); color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+
+<p>O espasmo da artéria coronária (coronary artery spasm — CAS) é uma alteração caracterizada pela contração anormal da musculatura lisa das artérias coronárias, provocando o estreitamento parcial ou a obstrução completa e transitória desses vasos. Como as artérias coronárias são responsáveis pelo fornecimento de sangue oxigenado ao músculo cardíaco, a redução do seu calibre pode comprometer a perfusão do miocárdio e provocar isquemia.</p>
+
+<h1>1. Introdução e contextualização</h1>
+
+Dependendo da intensidade, da duração e da localização do espasmo, bem como da existência de circulação colateral, as manifestações clínicas podem variar desde episódios de angina até complicações cardiovasculares graves.
+
+Uma das manifestações mais características dessa condição é a angina vasoespástica, também conhecida como angina variante ou angina de Prinzmetal. Ela pode ocorrer em repouso e estar associada a alterações transitórias do segmento ST no eletrocardiograma. Embora a apresentação clínica possa ser passageira, o espasmo coronariano não é necessariamente uma condição benigna, pois pode desencadear infarto agudo do miocárdio, arritmias, insuficiência cardíaca, parada cardíaca e morte súbita.
+
+A ocorrência do espasmo coronariano está relacionada a diferentes fatores fisiopatológicos, incluindo a hipercontratilidade da musculatura lisa vascular, a disfunção endotelial, a inflamação crônica dos vasos sanguíneos e as alterações do sistema nervoso autônomo. A deficiência de magnésio, a exposição ao frio, o estresse, o esforço físico, a dislipidemia e a poluição atmosférica também são considerados fatores associados. Entre eles, o tabagismo apresenta particular importância por sua capacidade de comprometer a função vascular e favorecer diferentes mecanismos envolvidos no desenvolvimento de doenças cardiovasculares.
+
+O consumo de tabaco é um fator de risco independente para o espasmo coronariano. As substâncias presentes na fumaça do cigarro contribuem para a lesão do endotélio, a inflamação vascular, as alterações do metabolismo lipídico, o desenvolvimento da aterosclerose e o desequilíbrio entre os mecanismos que favorecem a coagulação e aqueles que impedem a formação de trombos. Esses efeitos podem aumentar a vulnerabilidade do sistema cardiovascular e contribuir para a ocorrência de eventos isquêmicos.
+
+Apesar da associação já estabelecida entre tabagismo e espasmo coronariano, a influência do hábito de fumar sobre o prognóstico de pacientes que já apresentam essa condição não estava completamente esclarecida. Os estudos disponíveis apresentavam resultados divergentes: algumas investigações identificaram maior ocorrência de infarto e morte cardíaca entre fumantes, enquanto outras não encontraram diferenças significativas nos desfechos cardiovasculares mais graves.
+
+Essa divergência dificultava a compreensão da magnitude do risco associado ao tabagismo especificamente entre pacientes com espasmo coronariano. Além disso, os efeitos sobre os resultados clínicos em longo prazo ainda precisavam ser avaliados de maneira sistemática. Nesse contexto, tornou-se necessário reunir os resultados das pesquisas disponíveis para determinar se o tabagismo estava associado a uma maior incidência de eventos cardiovasculares adversos nessa população.
+
+O principal objetivo da investigação foi, portanto, avaliar a associação entre tabagismo e eventos cardiovasculares adversos maiores (major adverse cardiovascular events — MACE) em pacientes com espasmo da artéria coronária, comparando indivíduos fumantes e não fumantes e examinando possíveis diferenças relacionadas ao país de origem, ao tamanho das amostras e à duração do acompanhamento clínico.
+
+<h1>2. Principais conceitos envolvidos</h1>
+
+<h1>2.1. Espasmo da artéria coronária</h1>
+
+O espasmo coronariano ocorre quando há uma contração excessiva da musculatura lisa de uma artéria coronária, reduzindo temporariamente o fluxo sanguíneo destinado ao coração. Essa alteração pode ocorrer mesmo na ausência de uma obstrução aterosclerótica fixa significativa.
+
+A intensidade do comprometimento circulatório depende da extensão do espasmo, do tempo durante o qual ele permanece e das condições da circulação coronariana. Quando a redução do fluxo é suficientemente intensa, o músculo cardíaco deixa de receber oxigênio em quantidade adequada, caracterizando a isquemia miocárdica.
+
+A isquemia pode provocar dor torácica, alterações eletrocardiográficas e, nos casos mais graves, lesão do músculo cardíaco. A persistência ou a recorrência dos episódios pode aumentar a possibilidade de complicações, principalmente quando estão presentes outros fatores de risco cardiovasculares.
+
+A angina vasoespástica constitui uma manifestação clínica importante do espasmo coronariano. Os episódios podem ocorrer em repouso e apresentam variação temporal, sendo descrita uma tendência de maior ocorrência durante as primeiras horas do dia. Essa característica sugere participação dos mecanismos de regulação autonômica na atividade vascular coronariana.
+
+<h1>2.2. Tabagismo como fator de risco cardiovascular</h1>
+
+O tabagismo exerce efeitos prejudiciais sobre o sistema cardiovascular por diferentes vias simultâneas. A exposição à fumaça do cigarro pode comprometer a integridade e o funcionamento do endotélio, camada celular que reveste internamente os vasos sanguíneos e participa da regulação do tônus vascular, da inflamação e da coagulação.
+
+Quando a função endotelial é prejudicada, a capacidade de manter a dilatação adequada dos vasos pode diminuir. Ao mesmo tempo, a resposta contrátil da musculatura lisa vascular pode se tornar mais intensa, favorecendo o vasoespasmo.
+
+O tabagismo também está relacionado ao aumento da atividade inflamatória e do estresse oxidativo, além de alterações no metabolismo dos lipídios. Esses processos contribuem para a progressão da aterosclerose, favorecem condições que facilitam a formação de trombos e aumentam a vulnerabilidade a eventos cardiovasculares.
+
+Outro mecanismo importante é a estimulação do sistema nervoso simpático. Essa ativação promove a liberação de catecolaminas, como adrenalina e noradrenalina, provocando alterações hemodinâmicas e favorecendo a vasoconstrição. Consequentemente, o tabagismo pode contribuir tanto para o desencadeamento do espasmo coronariano quanto para o agravamento das suas consequências.
+
+Nos pacientes que já apresentam espasmo coronariano, esses efeitos podem atuar em conjunto com a predisposição vascular existente, aumentando a possibilidade de isquemia e de complicações clínicas.
+
+<h1>2.3. Eventos cardiovasculares adversos maiores</h1>
+
+A expressão MACE designa um conjunto de desfechos clínicos relevantes para a avaliação do prognóstico cardiovascular. Na investigação, os eventos considerados incluíram manifestações graves, como parada cardíaca, morte cardíaca, infarto agudo do miocárdio e angina instável. Os estudos individuais também utilizaram determinadas definições que incluíam síndrome coronariana aguda, insuficiência cardíaca grave, arritmias sintomáticas de início recente e outros desfechos cardiovasculares.
+
+A composição exata desse conjunto variou entre os estudos analisados. Por esse motivo, a avaliação conjunta permitiu examinar a relação entre tabagismo e resultados cardiovasculares adversos, mas exigiu considerar as diferenças metodológicas na definição dos eventos.
+
+A análise dos MACE é particularmente importante porque permite avaliar consequências clínicas que ultrapassam a presença isolada de dor torácica ou de episódios recorrentes de angina. Dessa forma, o foco está no risco de complicações capazes de comprometer significativamente a saúde, a sobrevida e a qualidade de vida dos pacientes.
+
+<h1>3. Metodologia</h1>
+
+A investigação foi conduzida por meio de uma revisão sistemática e metanálise, métodos que permitem reunir e analisar quantitativamente resultados de diferentes estudos para estimar a associação entre uma exposição e determinados desfechos clínicos.
+
+A busca bibliográfica abrangeu três bases de dados científicas: PubMed, Embase e Cochrane Library. Foram considerados estudos publicados entre janeiro de 2000 e julho de 2023. A estratégia de busca utilizou termos relacionados ao tabagismo, ao espasmo da artéria coronária, à angina vasoespástica e à angina variante.
+
+O processo metodológico seguiu as diretrizes PRISMA, utilizadas para orientar a identificação, a seleção e a apresentação de estudos em revisões sistemáticas. O protocolo também foi registrado no PROSPERO, sob o número CRD42023448958.
+
+<h1>3.1. Critérios de inclusão e exclusão</h1>
+
+Foram considerados elegíveis estudos que incluíssem pacientes diagnosticados com espasmo coronariano, angina vasoespástica ou angina variante, com grupos de fumantes e não fumantes. Também era necessário apresentar resultados clínicos relacionados aos eventos cardiovasculares adversos e informar o número de participantes e de eventos em cada grupo.
+
+Foram aceitos estudos de coorte e ensaios clínicos randomizados. Por outro lado, foram excluídos estudos experimentais com animais, relatos de casos, estudos de caso-controle, resumos de congressos, revisões, editoriais, comentários e pequenas séries de casos com menos de 50 participantes. Também foram descartadas pesquisas com dados incompletos, textos integrais indisponíveis, publicações duplicadas e trabalhos publicados em idiomas diferentes do inglês.
+
+A seleção inicial identificou 1.717 estudos. Após a avaliação dos títulos e resumos, 1.661 foram excluídos, restando 56 para análise do texto integral. Ao final do processo, nove estudos preencheram os critérios de elegibilidade e foram incluídos na metanálise.
+
+<h1>3.2. Características da população estudada</h1>
+
+Os nove estudos selecionados reuniram 9.376 pacientes, dos quais 3.050 pertenciam ao grupo de fumantes e 5.185 ao grupo de não fumantes. A soma desses dois grupos corresponde a 8.235 participantes, embora o total informado para o conjunto de estudos seja de 9.376. Portanto, existe uma inconsistência numérica nos dados apresentados, que deve ser considerada na interpretação dos resultados.
+
+As pesquisas foram publicadas entre 2007 e 2021 e realizadas predominantemente na Ásia. Cinco estudos foram conduzidos no Japão, três na Coreia do Sul e um na Espanha. As amostras individuais variaram de 224 a 1.812 participantes.
+
+A idade média dos pacientes era de aproximadamente 60 anos, e 55,5% eram homens. Entre as condições clínicas concomitantes identificadas estavam hipertensão arterial, diabetes mellitus e dislipidemia, fatores que podem interferir no risco cardiovascular e na evolução clínica.
+
+Os estudos também apresentaram diferenças na definição de tabagismo. Algumas pesquisas consideraram o consumo de cigarros durante o ano anterior, enquanto outras não estabeleceram critérios claros para classificar os participantes como fumantes. Essa variação dificulta a avaliação da intensidade, da frequência e da duração da exposição ao tabaco.
+
+<h1>3.3. Avaliação da qualidade metodológica</h1>
+
+A qualidade dos estudos foi examinada por dois pesquisadores utilizando a escala de Newcastle–Ottawa, instrumento destinado à avaliação de estudos de coorte. A escala considera a seleção dos participantes, a comparabilidade entre os grupos e a avaliação dos desfechos, com pontuação máxima de nove pontos.
+
+Todos os estudos incluídos obtiveram mais de cinco pontos. Dois foram classificados como de alta qualidade, com oito pontos, enquanto os outros sete apresentaram qualidade moderada, com pontuações entre cinco e seis.
+
+Embora essa avaliação indique que os estudos apresentavam condições metodológicas suficientes para serem incluídos na análise, a predominância de pesquisas observacionais limita a capacidade de estabelecer uma relação causal definitiva entre tabagismo e eventos cardiovasculares.
+
+<h1>3.4. Análise estatística</h1>
+
+A associação entre tabagismo e eventos cardiovasculares adversos foi estimada por meio do risco relativo (RR), acompanhado de intervalo de confiança de 95% (IC 95%). O risco relativo compara a ocorrência de um evento entre dois grupos, permitindo avaliar se a exposição está associada a uma maior ou menor probabilidade do desfecho.
+
+A heterogeneidade entre os estudos foi examinada pelo teste I2I^2I2 e pela estatística Q de Cochran. Quando havia heterogeneidade significativa, utilizava-se um modelo de efeitos aleatórios; na ausência dela, era empregado um modelo de efeitos fixos.
+
+Também foram realizadas análises de sensibilidade, que verificam se a exclusão individual de determinados estudos modifica substancialmente o resultado geral. Para investigar possíveis vieses de publicação, foram utilizados gráficos de funil e os testes de Begg e Egger.
+
+Por fim, foram conduzidas análises de subgrupos considerando o país de origem, a duração do acompanhamento e o tamanho da amostra. Essas análises permitiram examinar se a associação entre tabagismo e eventos cardiovasculares variava de acordo com as características dos estudos.
+
+<h1>4. Resultados principais</h1>
+
+<h1>4.1. Associação geral entre tabagismo e eventos cardiovasculares</h1>
+
+O principal resultado foi a identificação de uma associação estatisticamente significativa entre tabagismo e aumento da ocorrência de eventos cardiovasculares adversos maiores em pacientes com espasmo coronariano.
+
+<div class="grid-table" role="table" aria-label="Resultados da metanálise">
+  <div class="row" role="row">
+    <div role="rowheader">Risco relativo combinado</div>
+    <div role="cell">RR = 1,965</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Intervalo de confiança de 95%</div>
+    <div role="cell">1,348–2,865</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Heterogeneidade (I²)</div>
+    <div role="cell">60,4%</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Significância da heterogeneidade</div>
+    <div role="cell">p = 0,010</div>
+  </div>
+</div>
+
+O risco relativo de 1,965 indica que a ocorrência dos desfechos cardiovasculares analisados foi aproximadamente 1,97 vez maior no grupo de fumantes do que no grupo de não fumantes, considerando a estimativa combinada dos estudos. Isso corresponde a um aumento relativo estimado de aproximadamente 96,5%.
+
+É importante distinguir aumento relativo de aumento absoluto: esse resultado não significa que 96,5% dos fumantes sofreram eventos cardiovasculares, nem permite determinar diretamente quantos eventos adicionais ocorreriam em uma população específica. Para calcular o risco absoluto, seria necessário conhecer a frequência inicial dos eventos no grupo de comparação.
+
+O intervalo de confiança de 95% variou de 1,348 a 2,865. Como todo o intervalo permaneceu acima de 1, o resultado indica uma associação estatisticamente significativa entre tabagismo e maior ocorrência de MACE.
+
+Entretanto, a heterogeneidade de 60,4%, acompanhada de p=0,010p=0,010p=0,010, demonstra que os resultados não foram inteiramente consistentes entre os estudos. Diferenças nas populações, nas definições de tabagismo, nos desfechos considerados, nos tratamentos utilizados e no tempo de acompanhamento podem ter contribuído para essa variação. Por esse motivo, foi empregado o modelo de efeitos aleatórios, que considera a possibilidade de diferenças reais entre os efeitos observados nas diversas pesquisas.
+
+Em termos clínicos, o achado central é que o tabagismo esteve associado a um prognóstico cardiovascular menos favorável em pacientes com espasmo coronariano. A associação foi observada considerando o conjunto dos desfechos cardiovasculares avaliados, e não apenas a ocorrência de episódios isolados de angina.
+
+<h1>4.2. Evolução dos resultados ao longo do tempo</h1>
+
+A metanálise cumulativa foi utilizada para examinar como a evidência disponível se modificou conforme a publicação de novos estudos. Os resultados indicaram que a associação prejudicial do tabagismo com os eventos cardiovasculares adversos passou a ser observada de maneira mais clara a partir de 2011.
+
+Esse resultado demonstra a importância da acumulação progressiva de evidências científicas. Estudos isolados podem apresentar estimativas divergentes devido às características das amostras, ao número limitado de eventos ou às diferenças na definição dos desfechos. Quando os dados são combinados, torna-se possível obter uma estimativa mais abrangente da associação investigada.
+
+A metanálise cumulativa, contudo, não significa que o efeito biológico do tabagismo tenha começado em 2011. Esse marco se refere à evolução da evidência publicada e à maior clareza da associação estatística nos estudos reunidos.
+
+<h1>4.3. Análises de sensibilidade</h1>
+
+As análises de sensibilidade avaliaram a estabilidade do resultado geral por meio da exclusão sucessiva de cada estudo incluído. O objetivo foi verificar se a associação observada dependia excessivamente de uma única pesquisa.
+
+Os resultados permaneceram estatisticamente estáveis após a retirada individual dos estudos. Isso indica que nenhuma pesquisa isolada foi responsável, por si só, pelo efeito combinado observado.
+
+Esse achado fortalece a consistência interna da estimativa, pois demonstra que a associação não desapareceu simplesmente com a exclusão de um dos trabalhos. Ainda assim, a estabilidade estatística não elimina as limitações relacionadas à heterogeneidade, ao número de estudos e à possibilidade de fatores de confusão.
+
+<h1>4.4. Viés de publicação</h1>
+
+A possibilidade de viés de publicação foi examinada por meio da análise do gráfico de funil e dos testes estatísticos de Begg e Egger.
+
+O gráfico de funil apresentou assimetria, o que levantou a possibilidade de viés de publicação. Entretanto, os testes de Begg e Egger não identificaram evidência estatisticamente significativa desse viés, com valores de p=0,348p=0,348p=0,348 e p=0,989p=0,989p=0,989, respectivamente.
+
+A divergência entre os métodos exige cautela. A ausência de significância nos testes não comprova que o viés de publicação inexista, especialmente quando o número de estudos é pequeno. Assim, não é possível descartar completamente a possibilidade de que pesquisas com resultados diferentes tenham sido publicadas ou identificadas em proporções desiguais.
+
+<h1>5. Resultados das análises de subgrupos</h1>
+
+As análises de subgrupos foram realizadas para verificar se a associação entre tabagismo e eventos cardiovasculares adversos variava conforme o país de origem das pesquisas, a duração média do acompanhamento e o tamanho das amostras.
+
+<h1>5.1. Diferenças entre países</h1>
+
+A comparação entre os países identificou diferenças na intensidade da associação entre tabagismo e eventos cardiovasculares adversos.
+
+<div class="cards">
+  <article class="card">
+    <header class="card-head">
+      <h3>Japão</h3>
+      <span class="badge badge--sig">Associação significativa</span>
+    </header>
+    <p class="rr">RR = 2,527</p>
+    <p class="ci">IC 95%: 1,563–4,085 · 5 estudos</p>
+    <p class="desc">A estimativa correspondeu a um risco relativo aproximadamente 2,53 vezes maior entre fumantes, com associação estatisticamente significativa. Foi observado aumento relativo estimado de cerca de 152,7% nos desfechos cardiovasculares.</p>
+  </article>
+
+  <article class="card">
+    <header class="card-head">
+      <h3>Coreia do Sul</h3>
+      <span class="badge badge--ns">Não significativa</span>
+    </header>
+    <p class="rr">RR = 1,275</p>
+    <p class="ci">IC 95%: 0,860–1,890 · 3 estudos</p>
+    <p class="desc">A estimativa apontou para um aumento relativo de aproximadamente 27,5%, mas o intervalo de confiança incluiu 1. Portanto, não foi demonstrada uma associação estatisticamente significativa nesse subgrupo.</p>
+  </article>
+
+  <article class="card">
+    <header class="card-head">
+      <h3>Espanha</h3>
+      <span class="badge badge--ns">Não significativa</span>
+    </header>
+    <p class="rr">RR = 1,323</p>
+    <p class="ci">IC 95%: 0,619–2,826 · 1 estudo</p>
+    <p class="desc">A estimativa também foi superior a 1, mas apresentou ampla incerteza. Como havia apenas um estudo, não é possível generalizar esse resultado para a população espanhola.</p>
+  </article>
+</div>
+
+O resultado japonês foi o mais expressivo entre os subgrupos geográficos. Essa diferença pode estar relacionada à maior prevalência de espasmo coronariano em populações asiáticas, às particularidades da reatividade vascular e a fatores genéticos e ambientais.
+
+A distribuição de determinadas variantes genéticas, como o genótipo ALDH2*2, é apontada como um possível elemento associado à maior predisposição ao espasmo coronariano em populações do Leste Asiático. Essa variante pode favorecer o acúmulo de aldeídos tóxicos, o estresse oxidativo, a lesão endotelial, a vasoconstrição e a trombose.
+
+Também podem existir diferenças nos hábitos de tabagismo, nas características clínicas dos pacientes e nos métodos utilizados para diagnosticar o espasmo coronariano. A aplicação de diferentes protocolos de provocação do espasmo com acetilcolina, por exemplo, pode alterar a frequência de resultados positivos e dificultar a comparação direta entre populações.
+
+Entretanto, a associação significativa observada no Japão e a ausência de significância na Coreia do Sul não comprovam, por si sós, que o efeito do tabagismo seja biologicamente diferente entre essas populações. A quantidade limitada de estudos e a heterogeneidade dos resultados exigem cautela na interpretação das diferenças geográficas.
+
+<h1>5.2. Influência da duração do acompanhamento</h1>
+
+O tempo de acompanhamento também esteve relacionado à intensidade da associação observada entre tabagismo e MACE.
+
+<div class="cards">
+  <article class="card">
+    <header class="card-head">
+      <h3>Acompanhamento de até 3 anos</h3>
+      <span class="badge badge--ns">Não significativa</span>
+    </header>
+    <p class="rr">RR = 1,324</p>
+    <p class="ci">IC 95%: 0,939–1,867 · 4 estudos</p>
+  </article>
+
+  <article class="card">
+    <header class="card-head">
+      <h3>Acompanhamento superior a 3 anos</h3>
+      <span class="badge badge--sig">Significativa</span>
+    </header>
+    <p class="rr">RR = 2,485</p>
+    <p class="ci">IC 95%: 1,511–4,086 · 5 estudos</p>
+  </article>
+</div>
+
+No grupo acompanhado por até três anos, o risco relativo estimado foi de 1,324, equivalente a um aumento relativo de aproximadamente 32,4%. Entretanto, como o intervalo de confiança incluiu 1, não foi demonstrada uma associação estatisticamente significativa.
+
+Já nos estudos com acompanhamento superior a três anos, o risco relativo foi de 2,485, indicando uma ocorrência estimada de eventos aproximadamente 2,49 vezes maior entre fumantes. O intervalo de confiança permaneceu acima de 1, demonstrando significância estatística.
+
+A diferença entre as estimativas sugere que a associação entre tabagismo e desfechos cardiovasculares adversos pode tornar-se mais evidente durante períodos prolongados de observação. A exposição continuada ao tabaco pode manter a inflamação vascular, prejudicar a função endotelial, favorecer a aterosclerose e aumentar a vulnerabilidade a eventos isquêmicos.
+
+Também é possível que um acompanhamento mais longo permita identificar eventos que não seriam observados em períodos curtos. Dessa forma, o tempo de seguimento influencia a capacidade de detectar diferenças nos desfechos clínicos.
+
+Apesar disso, os resultados não demonstram que o risco individual necessariamente aumenta de forma progressiva após o terceiro ano. A comparação foi realizada entre grupos de estudos com durações distintas, e não por meio de uma avaliação direta da evolução temporal do risco em todos os mesmos pacientes. Assim, diferenças nas populações e nos métodos de acompanhamento também podem contribuir para a variação encontrada.
+
+<h1>5.3. Influência do tamanho da amostra</h1>
+
+A análise também comparou estudos com menos de mil participantes e estudos com mil ou mais participantes.
+
+<div class="cards">
+  <article class="card">
+    <header class="card-head">
+      <h3>Menos de 1.000 participantes</h3>
+      <span class="badge badge--sig">Significativa</span>
+    </header>
+    <p class="rr">RR = 2,556</p>
+    <p class="ci">IC 95%: 1,500–4,353 · 5 estudos</p>
+  </article>
+
+  <article class="card">
+    <header class="card-head">
+      <h3>1.000 participantes ou mais</h3>
+      <span class="badge badge--sig">Significativa</span>
+    </header>
+    <p class="rr">RR = 1,393</p>
+    <p class="ci">IC 95%: 1,016–1,908 · 4 estudos</p>
+  </article>
+</div>
+
+Nos estudos com menos de mil participantes, a estimativa indicou risco relativo de 2,556, correspondente a um aumento relativo de aproximadamente 155,6%. Nos estudos maiores, o risco relativo foi de 1,393, equivalente a um aumento relativo de aproximadamente 39,3%.
+
+Portanto, a associação permaneceu estatisticamente significativa nos dois grupos, embora a estimativa tenha sido mais elevada nos estudos menores.
+
+Uma possível explicação é que pesquisas com amostras reduzidas podem apresentar maior variabilidade nas estimativas e ser mais sensíveis às características específicas dos participantes. Também podem ocorrer diferenças na seleção das populações, no número de eventos observados e no controle de fatores de confusão.
+
+A maior estimativa nos estudos menores não significa, necessariamente, que o tabagismo seja mais prejudicial em populações pequenas. O tamanho amostral é uma característica metodológica, e não uma propriedade biológica dos pacientes. Assim, o resultado deve ser interpretado como uma diferença entre conjuntos de estudos, sem estabelecer uma relação causal entre tamanho da amostra e intensidade do risco.
+
+<h1>5.4. Heterogeneidade nos subgrupos</h1>
+
+A heterogeneidade foi identificada principalmente nos estudos japoneses, nos estudos com acompanhamento superior a três anos e nos estudos com menos de mil participantes.
+
+No subgrupo japonês, o I2I^2I2 foi de 63,4%, com p=0,027p=0,027p=0,027. Nos estudos com acompanhamento superior a três anos, o I2I^2I2 foi de 64,9%, com p=0,022p=0,022p=0,022. Entre os estudos com menos de mil participantes, o I2I^2I2 foi de 62,3%, com p=0,031p=0,031p=0,031.
+
+Em contrapartida, não foi identificada heterogeneidade significativa nos subgrupos coreano e espanhol, nos estudos com acompanhamento de até três anos e nos estudos com mil ou mais participantes. Contudo, a ausência de heterogeneidade estatisticamente detectável, especialmente quando existem poucos estudos, não garante que as pesquisas sejam completamente semelhantes.
+
+De maneira geral, as análises de subgrupos reforçaram a associação entre tabagismo e eventos cardiovasculares adversos, mas também demonstraram que a magnitude dessa associação variou de acordo com as características metodológicas e populacionais das pesquisas.
+
+<h1>6. Discussão dos mecanismos fisiopatológicos</h1>
+
+A relação entre tabagismo e pior prognóstico cardiovascular pode ser compreendida a partir da interação entre os efeitos do tabaco sobre os vasos sanguíneos e as alterações que caracterizam o espasmo coronariano.
+
+<h1>6.1. Disfunção endotelial</h1>
+
+O endotélio participa ativamente da regulação da circulação, controlando a dilatação e a contração vascular, a resposta inflamatória e o equilíbrio entre coagulação e anticoagulação.
+
+A exposição ao tabaco prejudica essa função e pode comprometer a capacidade dos vasos de responder adequadamente às necessidades circulatórias. Como consequência, a regulação do calibre das artérias coronárias torna-se menos eficiente, favorecendo episódios de vasoconstrição excessiva.
+
+A disfunção endotelial também pode contribuir para a progressão da aterosclerose e para alterações que facilitam a formação de trombos. Em pacientes com espasmo coronariano, esses mecanismos podem somar-se à hiperreatividade vascular e agravar o comprometimento do fluxo sanguíneo miocárdico.
+
+Entretanto, a relação entre disfunção endotelial e espasmo coronariano não é necessariamente uniforme em todos os pacientes. A resposta ao estímulo com acetilcolina, por exemplo, pode envolver mecanismos que não correspondem exclusivamente à disfunção endotelial. Por isso, a fisiopatologia do espasmo coronariano deve ser entendida como multifatorial.
+
+<h1>6.2. Hipercontratilidade da musculatura lisa vascular</h1>
+
+A musculatura lisa das artérias coronárias é responsável pela regulação do calibre dos vasos. Quando ocorre uma resposta contrátil exagerada, o estreitamento vascular pode reduzir significativamente o fluxo sanguíneo.
+
+O tabagismo pode favorecer essa resposta por meio da alteração da função vascular e da atividade de vias intracelulares relacionadas à contração, incluindo a sinalização associada à Rho-quinase.
+
+A ativação dessas vias pode aumentar a sensibilidade contrátil da musculatura lisa, facilitando o surgimento do espasmo. Quando a contração é intensa, a perfusão do miocárdio diminui e pode ocorrer isquemia.
+
+Esse mecanismo é particularmente relevante porque o espasmo coronariano pode surgir mesmo na ausência de obstruções fixas importantes. Dessa forma, a alteração funcional do vaso pode produzir consequências clínicas graves independentemente da existência de uma lesão aterosclerótica obstrutiva significativa.
+
+<h1>6.3. Ativação do sistema nervoso simpático</h1>
+
+A exposição ao tabaco estimula o sistema nervoso simpático e promove a liberação de adrenalina e noradrenalina. Essas substâncias provocam alterações na frequência cardíaca, na pressão arterial e no tônus vascular.
+
+A intensificação da atividade simpática pode favorecer a vasoconstrição e modificar as condições hemodinâmicas do sistema cardiovascular. Em indivíduos predispostos ao espasmo coronariano, essa resposta pode contribuir para o desencadeamento de episódios de redução do fluxo sanguíneo.
+
+A participação do sistema nervoso autônomo também é relevante para compreender a variação temporal dos episódios de angina vasoespástica. A ocorrência frequente de crises durante as primeiras horas do dia sugere que alterações circadianas da regulação autonômica podem interferir no comportamento dos vasos coronários.
+
+O tabagismo, portanto, pode contribuir para o agravamento do quadro tanto por efeitos diretos sobre a parede vascular quanto pela modificação dos mecanismos sistêmicos de regulação circulatória.
+
+<h1>6.4. Inflamação e estresse oxidativo</h1>
+
+A inflamação vascular e o estresse oxidativo são componentes importantes da fisiopatologia cardiovascular associada ao tabagismo. A exposição aos componentes da fumaça do cigarro pode aumentar a produção de espécies reativas e favorecer processos inflamatórios que comprometem a integridade dos vasos sanguíneos.
+
+Essas alterações prejudicam a função endotelial e podem intensificar a resposta contrátil da musculatura lisa. Além disso, o estresse oxidativo pode interferir na atividade de mecanismos envolvidos na regulação do tônus vascular.
+
+A persistência desses processos favorece condições que contribuem para a progressão da aterosclerose, para alterações da coagulação e para a ocorrência de eventos isquêmicos.
+
+Nos pacientes com espasmo coronariano, a combinação entre inflamação, estresse oxidativo e hipercontratilidade vascular constitui uma explicação plausível para a associação entre tabagismo e maior incidência de eventos cardiovasculares adversos.
+
+<h1>6.5. Isquemia miocárdica e complicações cardíacas</h1>
+
+Quando o espasmo coronariano reduz o fluxo sanguíneo a níveis insuficientes, ocorre desequilíbrio entre a oferta e a demanda de oxigênio do miocárdio. Esse processo caracteriza a isquemia miocárdica e pode provocar dor torácica e alterações eletrocardiográficas.
+
+Se a redução da perfusão for intensa ou prolongada, pode ocorrer lesão dos cardiomiócitos e infarto agudo do miocárdio. A isquemia também pode desencadear arritmias potencialmente fatais, insuficiência cardíaca e, em situações graves, parada cardíaca ou morte súbita.
+
+O tabagismo pode contribuir para essas complicações por meio de mecanismos complementares: favorece o espasmo, prejudica a função endotelial, estimula a inflamação, altera o metabolismo lipídico e modifica a resposta cardiovascular.
+
+Assim, a associação observada entre tabagismo e MACE apresenta coerência fisiopatológica, embora os resultados observacionais não permitam afirmar que todos os eventos adicionais tenham sido causados exclusivamente pelo tabaco.
+
+<h1>7. Influência de outras condições clínicas e dos tratamentos</h1>
+
+Além do tabagismo, diversas características clínicas podem interferir na evolução dos pacientes com espasmo coronariano. Entre as condições avaliadas nas pesquisas estão hipertensão arterial, diabetes mellitus, resistência à insulina, hiperinsulinemia e dislipidemia.
+
+<h1>7.1. Hipertensão arterial e diabetes mellitus</h1>
+
+A hipertensão arterial e o diabetes mellitus são fatores de risco importantes para doenças cardiovasculares, especialmente por seus efeitos sobre a função vascular e o metabolismo. Entretanto, a presença dessas condições não implica necessariamente uma associação direta com todos os mecanismos responsáveis pelo espasmo coronariano.
+
+Na análise discutida, a hipertensão e o diabetes não foram identificados como preditores independentes do espasmo coronariano induzido por acetilcolina em pesquisas anteriores consideradas na discussão. Uma possível explicação é que esse tipo de resposta vascular não depende exclusivamente da disfunção endotelial.
+
+Por outro lado, a resistência à insulina e a hiperinsulinemia foram associadas ao aumento do risco de eventos cardíacos em pacientes com angina vasoespástica em uma das pesquisas de coorte consideradas. Isso demonstra que alterações metabólicas podem desempenhar um papel importante no prognóstico, mesmo quando não apresentam uma associação uniforme com o desenvolvimento do espasmo.
+
+<h1>7.2. Dislipidemia e função vascular</h1>
+
+A dislipidemia também é relevante para a evolução clínica, pois as alterações no metabolismo dos lipídios estão associadas à aterosclerose e à disfunção vascular.
+
+Pacientes com angina vasoespástica podem apresentar concentrações reduzidas de colesterol HDL e apolipoproteína A-I, além de alterações nos níveis de lipoproteína(a), colesterol total, colesterol LDL e triglicerídeos.
+
+Essas alterações podem comprometer a função vascular e contribuir para um ambiente favorável à inflamação e à progressão da doença aterosclerótica. Dessa forma, a avaliação do perfil lipídico constitui um elemento importante na abordagem global do risco cardiovascular.
+
+<h1>7.3. Tratamentos farmacológicos</h1>
+
+O tratamento do espasmo coronariano envolve principalmente medicamentos capazes de controlar a vasoconstrição e reduzir a ocorrência de episódios isquêmicos. Entre as classes mencionadas estão os bloqueadores dos canais de cálcio, os nitratos, as estatinas, os antiagregantes plaquetários e determinados medicamentos que atuam sobre o sistema renina-angiotensina.
+
+Os bloqueadores dos canais de cálcio são particularmente importantes por reduzirem a contração da musculatura lisa vascular e favorecerem o relaxamento das artérias coronárias. A benidipina, por exemplo, apresentou resultados favoráveis em comparações com outros bloqueadores dos canais de cálcio quanto ao risco de eventos cardiovasculares em pacientes com angina vasoespástica.
+
+As estatinas também merecem destaque por seus efeitos sobre o metabolismo lipídico, a função endotelial, a inflamação e o estresse oxidativo. A redução do colesterol LDL e a modulação de vias envolvidas na contração vascular podem contribuir para melhorar o ambiente vascular e reduzir o risco de eventos cardiovasculares.
+
+Por outro lado, a utilização de antiagregantes plaquetários, como o ácido acetilsalicílico, apresenta resultados que dependem das características clínicas dos pacientes e da presença de doença coronariana obstrutiva. A associação de ácido acetilsalicílico com clopidogrel também exige atenção devido às possíveis diferenças entre os benefícios e os riscos em determinados grupos.
+
+Os nitratos são utilizados para promover vasodilatação, mas a terapia prolongada foi associada a resultados prognósticos variáveis nas pesquisas consideradas. Alguns estudos identificaram uma possível relação entre o uso crônico de nitratos e maior ocorrência de eventos cardíacos, especialmente em determinados esquemas terapêuticos. Esses achados não demonstram necessariamente que os nitratos provoquem os eventos, pois pacientes com quadros mais graves podem receber tratamentos mais intensivos.
+
+A interpretação dos tratamentos, portanto, precisa considerar as indicações clínicas, a gravidade da doença, a presença de outras condições cardiovasculares e as diferenças entre os estudos. A análise do tabagismo não permite estabelecer, isoladamente, qual combinação medicamentosa seria ideal para todos os pacientes.
+
+<h1>7.4. Importância da cessação do tabagismo</h1>
+
+A interrupção do tabagismo representa uma medida importante para reduzir a exposição contínua aos fatores que prejudicam a função vascular.
+
+A cessação pode contribuir para melhorar a função endotelial, diminuir a atividade inflamatória e reduzir o risco cardiovascular. Também pode melhorar os sintomas e o prognóstico da angina vasoespástica, inclusive em períodos relativamente curtos após a interrupção do consumo de cigarros.
+
+A redução da exposição ao tabaco é especialmente relevante porque os mecanismos envolvidos no espasmo coronariano podem persistir enquanto houver estímulos que favoreçam a vasoconstrição, a inflamação e o estresse oxidativo.
+
+A interrupção do hábito de fumar também apresenta benefícios que vão além do espasmo coronariano, uma vez que reduz a exposição a fatores associados à aterosclerose, à trombose e a outras doenças cardiovasculares.
+
+Entretanto, a cessação não deve ser entendida como substituta do acompanhamento clínico ou do tratamento farmacológico. O controle dos fatores de risco, a avaliação dos sintomas e a utilização adequada dos medicamentos continuam sendo componentes importantes do cuidado dos pacientes com espasmo coronariano.
+
+<h1>8. Limitações da investigação</h1>
+
+Apesar dos resultados que indicam uma associação entre tabagismo e maior ocorrência de eventos cardiovasculares adversos, existem limitações importantes que precisam ser consideradas.
+
+Número limitado de estudos. Apenas nove pesquisas foram incluídas na metanálise. Essa quantidade restringe a capacidade de explorar diferenças entre populações, avaliar fatores de confusão e identificar com segurança possíveis modificadores do efeito.
+
+Ausência de ensaios clínicos randomizados. Todos os estudos incluídos eram estudos de coorte: três prospectivos, quatro retrospectivos e dois que combinaram componentes retrospectivos e prospectivos. Como a exposição ao tabaco não foi distribuída aleatoriamente, os resultados permitem identificar associações, mas não estabelecer causalidade definitiva.
+
+Heterogeneidade entre as pesquisas. Os estudos apresentaram diferenças nas características dos participantes, nas definições de tabagismo, nos critérios utilizados para identificar MACE e nos períodos de acompanhamento. A heterogeneidade global de 60,4% demonstra que os resultados não foram completamente uniformes.
+
+Definição insuficiente do tabagismo. Cinco dos nove estudos não apresentaram uma definição clara do hábito de fumar. Não foi possível avaliar adequadamente a influência da intensidade, da frequência e da duração do consumo de tabaco sobre o prognóstico.
+
+Predomínio de estudos asiáticos. A maior parte das pesquisas foi realizada no Japão e na Coreia do Sul, com apenas um estudo espanhol. A falta de evidências provenientes de outras regiões limita a generalização dos resultados para populações com características genéticas, ambientais e clínicas diferentes.
+
+Diferenças no tamanho das amostras. As pesquisas apresentaram tamanhos amostrais bastante variados, o que pode ter influenciado a precisão das estimativas e a magnitude das associações observadas.
+
+Possibilidade de viés de publicação. Embora os testes estatísticos de Begg e Egger não tenham identificado viés de publicação significativo, a assimetria observada no gráfico de funil impede descartar completamente essa possibilidade.
+
+Dados clínicos incompletos. A exclusão de estudos com informações insuficientes e a falta de dados completos sobre algumas condições concomitantes podem ter reduzido a capacidade de controlar fatores de confusão. A própria apresentação do total de participantes e dos números atribuídos aos grupos de fumantes e não fumantes contém uma inconsistência numérica que merece atenção.
+
+Possível influência de fatores de confusão. A presença de outras doenças, as diferenças nos tratamentos recebidos e as características individuais dos pacientes podem contribuir para a associação observada. Portanto, não é possível atribuir toda a diferença de risco exclusivamente ao tabagismo.
+
+Essas limitações indicam a necessidade de estudos futuros com amostras maiores, definições padronizadas de exposição e desfechos, acompanhamento prolongado e representação mais ampla de diferentes populações. Pesquisas com métodos mais rigorosos também são necessárias para esclarecer os mecanismos envolvidos e determinar com maior precisão a magnitude do risco associado ao tabagismo.
+
+<h1>9. Conclusão geral</h1>
+
+A análise conjunta dos estudos identificou uma associação significativa entre tabagismo e aumento da ocorrência de eventos cardiovasculares adversos maiores em pacientes com espasmo da artéria coronária. A estimativa global foi de RR = 1,965, com intervalo de confiança de 95% entre 1,348 e 2,865, indicando uma ocorrência relativa de eventos aproximadamente 96,5% maior entre fumantes.
+
+Essa associação apresenta coerência com os mecanismos fisiopatológicos envolvidos no tabagismo, que incluem disfunção endotelial, hipercontratilidade da musculatura lisa vascular, inflamação, estresse oxidativo, estimulação simpática e alterações hemodinâmicas. A combinação desses processos pode favorecer o espasmo coronariano, comprometer a perfusão do miocárdio e aumentar a possibilidade de complicações como infarto, arritmias, insuficiência cardíaca e morte cardíaca.
+
+As análises de subgrupos identificaram uma associação mais expressiva nas pesquisas japonesas, nos estudos com acompanhamento superior a três anos e nos estudos com menos de mil participantes. Entre esses resultados, o subgrupo com acompanhamento prolongado apresentou RR = 2,485, enquanto o subgrupo japonês apresentou RR = 2,527. Entretanto, essas diferenças precisam ser interpretadas com cautela, pois podem refletir características das populações, dos métodos de investigação e dos estudos disponíveis.
+
+As análises de sensibilidade demonstraram estabilidade estatística do resultado geral, embora a heterogeneidade e as limitações metodológicas impeçam conclusões definitivas sobre causalidade. A ausência de ensaios clínicos randomizados, o número reduzido de estudos, a predominância de pesquisas asiáticas e a falta de definições uniformes de tabagismo restringem a generalização dos achados.
+
+A cessação do tabagismo assume, nesse contexto, grande importância para o cuidado dos pacientes com espasmo coronariano. A interrupção da exposição ao tabaco pode contribuir para melhorar a função vascular, reduzir o risco cardiovascular e favorecer o prognóstico, devendo ser integrada ao acompanhamento clínico e ao controle dos demais fatores de risco.
+
+Em síntese, o tabagismo constitui um fator potencialmente modificável associado a um prognóstico cardiovascular menos favorável em indivíduos com espasmo coronariano. A prevenção e a interrupção do consumo de tabaco, aliadas ao diagnóstico adequado, ao tratamento farmacológico e ao acompanhamento contínuo, representam componentes relevantes para a redução do risco de complicações. A confirmação da magnitude dessa associação e o esclarecimento dos mecanismos envolvidos dependem, contudo, de pesquisas adicionais com maior rigor metodológico e maior diversidade populacional.
+
+<h1>10. Síntese dos principais achados</h1>
+
+<div class="grid-table" role="table" aria-label="Tabagismo e MACE em espasmo coronariano">
+  <div class="row header" role="row">
+    <div role="columnheader">Aspecto avaliado</div>
+    <div role="columnheader">Principal resultado</div>
+  </div>
+
+  <div class="row" role="row">
+    <div role="rowheader">Objetivo</div>
+    <div role="cell">Avaliar a associação entre tabagismo e MACE em pacientes com espasmo coronariano.</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Tipo de investigação</div>
+    <div role="cell">Revisão sistemática e metanálise de estudos de coorte.</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Estudos incluídos</div>
+    <div role="cell">9 estudos publicados entre 2007 e 2021.</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Resultado geral</div>
+    <div role="cell">RR = 1,965; IC 95%: 1,348–2,865.</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">País com associação significativa mais expressiva</div>
+    <div role="cell">Japão: RR = 2,527.</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Acompanhamento superior a 3 anos</div>
+    <div role="cell">RR = 2,485.</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Estudos com menos de 1.000 participantes</div>
+    <div role="cell">RR = 2,556.</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Mecanismos envolvidos</div>
+    <div role="cell">Disfunção endotelial, inflamação, estresse oxidativo, hipercontratilidade vascular e estimulação simpática.</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Principal implicação clínica</div>
+    <div role="cell">A cessação do tabagismo é importante para a redução do risco cardiovascular.</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Principal limitação</div>
+    <div role="cell">Poucos estudos, heterogeneidade, ausência de ensaios randomizados e predomínio de populações asiáticas.</div>
+  </div>
+</div>
+
+Conclusão central: em pacientes com espasmo da artéria coronária, o tabagismo está associado a maior ocorrência de eventos cardiovasculares adversos, com uma associação mais evidente em estudos japoneses e em pesquisas com acompanhamento prolongado. Apesar da consistência geral do resultado, a confirmação da magnitude do risco e o estabelecimento de uma relação causal exigem evidências adicionais.
+
+
+<h5>Referência: Yang, L. et al. Effects of Smoking on Major Adverse Cardiovascular Events in Patients With Coronary Artery Spasm: A Systematic Review and Meta-Analysis. Publicado na revista Heart, Lung and Circulation, em 2024</h5>
+
+
+</main>
+</body>
+</html>

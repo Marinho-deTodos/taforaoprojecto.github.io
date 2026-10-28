@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Respostas cardiovasculares e pulmonares ao uso agudo de sistemas eletrônicos de liberação de nicotina e cigarros combustíveis em usuários de longa data</title>
+<style>
+  :root {
+    /* white #ffffff graystrong #333333 bluelight #95bdfc gray #7a7a85 bluestrong  #3178eb whiteblued #e4e4ea;*/
+  --bg-color: #f6f7f9;
+  --txt-color: #333333;
+  --button-color: #95bdfc;
+  --surface: #f6f7f9; --muted: #7a7a85;
+  --main-color: #3178eb; --border: #e4e4ea;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+  --bg-color: #13171d;
+  --txt-color: #f0f0f0;
+  --button-color: #95bdfc;
+  --surface: #1a1a20; --muted: #8e8e99;
+  --main-color: #3178eb; --border: #676772;
+    }}
+:root[data-theme="dark"] {
+  --bg-color: #13171d;
+  --txt-color: #f0f0f0;
+  --button-color: #95bdfc;
+  --surface: #1a1a20z; --muted: #8e8e99;
+  --main-color: #3178eb; --border: #676772;
+  }
+
+  
+  
+  .grid-table {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 960px;
+  margin: 1rem auto;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(10rem, 1.2fr) repeat(3, 1fr);
+  align-items: stretch;
+}
+
+.row > div {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e4e7ec;
+  font-size: 0.9rem;
+}
+
+.row:last-child > div {
+  border-bottom: 0;
+}
+
+/* cabeçalho */
+.row.header > div {
+  background: #f2f4f7;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* primeira coluna como rótulo */
+.row:not(.header) > div:first-child {
+  font-weight: 600;
+  background: #fafafa;
+  border-right: 1px solid #e4e7ec;
+}
+
+.row:not(.header):hover > div:not(:first-child) {
+  background: #eef4ff;
+}
+
+/* tablets: rótulo em linha própria, três grupos lado a lado */
+@media (max-width: 800px) {
+  .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .row.header {
+    display: none;
+  }
+  .row:not(.header) > div:first-child {
+    grid-column: 1 / -1;
+    border-right: 0;
+    background: #f2f4f7;
+  }
+  .row > div[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #667085;
+  }
+}
+
+/* celulares: tudo empilhado */
+@media (max-width: 520px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .row > div {
+    border-bottom: 0;
+  }
+  .row:last-child > div:last-child {
+    border-bottom: 0;
+  }
+  .row:not(.header) > div:first-child {
+    border-top: 1px solid #d0d5dd;
+  }
+  .row:first-of-type:not(.header) > div:first-child {
+    border-top: 0;
+  }
+}
+
+
+
+
+  
+  
+  
+  
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px 20px 48px; background: var(--bg-color); color: var(--txt-color);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 8px; }
+  h2 { font-size: 1.15rem; margin: 28px 0 8px; }
+  p { margin: 0 0 12px; }
+  .lead { color: var(--muted); }
+  ol, ul { padding-left: 22px; margin: 0 0 12px; }
+  li { margin-bottom: 6px; }
+  code { background: color-mix(in srgb, var(--border) 12%, transparent); padding: 1px 6px; border-radius: 4px; }
+  blockquote { margin: 16px 0; padding: 8px 14px; border-left: 3px solid var(--border); color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+
+  
+<p>O uso de dispositivos eletrônicos para administração de nicotina, conhecidos como cigarros eletrônicos ou vapes, tornou-se cada vez mais frequente, especialmente entre adolescentes, adultos jovens e pessoas com menos de 25 anos. A popularização desses dispositivos está relacionada à ampla disponibilidade de diferentes modelos, à facilidade de utilização e à capacidade de fornecer nicotina por meio de aerossóis inalados.</p>
+
+<h1>1. Introdução e contextualização</h1>
+
+ Entretanto, a exposição a essas substâncias pode produzir efeitos sobre o sistema cardiovascular e o sistema respiratório, mesmo quando não ocorre a combustão do tabaco.
+
+Os dispositivos eletrônicos mais modernos apresentam características distintas das gerações anteriores, incluindo maior capacidade de aquecimento e alterações na forma de administrar nicotina e outras substâncias químicas. Essas características podem favorecer a absorção de nicotina e aumentar a exposição a compostos potencialmente tóxicos. Além disso, a nicotina possui efeitos fisiológicos importantes, pois atua sobre o sistema nervoso autônomo e pode modificar a frequência cardíaca, a pressão arterial e o funcionamento dos vasos sanguíneos.
+
+A avaliação dos efeitos dos cigarros eletrônicos exige atenção especial porque as doenças cardiovasculares e pulmonares frequentemente se desenvolvem ao longo de muitos anos. Dessa maneira, a ausência de sintomas imediatos ou de alterações evidentes nos exames realizados em repouso não significa necessariamente que a exposição seja inofensiva. Alterações fisiológicas de curta duração podem fornecer informações relevantes sobre possíveis mecanismos envolvidos no desenvolvimento de problemas de saúde ao longo do tempo.
+
+O cigarro convencional já está associado a diversos prejuízos cardiovasculares e respiratórios, decorrentes da exposição à nicotina, ao monóxido de carbono, às partículas e a inúmeras substâncias produzidas durante a combustão do tabaco. Os cigarros eletrônicos, por sua vez, não dependem da queima do tabaco para produzir o aerossol inalado, mas isso não elimina os efeitos biológicos de seus componentes.
+
+Nesse contexto, torna-se importante compreender se o uso de dispositivos eletrônicos provoca alterações agudas semelhantes às observadas após o consumo de cigarros convencionais. Também é necessário avaliar se essas mudanças envolvem apenas o sistema cardiovascular ou se atingem simultaneamente a função pulmonar, a regulação autonômica e a capacidade de realizar exercícios físicos.
+
+A investigação concentrou-se justamente nessas respostas imediatas, comparando usuários habituais de cigarros eletrônicos, fumantes de cigarros convencionais e pessoas que não utilizavam nenhum desses produtos. A análise conjunta desses grupos permitiu avaliar diferentes indicadores fisiológicos antes e depois de uma exposição breve à nicotina, além de verificar o desempenho físico em um teste realizado posteriormente.
+
+<h1>2. Objetivo principal</h1>
+
+O objetivo central foi investigar as respostas cardiovasculares e pulmonares provocadas pelo uso agudo de dispositivos eletrônicos de administração de nicotina e de cigarros convencionais em usuários de longa duração.
+
+A investigação procurou identificar alterações na pressão arterial, na frequência cardíaca, na variabilidade da frequência cardíaca, no comportamento dos vasos sanguíneos, na função pulmonar e na tolerância ao exercício. Essas medidas permitem observar diferentes aspectos da resposta do organismo à exposição à nicotina e às demais substâncias presentes nos produtos inalados.
+
+A comparação envolveu três grupos:
+
+•Usuários exclusivos de cigarros eletrônicos: pessoas que utilizavam dispositivos eletrônicos, sem apresentar evidências de uso atual de cigarros convencionais de acordo com os critérios estabelecidos.
+
+•Fumantes exclusivos de cigarros convencionais: pessoas que consumiam cigarros combustíveis e apresentavam indicadores compatíveis com esse hábito.
+
+•Grupo de controle: pessoas que não fumavam nem utilizavam cigarros eletrônicos.
+
+A principal questão consistiu em determinar se uma única sessão de uso de cigarros eletrônicos seria capaz de produzir alterações fisiológicas relevantes e se essas respostas seriam semelhantes às encontradas entre fumantes de cigarros convencionais.
+
+Também foi importante avaliar o comportamento dos usuários de cigarros eletrônicos antes da exposição. Caso esses participantes apresentassem resultados iniciais semelhantes aos do grupo de controle, mas demonstrassem alterações depois do uso, seria possível identificar mudanças agudas que não seriam necessariamente percebidas por meio de avaliações realizadas exclusivamente em repouso.
+
+A pesquisa, portanto, abrangeu tanto as respostas imediatas à exposição quanto a capacidade funcional do organismo nos momentos posteriores ao consumo dos produtos.
+
+<h1>3. Desenho do estudo e características dos participantes</h1>
+
+A investigação foi conduzida por meio de um estudo observacional com avaliações antes e depois de uma sessão de uso de produtos contendo nicotina. Foram recrutados participantes da comunidade, submetidos a procedimentos padronizados de avaliação cardiovascular, pulmonar e laboratorial.
+
+Inicialmente, 1.745 pessoas foram avaliadas quanto à elegibilidade. Destas, 450 foram incluídas na etapa de alocação dos grupos. Após as exclusões relacionadas aos critérios de elegibilidade e as perdas de acompanhamento, a amostra final analisada foi composta por 395 participantes.
+
+A distribuição dos participantes foi a seguinte:
+
+GrupoNúmero de participantesUsuários de cigarros eletrônicos164Fumantes de cigarros convencionais117Grupo de controle114Total395
+
+Os usuários de cigarros eletrônicos apresentavam idade média de 27,4 anos, enquanto a idade média do grupo de controle era de 30,8 anos. Entre os fumantes de cigarros convencionais, a idade média era de 42,8 anos. Portanto, os fumantes eram, em média, consideravelmente mais velhos do que os participantes dos outros grupos.
+
+A maioria dos usuários de cigarros eletrônicos utilizava dispositivos de quarta geração, que correspondiam a 82% desse grupo. Os demais 18% utilizavam dispositivos de terceira geração. A duração mediana do uso de cigarros eletrônicos era de quatro anos.
+
+Entre os fumantes de cigarros convencionais, a duração mediana do hábito era de 21 anos, com histórico mediano de 24 maços-ano. Essa medida expressa a intensidade acumulada do tabagismo, considerando a quantidade de cigarros consumidos por dia e o número de anos de consumo.
+
+A identificação dos grupos foi realizada por meio de informações sobre os hábitos de consumo e de exames laboratoriais. Foram utilizados testes de nicotina e cotinina na urina e no sangue, além da mensuração do monóxido de carbono no ar expirado. Esses procedimentos ajudaram a verificar a exposição aos produtos e a distinguir os participantes conforme os critérios de inclusão.
+
+Os participantes compareceram a duas visitas presenciais, realizadas com aproximadamente sete dias de intervalo. Na segunda visita, os exames foram realizados pela manhã, após jejum e abstinência de produtos contendo nicotina por pelo menos oito horas.
+
+Antes da sessão experimental, foram avaliados indicadores cardiovasculares, respiratórios e autonômicos. Em seguida, os participantes realizaram uma sessão de até 15 minutos: os usuários de cigarros eletrônicos utilizaram seus próprios dispositivos, os fumantes consumiram seus próprios cigarros e o grupo de controle permaneceu em repouso.
+
+As avaliações posteriores foram realizadas logo após essa sessão, permitindo observar as mudanças fisiológicas associadas ao período de exposição. Aproximadamente 90 minutos depois, os participantes também realizaram um teste de esforço em esteira.
+
+A utilização dos próprios dispositivos e cigarros permitiu aproximar o procedimento das condições habituais de consumo. Ao mesmo tempo, essa escolha introduziu diferenças entre os produtos, as doses e os padrões de utilização, fatores que precisam ser considerados na interpretação dos resultados.
+
+<h1>4. Procedimentos e indicadores avaliados</h1>
+
+A investigação reuniu diferentes métodos de avaliação para analisar o funcionamento cardiovascular, pulmonar e autonômico.
+
+<h1>4.1. Pressão arterial e frequência cardíaca</h1>
+
+A pressão arterial foi medida repetidamente após um período de repouso, permitindo avaliar tanto a pressão sistólica quanto a diastólica. A pressão sistólica corresponde à pressão exercida nas artérias durante a contração do coração, enquanto a diastólica representa a pressão durante o relaxamento cardíaco.
+
+A frequência cardíaca foi registrada para identificar mudanças na quantidade de batimentos por minuto. Esse indicador é importante porque pode responder rapidamente à estimulação provocada pela nicotina e às alterações na atividade do sistema nervoso autônomo.
+
+<h1>4.2. Variabilidade da frequência cardíaca</h1>
+
+A variabilidade da frequência cardíaca (VFC) corresponde às variações nos intervalos de tempo entre batimentos consecutivos. Ela fornece informações sobre a regulação autonômica do coração, incluindo a interação entre os componentes simpático e parassimpático do sistema nervoso.
+
+O componente simpático está relacionado, entre outras funções, à preparação do organismo para situações de esforço e alerta. O componente parassimpático participa da regulação do repouso e da recuperação. A redução de determinados índices de VFC pode indicar alterações nessa regulação, embora sua interpretação dependa da medida utilizada e das condições de avaliação.
+
+Foram empregados indicadores temporais da VFC, como RMSSD e PNN50, além de outras medidas realizadas em repouso e na posição em pé.
+
+<h1>4.3. Avaliação dos vasos sanguíneos</h1>
+
+O funcionamento vascular foi investigado por meio de exames de ultrassonografia e análise de ondas de pulso. A avaliação da artéria braquial permitiu medir seu diâmetro e examinar aspectos da resposta vascular.
+
+A diminuição do diâmetro arterial após a exposição pode indicar vasoconstrição, isto é, estreitamento dos vasos sanguíneos. Esse fenômeno pode aumentar a resistência à passagem do sangue e contribuir para mudanças na pressão arterial.
+
+Também foi avaliada a dilatação mediada pelo fluxo, um indicador utilizado para investigar a capacidade de resposta do endotélio, camada de células que reveste internamente os vasos sanguíneos. Essa medida permite examinar aspectos da função vascular que não são captados apenas pela pressão arterial.
+
+<h1>4.4. Função pulmonar</h1>
+
+A função respiratória foi examinada por meio da espirometria. Entre os principais indicadores estavam:
+
+•VEF1: volume expiratório forçado no primeiro segundo, que representa a quantidade de ar expirada com força no primeiro segundo de uma expiração.
+
+•CVF: capacidade vital forçada, correspondente ao volume total de ar expirado forçadamente após uma inspiração máxima.
+
+•Relação VEF1/CVF: proporção entre o volume expirado no primeiro segundo e o volume total expirado.
+
+•FEF25–75: fluxo expiratório forçado médio durante a expiração da porção intermediária da capacidade vital forçada.
+
+Esses parâmetros permitem identificar alterações no fluxo de ar e sinais compatíveis com obstrução das vias respiratórias.
+
+Também foi medido o óxido nítrico exalado fracionado (FeNO), um indicador relacionado a processos inflamatórios das vias aéreas. Seu comportamento pode variar conforme o contexto clínico e o tipo de exposição, de modo que sua interpretação não deve ser feita isoladamente.
+
+<h1>4.5. Teste de esforço</h1>
+
+Aproximadamente 90 minutos após a sessão de exposição, os participantes realizaram um teste máximo em esteira. Foram avaliados o equivalente metabólico máximo (MET), o produto frequência cardíaca-pressão arterial, a reserva de frequência cardíaca e a recuperação da frequência cardíaca após 60 segundos.
+
+O MET é uma medida utilizada para expressar a intensidade do esforço e a capacidade funcional. Valores mais altos no teste podem indicar maior capacidade de realizar atividades físicas.
+
+A recuperação da frequência cardíaca, por sua vez, representa a redução dos batimentos após o esforço. Uma recuperação mais lenta pode indicar diferenças na regulação autonômica e está associada a indicadores prognósticos cardiovasculares.
+
+A combinação dessas medidas permitiu analisar se as alterações identificadas após o consumo dos produtos também se relacionavam ao desempenho físico em um momento posterior.
+
+<h1>5. Resultados cardiovasculares antes da exposição</h1>
+
+Antes da sessão de uso dos produtos, os usuários de cigarros eletrônicos e os participantes do grupo de controle apresentavam resultados semelhantes em grande parte das avaliações cardiovasculares. As diferenças mais evidentes foram observadas entre os fumantes de cigarros convencionais e os outros dois grupos.
+
+Os fumantes apresentaram frequência cardíaca inicial mais elevada, maior índice de aumento aórtico ajustado para uma frequência cardíaca de 75 batimentos por minuto e resultados menos favoráveis em determinadas medidas da variabilidade da frequência cardíaca. Essas diferenças indicam que o grupo de fumantes já apresentava alterações em alguns indicadores cardiovasculares antes da exposição realizada durante o estudo.
+
+A frequência cardíaca média inicial foi de aproximadamente 59,6 batimentos por minuto no grupo de controle, 58,3 nos usuários de cigarros eletrônicos e 65,3 nos fumantes de cigarros convencionais.
+
+A pressão arterial sistólica média inicial foi de 118,4 mmHg no grupo de controle, 119,7 mmHg entre os usuários de cigarros eletrônicos e 126,4 mmHg entre os fumantes. Para a pressão diastólica, os valores foram de 70,4 mmHg, 71,1 mmHg e 76,6 mmHg, respectivamente.
+
+Apesar dessas diferenças numéricas, as comparações ajustadas não demonstraram diferenças estatisticamente significativas entre os grupos para a pressão arterial inicial. A idade, o sexo e a raça ou etnia foram considerados nas análises estatísticas, uma vez que essas características poderiam influenciar os resultados.
+
+Um aspecto importante foi a semelhança geral entre usuários de cigarros eletrônicos e participantes que não utilizavam produtos com nicotina. Essa condição permitiu identificar com maior clareza as alterações observadas após a sessão de uso, especialmente nos indicadores que se modificaram de maneira mais acentuada entre os usuários.
+
+Entretanto, os resultados iniciais não significam que o uso prolongado de cigarros eletrônicos seja necessariamente isento de efeitos. A avaliação de determinados parâmetros em um único momento não permite excluir alterações em outros mecanismos fisiológicos, nem determinar os efeitos acumulados de anos de exposição.
+
+<h1>6. Efeitos agudos sobre a pressão arterial e a frequência cardíaca</h1>
+
+Um dos principais resultados foi o aumento da pressão arterial e da frequência cardíaca após o uso dos cigarros eletrônicos.
+
+Durante a sessão de até 15 minutos, os fumantes de cigarros convencionais consumiram uma mediana de 14 tragadas, enquanto os usuários de cigarros eletrônicos realizaram uma mediana de nove tragadas. Mesmo com essa diferença no número de tragadas, ambos os grupos apresentaram alterações cardiovasculares relevantes após a exposição.
+
+Entre os usuários de cigarros eletrônicos, o aumento médio ajustado da pressão arterial sistólica foi de aproximadamente 5,6 mmHg. No grupo de controle, que permaneceu em repouso, o aumento foi de 2,3 mmHg.
+
+Na pressão arterial diastólica, o aumento médio ajustado foi de 4,2 mmHg entre os usuários de cigarros eletrônicos, comparado a 2,0 mmHg no grupo de controle.
+
+A frequência cardíaca também aumentou de maneira mais expressiva entre os usuários de cigarros eletrônicos. O aumento médio ajustado foi de 4,8 batimentos por minuto, enquanto o grupo de controle apresentou uma redução de aproximadamente 1,3 batimento por minuto.
+
+Os fumantes de cigarros convencionais também apresentaram elevações na pressão arterial sistólica, na pressão diastólica e na frequência cardíaca. As mudanças nesses indicadores foram semelhantes às observadas entre os usuários de cigarros eletrônicos, sem diferenças estatisticamente significativas entre os dois grupos de consumidores.
+
+Esses resultados indicam que a exposição aguda aos cigarros eletrônicos pode provocar uma resposta cardiovascular que envolve aumento da pressão arterial e aceleração dos batimentos cardíacos. A ocorrência dessas alterações em um período curto demonstra que os efeitos fisiológicos podem surgir mesmo após uma única sessão de uso.
+
+A nicotina constitui um possível mecanismo importante para explicar essa resposta, pois pode estimular o sistema nervoso simpático e produzir efeitos semelhantes aos de uma ativação fisiológica de alerta. Essa estimulação pode elevar a frequência cardíaca, aumentar a pressão arterial e modificar a atividade dos vasos sanguíneos.
+
+É importante distinguir, contudo, a constatação das alterações fisiológicas da demonstração de seus mecanismos. A investigação identificou as mudanças após o uso, mas não foi desenvolvida especificamente para determinar a contribuição exata da nicotina em comparação com outras substâncias presentes nos aerossóis.
+
+Os resultados também não permitem afirmar que uma única sessão provoque necessariamente um evento cardiovascular grave. A relevância está na identificação de alterações objetivas em indicadores relacionados à função cardiovascular, que podem contribuir para a compreensão dos possíveis riscos associados à exposição repetida.
+
+<h1>7. Alterações na variabilidade da frequência cardíaca e na regulação autonômica</h1>
+
+Além das mudanças na pressão arterial e na frequência cardíaca, os usuários de cigarros eletrônicos apresentaram redução de determinados indicadores da variabilidade da frequência cardíaca.
+
+A VFC permite avaliar aspectos da capacidade de regulação do coração pelo sistema nervoso autônomo. Em condições normais, os intervalos entre os batimentos variam continuamente, acompanhando as necessidades do organismo e a interação entre os sistemas simpático e parassimpático.
+
+Após a exposição, os usuários de cigarros eletrônicos apresentaram redução dos índices PNN50 e RMSSD. Essas alterações também foram observadas entre os fumantes de cigarros convencionais e foram mais pronunciadas do que as verificadas no grupo de controle.
+
+O PNN50 expressa a porcentagem de intervalos consecutivos entre batimentos que diferem em mais de 50 milissegundos. O RMSSD representa a raiz quadrada da média dos quadrados das diferenças entre intervalos consecutivos normais. Ambos são utilizados, especialmente, para avaliar componentes da modulação autonômica cardíaca.
+
+A redução desses indicadores após a exposição sugere uma alteração aguda da regulação autonômica, compatível com maior influência simpática e menor modulação parassimpática em determinadas condições.
+
+Por outro lado, a medida da variabilidade da frequência cardíaca na posição em pé não apresentou diferenças significativas entre os grupos quanto à mudança provocada pela sessão de uso. Portanto, nem todos os parâmetros autonômicos responderam da mesma maneira.
+
+A interpretação precisa considerar essa diversidade de resultados. A VFC não corresponde a uma medida única, e diferentes índices refletem aspectos distintos da regulação cardíaca. Assim, as mudanças observadas em alguns parâmetros não devem ser generalizadas automaticamente para todos os componentes do sistema nervoso autônomo.
+
+Ainda assim, a associação entre aumento da frequência cardíaca, elevação da pressão arterial e redução de determinados índices de VFC forma um conjunto coerente de alterações cardiovasculares agudas.
+
+Esse conjunto é relevante porque a regulação autonômica participa do controle da circulação, da adaptação ao esforço físico e da recuperação após situações de maior demanda fisiológica.
+
+<h1>8. Vasoconstrição e respostas dos vasos sanguíneos</h1>
+
+Outro achado importante foi a redução do diâmetro de repouso da artéria braquial após o uso dos cigarros eletrônicos.
+
+O diâmetro arterial diminuiu de maneira mais acentuada entre os usuários de cigarros eletrônicos e os fumantes de cigarros convencionais do que entre os participantes do grupo de controle. Essa redução é compatível com vasoconstrição, caracterizada pelo estreitamento dos vasos sanguíneos.
+
+A vasoconstrição pode modificar a resistência vascular e contribuir para o aumento da pressão arterial. Quando os vasos se estreitam, a passagem do sangue pode exigir maior pressão, dependendo das características do sistema circulatório e das condições fisiológicas presentes.
+
+A magnitude da alteração observada entre os usuários de cigarros eletrônicos foi semelhante à encontrada entre os fumantes de cigarros convencionais. Isso reforça a existência de respostas vasculares agudas após o consumo dos dois tipos de produto.
+
+Entretanto, a dilatação mediada pelo fluxo não apresentou diferenças significativas entre os grupos quanto à resposta à exposição. Esse resultado é importante porque demonstra que a redução do diâmetro arterial não foi acompanhada por uma alteração estatisticamente significativa nesse outro indicador de função vascular.
+
+Portanto, não é adequado concluir que todos os aspectos da função endotelial tenham piorado durante a sessão experimental. O resultado mais diretamente sustentado foi a diminuição do diâmetro da artéria braquial, e não uma deterioração uniforme de todas as medidas vasculares.
+
+A interpretação desses achados também exige considerar que a pressão arterial, a frequência cardíaca e o diâmetro arterial são indicadores relacionados, mas não equivalentes. Cada um fornece informações específicas sobre a resposta cardiovascular, e a análise conjunta permite compreender melhor o padrão fisiológico observado.
+
+<h1>9. Efeitos sobre a função pulmonar</h1>
+
+As avaliações respiratórias revelaram alterações após a sessão de uso dos cigarros eletrônicos, principalmente nos indicadores relacionados à passagem do ar pelas vias respiratórias.
+
+O volume expiratório forçado no primeiro segundo (VEF1) diminuiu nos três grupos. Entretanto, a redução foi significativamente maior entre os usuários de cigarros eletrônicos do que entre os participantes do grupo de controle. A magnitude da queda entre os usuários de cigarros eletrônicos foi semelhante à observada entre os fumantes de cigarros convencionais.
+
+A redução do VEF1 indica que uma quantidade menor de ar foi expirada durante o primeiro segundo de uma expiração forçada. Esse resultado pode ser compatível com uma limitação do fluxo expiratório, embora não seja suficiente, isoladamente, para diagnosticar uma doença pulmonar obstrutiva.
+
+A relação VEF1/CVF também apresentou uma redução mais acentuada entre os usuários de cigarros eletrônicos do que nos outros grupos. Além disso, o fluxo expiratório forçado médio entre 25% e 75% da capacidade vital forçada (FEF25–75) diminuiu de maneira mais expressiva entre os usuários de cigarros eletrônicos do que entre os participantes do grupo de controle e os fumantes de cigarros convencionais.
+
+Essas alterações apontam para mudanças agudas em diferentes parâmetros da função respiratória. A redução simultânea do VEF1, da relação VEF1/CVF e do FEF25–75 é compatível com aumento da obstrução ao fluxo aéreo durante o período avaliado.
+
+A resposta pulmonar observada não deve ser interpretada como prova de que os participantes desenvolveram uma doença respiratória crônica. A espirometria foi realizada antes e imediatamente após a exposição, permitindo identificar mudanças de curta duração, mas não estabelecer a persistência dessas alterações.
+
+A capacidade pulmonar pode ser influenciada por diferentes fatores, incluindo irritação das vias aéreas, alterações transitórias do calibre brônquico e características da exposição inalada. O estudo não foi projetado para determinar precisamente qual desses mecanismos explica cada mudança encontrada.
+
+Apesar dessa limitação, a ocorrência de alterações em vários parâmetros espirométricos é relevante, porque demonstra que os efeitos agudos do uso não se restringiram ao sistema cardiovascular.
+
+<h1>9.1. Alterações no óxido nítrico exalado</h1>
+
+O óxido nítrico exalado fracionado (FeNO) também diminuiu significativamente após o uso dos cigarros eletrônicos. Essa redução não foi estatisticamente significativa entre os participantes do grupo de controle nem entre os fumantes de cigarros convencionais.
+
+O FeNO é utilizado como indicador relacionado à inflamação das vias respiratórias, especialmente em determinados contextos de inflamação eosinofílica. Entretanto, seus valores podem ser modificados por diferentes exposições e condições clínicas.
+
+Consequentemente, uma redução do FeNO não significa necessariamente uma melhora da saúde pulmonar. Nesse contexto, o indicador diminuiu simultaneamente a outras medidas de função respiratória que apresentaram piora, o que impede uma interpretação simplificada do resultado.
+
+A associação entre redução do FeNO e alterações espirométricas reforça a necessidade de avaliar diferentes parâmetros respiratórios em conjunto, em vez de utilizar um único marcador como representação completa da função pulmonar.
+
+<h1>10. Capacidade de realizar exercícios físicos</h1>
+
+Uma parte importante da investigação consistiu na avaliação do desempenho físico em esteira, realizada aproximadamente 90 minutos depois da sessão de exposição.
+
+Os usuários de cigarros eletrônicos apresentaram resultados inferiores aos do grupo de controle nos quatro indicadores de exercício avaliados. Em geral, os valores dos fumantes de cigarros convencionais ficaram em uma posição intermediária, sem diferenças estatisticamente significativas em relação aos usuários de cigarros eletrônicos na maioria dessas medidas.
+
+Esse resultado demonstra que as diferenças entre os grupos não se limitaram às avaliações realizadas imediatamente após o consumo. Também foram observadas diferenças na capacidade funcional durante o teste de esforço posterior.
+
+<h1>10.1. Equivalentes metabólicos</h1>
+
+O desempenho máximo foi de aproximadamente 11,1 METs no grupo de controle, 9,8 METs entre os usuários de cigarros eletrônicos e 9,3 METs entre os fumantes de cigarros convencionais, considerando as médias ajustadas.
+
+Os METs representam uma forma de expressar o custo energético de uma atividade em relação ao repouso. Durante um teste máximo, o valor alcançado fornece uma estimativa da capacidade funcional do indivíduo.
+
+A menor capacidade de atingir valores elevados de METs entre os usuários de cigarros eletrônicos indica um desempenho inferior no teste em comparação com pessoas que não utilizavam esses produtos.
+
+A diferença é relevante porque a capacidade funcional durante o exercício está relacionada à aptidão cardiorrespiratória e constitui um indicador importante da saúde geral. Valores mais baixos de capacidade funcional também estão associados, em outros contextos clínicos, a maior risco cardiovascular.
+
+Contudo, os resultados não demonstram que o uso de cigarros eletrônicos seja a única causa possível das diferenças no desempenho. O estudo foi observacional, e fatores individuais podem ter influenciado os resultados, mesmo após os ajustes estatísticos.
+
+<h1>10.2. Produto frequência cardíaca-pressão arterial</h1>
+
+O produto frequência cardíaca-pressão arterial, calculado a partir da frequência cardíaca máxima e da pressão arterial sistólica máxima, também apresentou diferenças entre os grupos.
+
+Os valores ajustados foram aproximadamente 292,8 no grupo de controle, 276,1 entre os usuários de cigarros eletrônicos e 266,0 entre os fumantes de cigarros convencionais, na escala utilizada para apresentação dos resultados.
+
+Esse indicador é empregado como uma estimativa da demanda de trabalho do coração durante o esforço. Sua interpretação depende das condições do teste e deve ser realizada em conjunto com as demais medidas.
+
+A diferença observada integra o conjunto de resultados que demonstraram desempenho inferior dos consumidores de produtos com nicotina em algumas medidas do teste de esforço.
+
+<h1>10.3. Reserva de frequência cardíaca</h1>
+
+A reserva de frequência cardíaca expressa a relação entre a frequência cardíaca máxima alcançada e a frequência máxima estimada para a idade, conforme a fórmula utilizada na investigação.
+
+Os valores ajustados foram de aproximadamente 91,5% no grupo de controle, 87,0% entre os usuários de cigarros eletrônicos e 85,0% entre os fumantes de cigarros convencionais.
+
+Os resultados indicam diferenças na resposta cardíaca durante o esforço físico. Entretanto, esse indicador não deve ser interpretado isoladamente como uma medida definitiva da capacidade cardiovascular, pois o desempenho também depende de fatores como condicionamento físico, idade e características individuais.
+
+<h1>10.4. Recuperação da frequência cardíaca</h1>
+
+A recuperação da frequência cardíaca após 60 segundos foi inferior entre os usuários de cigarros eletrônicos e os fumantes de cigarros convencionais em comparação com o grupo de controle.
+
+Os valores ajustados foram de aproximadamente 28,1 batimentos por minuto no grupo de controle, 25,2 entre os usuários de cigarros eletrônicos e 22,4 entre os fumantes de cigarros convencionais.
+
+Uma recuperação mais rápida costuma refletir a capacidade de adaptação do sistema cardiovascular após o esforço. Por outro lado, uma redução menor da frequência cardíaca durante o primeiro minuto de recuperação pode indicar uma recuperação autonômica menos favorável.
+
+Entre os usuários de cigarros eletrônicos, a recuperação foi significativamente inferior à observada no grupo de controle. Essa diferença é particularmente relevante porque a recuperação da frequência cardíaca é utilizada como indicador prognóstico em avaliações cardiovasculares.
+
+Os resultados do teste de esteira, considerados em conjunto, indicam que os usuários de cigarros eletrônicos apresentaram menor capacidade de exercício e diferenças na recuperação cardíaca, mesmo sendo mais jovens, em média, do que os fumantes de cigarros convencionais.
+
+Isso reforça a importância de avaliar a função cardiovascular não apenas em repouso, mas também durante o esforço e a recuperação.
+
+<h1>11. Comparação entre cigarros eletrônicos, cigarros convencionais e ausência de consumo</h1>
+
+A comparação dos três grupos demonstrou um padrão consistente de alterações em diferentes sistemas fisiológicos.
+
+<div class="grid-table" role="table" aria-label="Efeitos cardiovasculares e pulmonares por grupo">
+  <div class="row header" role="row">
+    <div role="columnheader">Indicador</div>
+    <div role="columnheader">Usuários de cigarros eletrônicos</div>
+    <div role="columnheader">Fumantes de cigarros convencionais</div>
+    <div role="columnheader">Grupo de controle</div>
+  </div>
+
+  <div class="row" role="row">
+    <div role="rowheader">Pressão arterial após a exposição</div>
+    <div role="cell" data-label="Usuários de cigarros eletrônicos">Aumento significativo</div>
+    <div role="cell" data-label="Fumantes de cigarros convencionais">Aumento significativo</div>
+    <div role="cell" data-label="Grupo de controle">Alterações menores</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Frequência cardíaca</div>
+    <div role="cell" data-label="Usuários de cigarros eletrônicos">Aumento significativo</div>
+    <div role="cell" data-label="Fumantes de cigarros convencionais">Aumento significativo</div>
+    <div role="cell" data-label="Grupo de controle">Pequena redução média</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Variabilidade da frequência cardíaca</div>
+    <div role="cell" data-label="Usuários de cigarros eletrônicos">Redução em índices temporais</div>
+    <div role="cell" data-label="Fumantes de cigarros convencionais">Redução em índices temporais</div>
+    <div role="cell" data-label="Grupo de controle">Resposta mais favorável</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Diâmetro da artéria braquial</div>
+    <div role="cell" data-label="Usuários de cigarros eletrônicos">Redução</div>
+    <div role="cell" data-label="Fumantes de cigarros convencionais">Redução</div>
+    <div role="cell" data-label="Grupo de controle">Redução menor</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">VEF1</div>
+    <div role="cell" data-label="Usuários de cigarros eletrônicos">Redução</div>
+    <div role="cell" data-label="Fumantes de cigarros convencionais">Redução de magnitude semelhante</div>
+    <div role="cell" data-label="Grupo de controle">Redução menor</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Relação VEF1/CVF</div>
+    <div role="cell" data-label="Usuários de cigarros eletrônicos">Redução mais acentuada</div>
+    <div role="cell" data-label="Fumantes de cigarros convencionais">Redução menos acentuada</div>
+    <div role="cell" data-label="Grupo de controle">Redução menor</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">FEF25–75</div>
+    <div role="cell" data-label="Usuários de cigarros eletrônicos">Redução mais acentuada</div>
+    <div role="cell" data-label="Fumantes de cigarros convencionais">Redução menos acentuada</div>
+    <div role="cell" data-label="Grupo de controle">Redução menor</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Capacidade de exercício</div>
+    <div role="cell" data-label="Usuários de cigarros eletrônicos">Inferior ao controle</div>
+    <div role="cell" data-label="Fumantes de cigarros convencionais">Inferior ao controle</div>
+    <div role="cell" data-label="Grupo de controle">Melhor desempenho médio</div>
+  </div>
+  <div class="row" role="row">
+    <div role="rowheader">Recuperação cardíaca em 60 segundos</div>
+    <div role="cell" data-label="Usuários de cigarros eletrônicos">Inferior ao controle</div>
+    <div role="cell" data-label="Fumantes de cigarros convencionais">Inferior ao controle</div>
+    <div role="cell" data-label="Grupo de controle">Melhor recuperação média</div>
+  </div>
+</div>
+
+A comparação evidencia que os cigarros eletrônicos não produziram apenas uma resposta isolada relacionada à frequência cardíaca. Foram observadas alterações concomitantes na pressão arterial, nos indicadores autonômicos, no calibre arterial, na função respiratória e no desempenho físico.
+
+Em vários indicadores cardiovasculares, as respostas dos usuários de cigarros eletrônicos foram semelhantes às dos fumantes de cigarros convencionais. Na função pulmonar, algumas alterações agudas foram até mais pronunciadas entre os usuários de cigarros eletrônicos, especialmente na relação VEF1/CVF e no FEF25–75.
+
+Essas diferenças não permitem estabelecer uma classificação universal de qual produto é mais prejudicial em todos os aspectos. Os grupos apresentavam características distintas, e os fumantes de cigarros convencionais já demonstravam resultados menos favoráveis em alguns indicadores antes da sessão experimental.
+
+Além disso, os efeitos de curto prazo observados não representam necessariamente a magnitude dos riscos acumulados após anos de consumo. A comparação permite identificar respostas fisiológicas agudas, mas não quantificar diretamente a incidência futura de infarto, acidente vascular cerebral, doença pulmonar obstrutiva crônica ou mortalidade.
+
+<h1>12. Possíveis mecanismos fisiológicos envolvidos</h1>
+
+As alterações cardiovasculares e pulmonares observadas podem envolver mecanismos dependentes e independentes da nicotina.
+
+<h1>12.1. Efeitos da nicotina sobre o sistema cardiovascular</h1>
+
+A nicotina pode estimular receptores nicotínicos e provocar uma resposta sistêmica de ativação simpática. Essa resposta pode aumentar a atividade cardiovascular, elevando a frequência cardíaca e a pressão arterial.
+
+A estimulação simpática também pode influenciar a resistência vascular e a regulação autonômica do coração. Esse mecanismo é compatível com o conjunto de alterações identificado após o uso dos cigarros eletrônicos.
+
+Os níveis de nicotina após a sessão de exposição alcançaram valores semelhantes aos observados entre os fumantes de cigarros convencionais. Isso demonstra que os dispositivos modernos utilizados pelos participantes eram capazes de fornecer nicotina em quantidades relevantes durante uma sessão breve.
+
+Entretanto, as análises não encontraram correlações fortes entre o aumento de nicotina ou de monóxido de carbono e as mudanças na maioria dos indicadores cardiovasculares. Portanto, embora a nicotina seja um mecanismo plausível, os resultados não estabelecem uma relação simples e proporcional entre a concentração absorvida e a magnitude de cada alteração fisiológica.
+
+<h1>12.2. Efeitos dos aerossóis sobre as vias respiratórias</h1>
+
+O aquecimento dos líquidos utilizados nos cigarros eletrônicos pode gerar diferentes substâncias químicas, incluindo compostos carbonílicos, compostos orgânicos, nitrosaminas, metais e partículas ultrafinas.
+
+A composição do aerossol depende de diversos fatores, como os ingredientes do líquido, a temperatura de aquecimento e as características do dispositivo.
+
+A inalação desses componentes pode estar associada à irritação das vias aéreas e a respostas fisiológicas capazes de modificar o fluxo de ar. Além disso, mecanismos relacionados à inflamação e à interação da nicotina com receptores presentes no tecido pulmonar podem contribuir para efeitos respiratórios.
+
+A investigação, contudo, não analisou detalhadamente a toxicologia de cada líquido nem determinou a contribuição específica de cada substância para as alterações espirométricas. Por isso, os mecanismos propostos devem ser considerados explicações possíveis, e não causas individualmente comprovadas pelos dados obtidos.
+
+<h1>12.3. Relação entre os sistemas cardiovascular e pulmonar</h1>
+
+O sistema cardiovascular e o sistema respiratório atuam de forma integrada para garantir o transporte de oxigênio aos tecidos e atender às necessidades metabólicas do organismo.
+
+Alterações no fluxo de ar, na circulação sanguínea e na regulação autonômica podem interferir na resposta ao exercício físico. A redução de determinados índices de função pulmonar, associada a mudanças cardiovasculares, constitui um padrão fisiológico compatível com menor eficiência durante o esforço.
+
+Ainda assim, a investigação não demonstrou diretamente que a alteração pulmonar tenha causado a redução do desempenho físico. Os resultados identificam mudanças concomitantes em diferentes sistemas, mas não estabelecem uma sequência causal completa entre elas.
+
+<h1>13. Relevância clínica e possíveis consequências para a saúde</h1>
+
+A importância clínica dos resultados está relacionada à magnitude e à combinação das alterações observadas após uma única sessão de uso.
+
+Entre os usuários de cigarros eletrônicos, a pressão arterial sistólica apresentou um aumento ajustado de aproximadamente 5,6 mmHg, enquanto a frequência cardíaca aumentou cerca de 4,8 batimentos por minuto. Também foram observadas redução de determinados índices de variabilidade cardíaca, diminuição do diâmetro arterial e alterações em parâmetros respiratórios.
+
+Essas mudanças são relevantes porque os indicadores cardiovasculares avaliados estão relacionados a mecanismos que participam da regulação da circulação e da adaptação do organismo às demandas fisiológicas.
+
+A pressão arterial, por exemplo, apresenta associação com o risco cardiovascular quando suas elevações se mantêm ao longo do tempo. Da mesma forma, a capacidade funcional e a recuperação da frequência cardíaca durante o exercício são utilizadas como indicadores prognósticos em diferentes contextos clínicos.
+
+O estudo também identificou uma redução aguda do VEF1 de aproximadamente 4% entre os usuários de cigarros eletrônicos. Essa magnitude demonstra que a resposta respiratória não foi exclusivamente estatística, embora o significado clínico individual e a persistência da alteração não possam ser determinados apenas com essa avaliação.
+
+É fundamental distinguir os efeitos agudos dos efeitos crônicos. A investigação não acompanhou os participantes por tempo suficiente para estabelecer se as mudanças encontradas permaneceriam após o término da exposição ou se produziriam danos permanentes.
+
+Também não foi possível determinar se a repetição diária dessas respostas resultaria em alterações persistentes em repouso, aumento de doenças cardiovasculares ou desenvolvimento de doenças pulmonares crônicas.
+
+Apesar dessas incertezas, a identificação de respostas cardiovasculares e pulmonares em usuários habituais de cigarros eletrônicos demonstra que a exposição pode provocar efeitos fisiológicos imediatos que merecem atenção.
+
+<h1>14. Limitações da investigação</h1>
+
+A interpretação dos resultados deve considerar algumas limitações metodológicas importantes.
+
+Primeiramente, o estudo foi observacional. Embora as medidas tenham sido obtidas antes e depois da sessão de uso, não houve uma distribuição aleatória dos participantes entre os grupos de consumidores e não consumidores. Dessa maneira, as alterações observadas após a exposição não constituem prova definitiva de causalidade.
+
+Em segundo lugar, os grupos apresentavam características diferentes. Os fumantes de cigarros convencionais eram mais velhos, em média, e possuíam um histórico de exposição ao tabaco mais prolongado. Essas diferenças podem influenciar a função cardiovascular, a função pulmonar e a capacidade física.
+
+Os ajustes estatísticos para idade, sexo e raça ou etnia ajudaram a reduzir parte dessa influência, mas não eliminam a possibilidade de confusão por fatores não medidos ou insuficientemente controlados.
+
+Em terceiro lugar, os produtos utilizados não eram idênticos. Os participantes utilizaram seus próprios cigarros eletrônicos ou cigarros convencionais, o que aproxima a sessão das condições reais de consumo, mas dificulta a padronização exata da dose, da composição e do padrão de inalação.
+
+Em quarto lugar, parte dos usuários de cigarros eletrônicos tinha histórico anterior de tabagismo. Embora análises adicionais tenham indicado que os principais resultados cardiovasculares e pulmonares eram robustos em relação ao histórico de consumo de cigarros convencionais, não é possível excluir completamente a influência de exposições anteriores.
+
+Em quinto lugar, a duração do acompanhamento foi limitada. As medidas foram obtidas imediatamente após a sessão de uso e, posteriormente, durante o teste de esforço. Não houve acompanhamento prolongado suficiente para determinar a persistência das alterações ou seus efeitos sobre a ocorrência de doenças.
+
+Em sexto lugar, o estudo não foi projetado para identificar os mecanismos específicos de cada alteração. Não foi possível separar completamente os efeitos da nicotina daqueles relacionados aos demais componentes do aerossol, nem estabelecer a contribuição exata de cada substância química.
+
+Por fim, a generalização dos resultados também exige cautela. A maioria dos usuários de cigarros eletrônicos era branca, e os resultados podem não representar de maneira uniforme todas as populações, todos os dispositivos disponíveis ou todos os padrões de consumo.
+
+Essas limitações não anulam as alterações observadas, mas definem os limites das conclusões que podem ser estabelecidas a partir dos dados.
+
+<h1>15. Implicações para futuras investigações</h1>
+
+Os resultados evidenciam a necessidade de pesquisas adicionais sobre os efeitos cardiovasculares e pulmonares dos cigarros eletrônicos, especialmente dos dispositivos modernos, que apresentam características diferentes das gerações anteriores.
+
+Uma das prioridades consiste em realizar estudos longitudinais capazes de acompanhar os usuários por períodos prolongados. Esse tipo de investigação permitiria verificar se as alterações agudas identificadas se repetem de maneira consistente e se estão associadas a mudanças persistentes na pressão arterial, na função pulmonar ou na capacidade funcional.
+
+Também seria importante investigar diferentes concentrações de nicotina, composições de líquidos, temperaturas de aquecimento e padrões de utilização. A comparação entre produtos padronizados poderia ajudar a esclarecer quais características estão mais relacionadas às respostas fisiológicas observadas.
+
+Outro aspecto relevante é a realização de estudos capazes de separar os efeitos da nicotina daqueles provocados por outros componentes do aerossol. Isso contribuiria para compreender melhor os mecanismos envolvidos nas alterações cardiovasculares e respiratórias.
+
+Além disso, pesquisas com populações mais diversas poderiam esclarecer se a magnitude das respostas varia conforme idade, sexo, condições de saúde, histórico de tabagismo e intensidade de uso.
+
+Por fim, a avaliação simultânea da função pulmonar, do sistema cardiovascular, da regulação autonômica e do desempenho físico deve continuar sendo uma abordagem importante. A análise integrada desses sistemas permite identificar alterações que poderiam passar despercebidas quando apenas um indicador é utilizado.
+
+<h1>16. Conclusão geral</h1>
+
+O uso agudo de cigarros eletrônicos contendo nicotina esteve associado a alterações cardiovasculares e pulmonares em usuários habituais. Após uma sessão de até 15 minutos, foram observados aumento da pressão arterial sistólica e diastólica, elevação da frequência cardíaca, redução de determinados índices de variabilidade da frequência cardíaca e diminuição do diâmetro da artéria braquial.
+
+Também ocorreram alterações na função pulmonar, incluindo redução do VEF1, da relação VEF1/CVF e do fluxo expiratório forçado médio. Aproximadamente 90 minutos após a exposição, os usuários de cigarros eletrônicos apresentaram menor capacidade de exercício e recuperação cardíaca inferior à observada entre os participantes que não utilizavam produtos com nicotina.
+
+Em diversos indicadores, as respostas dos usuários de cigarros eletrônicos foram semelhantes às dos fumantes de cigarros convencionais. Em algumas medidas respiratórias, as alterações foram mais pronunciadas entre os usuários de cigarros eletrônicos, embora essas diferenças devam ser interpretadas considerando as características dos grupos e o desenho observacional da investigação.
+
+A associação entre alterações cardiovasculares, respiratórias e autonômicas demonstra que os efeitos agudos dos cigarros eletrônicos podem envolver diferentes sistemas fisiológicos simultaneamente. A nicotina e outros componentes dos aerossóis constituem mecanismos potencialmente relevantes, mas a contribuição específica de cada substância ainda precisa ser esclarecida.
+
+A principal conclusão é que uma única sessão de uso de cigarros eletrônicos pode estar associada a alterações fisiológicas mensuráveis, mesmo quando os usuários apresentam valores cardiovasculares e pulmonares iniciais semelhantes aos de pessoas que não fumam nem utilizam dispositivos eletrônicos.
+
+Esses resultados levantam preocupações sobre os possíveis efeitos adversos dos dispositivos modernos, especialmente diante da repetição frequente da exposição. Entretanto, ainda são necessárias investigações de longo prazo para determinar se as alterações agudas se traduzem em danos persistentes, doenças cardiovasculares ou doenças pulmonares crônicas.
+
+Assim, a ausência de combustão do tabaco não deve ser interpretada como ausência de efeitos fisiológicos. A avaliação dos cigarros eletrônicos exige considerar não apenas a composição do produto, mas também suas respostas cardiovasculares e respiratórias imediatas, a frequência de utilização e as possíveis consequências da exposição continuada.
+
+<h5>Referência: Tattersall, M. C. et al. Cardiovascular and Pulmonary Responses to Acute Use of Electronic Nicotine Delivery Systems and Combustible Cigarettes in Long-Term Users. CHEST, 2023; 164(3): 757–769. DOI: 10.1016/j.chest.2023.03.047.</h5>
+
+
+
+
+
+
+</main>
+</body>
+</html>
